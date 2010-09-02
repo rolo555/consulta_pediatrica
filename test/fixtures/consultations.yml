@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  patient_id: 1.5
+  weight: 1.5
+  height: 1.5
+  head_circumference: 1.5
+  anterior_fontanel: 1.5
+  temperature: 
+  amount: 
+  deduct_clinic_percentage: false
+  current_condition: MyText
+  diagnosis: MyText
+  medical_certificate: MyText
+  recipe: MyText
+  order: MyText
+  laboratory: MyText
+
+two:
+  patient_id: 1.5
+  weight: 1.5
+  height: 1.5
+  head_circumference: 1.5
+  anterior_fontanel: 1.5
+  temperature: 
+  amount: 
+  deduct_clinic_percentage: false
+  current_condition: MyText
+  diagnosis: MyText
+  medical_certificate: MyText
+  recipe: MyText
+  order: MyText
+  laboratory: MyText

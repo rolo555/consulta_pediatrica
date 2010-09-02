@@ -9,7 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100902220339) do
+ActiveRecord::Schema.define(:version => 20100902232409) do
+
+  create_table "consultations", :force => true do |t|
+    t.integer  "patient_id"
+    t.float    "weight"
+    t.float    "height"
+    t.float    "head_circumference"
+    t.float    "anterior_fontanel"
+    t.float    "temperature"
+    t.boolean  "deduct_clinic_percentage"
+    t.text     "current_condition"
+    t.text     "diagnosis"
+    t.text     "medical_certificate"
+    t.text     "recipe"
+    t.text     "order"
+    t.text     "laboratory"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "emails", :force => true do |t|
     t.string   "address"
