@@ -51,4 +51,11 @@ ActiveRecord::Schema.define(:version => 20100902232409) do
     t.datetime "updated_at"
   end
 
+  create_table "addresses", :force => true do |t|
+    t.string   "address"
+    t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 end
