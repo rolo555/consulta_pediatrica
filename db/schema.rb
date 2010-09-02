@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100902204637) do
+ActiveRecord::Schema.define(:version => 20100902220339) do
+
+  create_table "emails", :force => true do |t|
+    t.string   "address"
+    t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "patients", :force => true do |t|
     t.string   "first_name"
@@ -19,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20100902204637) do
     t.date     "date_of_birth"
     t.string   "father"
     t.string   "mother"
-    t.string   "contact_emails"
     t.string   "origin"
     t.string   "referenced_by"
     t.text     "observations"

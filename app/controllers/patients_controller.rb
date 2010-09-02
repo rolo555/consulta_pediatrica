@@ -5,7 +5,7 @@ class PatientsController < ApplicationController
       group.add :first_name, :last_name, :date_of_birth, :origin
     end
     action.columns.add_subgroup "Parents data" do |group|
-      group.add :mother, :father, :address, :phone_number, :contact_emails
+      group.add :mother, :father, :address, :phone_number, :emails
     end
     action.columns.add_subgroup "Medical data" do |group|
       group.add :referenced_by, :observations
@@ -14,7 +14,7 @@ class PatientsController < ApplicationController
 
   active_scaffold :patient do |conf|
     #Configuración de las columnas que se mostrarán al listar
-    conf.list.columns = [:last_name, :first_name]
+    conf.list.columns = [:last_name, :first_name, :emails]
 
     #Configuración de las columnas que se excluiran para todas las acciones
     conf.columns.exclude :created_at, :updated_at

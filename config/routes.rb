@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :patients, :active_scaffold => true
+  map.resources :emails, :active_scaffold => true
 
   # The priority is based upon order of creation: first created -> highest priority.
 
