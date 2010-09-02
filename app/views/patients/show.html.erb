@@ -1,0 +1,58 @@
+<p>
+  <b>First name:</b>
+  <%=h @patient.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @patient.last_name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @patient.address %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%=h @patient.phone_number %>
+</p>
+
+<p>
+  <b>Date of birth:</b>
+  <%=h @patient.date_of_birth %>
+</p>
+
+<p>
+  <b>Father:</b>
+  <%=h @patient.father %>
+</p>
+
+<p>
+  <b>Mother:</b>
+  <%=h @patient.mother %>
+</p>
+
+<p>
+  <b>Contact emails:</b>
+  <%=h @patient.contact_emails %>
+</p>
+
+<p>
+  <b>Origin:</b>
+  <%=h @patient.origin %>
+</p>
+
+<p>
+  <b>Referenced by:</b>
+  <%=h @patient.referenced_by %>
+</p>
+
+<p>
+  <b>Observations:</b>
+  <%=h @patient.observations %>
+</p>
+
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
