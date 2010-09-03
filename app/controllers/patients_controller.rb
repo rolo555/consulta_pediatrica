@@ -5,7 +5,7 @@ class PatientsController < ApplicationController
       group.add :first_name, :last_name, :date_of_birth, :origin
     end
     action.columns.add_subgroup "Parents data" do |group|
-      group.add :mother, :father, :addresses, :phone_number, :emails
+      group.add :mother, :father, :addresses, :phone_numbers, :emails
     end
     action.columns.add_subgroup "Medical data" do |group|
       group.add :referenced_by, :observations
