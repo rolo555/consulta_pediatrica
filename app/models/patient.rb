@@ -6,7 +6,7 @@ class Patient < ActiveRecord::Base
   has_many :phone_numbers, :dependent => :destroy
 
   #Fotografía
-  has_attached_file :photograph, :styles => {:thumb => "100x100>"}
+  has_attached_file :photograph, :styles => {:thumbnail => "100x100>"}
 
   def to_label
     first_name + " " + last_name
