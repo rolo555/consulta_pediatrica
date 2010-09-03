@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100903021617) do
     t.float    "head_circumference"
     t.float    "anterior_fontanel"
     t.float    "temperature"
+    t.decimal  "amount"
     t.boolean  "deduct_clinic_percentage"
     t.text     "current_condition"
     t.text     "diagnosis"

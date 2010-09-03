@@ -7,7 +7,7 @@ class CreateConsultations < ActiveRecord::Migration
       t.float :head_circumference
       t.float :anterior_fontanel
       t.float :temperature
-      t.bigdecimal :amount
+      t.decimal :amount
       t.boolean :deduct_clinic_percentage
       t.text :current_condition
       t.text :diagnosis
