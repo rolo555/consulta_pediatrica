@@ -17,7 +17,7 @@ class PatientsController < ApplicationController
     conf.list.columns = [:last_name, :first_name, :emails, :addresses]
 
     #Configuración de las columnas que se excluiran para todas las acciones
-    conf.columns.exclude :created_at, :updated_at
+    conf.columns.exclude :created_at, :updated_at, :consultations
 
     #Configuración de las acciones que se mostrarán
     conf.actions = [:create, :search, :update, :delete, :show, :nested, :subform, :list]
