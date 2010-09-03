@@ -11,5 +11,6 @@ class Patient < ActiveRecord::Base
   def to_label
     first_name + " " + last_name
   end
+  validates_presence_of :first_name, :last_name, :date_of_birth  
 
 end
