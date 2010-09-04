@@ -1,3 +1,5 @@
+include ActiveScaffoldHelper
+
 class PatientsController < ApplicationController
 
   def self.add_sub_groups (action)
@@ -27,6 +29,6 @@ class PatientsController < ApplicationController
     add_sub_groups conf.update
     add_sub_groups conf.show
 
-    #conf.columns[:photograph].form_ui = :paperclip
+    add_required_columns conf, Patient
   end
 end
