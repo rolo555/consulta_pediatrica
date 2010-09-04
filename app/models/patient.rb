@@ -9,7 +9,7 @@ class Patient < ActiveRecord::Base
   has_attached_file :photograph, :styles => { :thumb => "100x100>" }
 
   def to_label
-    first_name + " " + last_name
+    "#{first_name} #{last_name}"
   end
   validates_presence_of :first_name, :last_name, :date_of_birth  
 
