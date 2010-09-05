@@ -1,7 +1,3 @@
-include ActionView::Helpers::AssetTagHelper
-include ActionView::Helpers::TagHelper
-include ActionView::Helpers::UrlHelper
-
 class PatientsController < ApplicationController
 
   def self.add_sub_groups (action)
@@ -21,7 +17,7 @@ class PatientsController < ApplicationController
     conf.columns.add :age
 
     #Configuración de las columnas que se mostrarán al listar
-    conf.list.columns = [:photograph, :last_name, :first_name, :age,:emails, :addresses]
+    conf.list.columns = [:photograph, :last_name, :first_name, :age, :emails, :addresses, :consultations]
 
     #Configuración de las columnas que se excluiran para todas las acciones
     conf.columns.exclude :created_at, :updated_at, :consultations, :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at
@@ -37,7 +33,7 @@ class PatientsController < ApplicationController
     #Configuracion de [:date_of_birth] para que muestre mas años
     conf.columns[:date_of_birth].options = {:end_year => Date.today.year-30, :start_year => Date.today.year}
 
-    conf.nested.add_link image_tag("icons/consultation.jpg"), [:consultations]
+    conf.columns[:consultations].label = ""
 
   end
 end

@@ -7,7 +7,9 @@ class Patient < ActiveRecord::Base
   belongs_to :place
 
   #Fotografía
-  has_attached_file :photograph, :styles => { :thumb => "100x100>" }
+  has_attached_file :photograph, 
+    :styles => { :thumb => "100x100>" },
+    :default_url => "missing.png"
 
   def to_label
     "#{first_name} #{last_name}"
