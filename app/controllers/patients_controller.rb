@@ -1,4 +1,3 @@
-include ActiveScaffoldHelper
 include ActionView::Helpers::AssetTagHelper
 include ActionView::Helpers::TagHelper
 include ActionView::Helpers::UrlHelper
@@ -34,8 +33,6 @@ class PatientsController < ApplicationController
 
     #Configuracion de [:date_of_birth] para que muestre mas años
     conf.columns[:date_of_birth].options = {:end_year => Date.today.year-30, :start_year => Date.today.year}
-
-    add_required_columns conf, Patient
 
     conf.nested.add_link image_tag("icons/consultation.jpg"), [:consultations]
 
