@@ -17,8 +17,11 @@ class PatientsController < ApplicationController
   end
 
   active_scaffold :patient do |conf|
+    #Agregar una columna para edad
+    conf.columns.add :age
+
     #Configuración de las columnas que se mostrarán al listar
-    conf.list.columns = [:photograph, :last_name, :first_name, :emails, :addresses]
+    conf.list.columns = [:photograph, :last_name, :first_name, :age,:emails, :addresses]
 
     #Configuración de las columnas que se excluiran para todas las acciones
     conf.columns.exclude :created_at, :updated_at, :consultations, :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at
