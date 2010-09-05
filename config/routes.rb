@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :places
-
-  map.resources :phone_numbers, :active_sacaffold => true
+  map.resources :places, :active_scaffold => true
+  map.resources :phone_numbers, :active_scaffold => true
   map.resources :consultations, :active_scaffold => true
   map.resources :addresses, :active_scaffold => true
   map.resources :patients, :active_scaffold => true

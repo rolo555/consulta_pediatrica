@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
 
   def self.add_sub_groups (action)
     action.columns.add_subgroup "Personal data" do |group|
-      group.add :photograph, :first_name, :last_name, :date_of_birth, :origin
+      group.add :photograph, :first_name, :last_name, :date_of_birth, :place
     end
     action.columns.add_subgroup "Parents data" do |group|
       group.add :mother, :father, :addresses, :phone_numbers, :emails

@@ -4,6 +4,7 @@ class Patient < ActiveRecord::Base
   has_many :consultations, :dependent => :destroy
   has_many :addresses, :dependent => :destroy
   has_many :phone_numbers, :dependent => :destroy
+  belongs_to :place
 
   #Fotografía
   has_attached_file :photograph, :styles => { :thumb => "100x100>" }
