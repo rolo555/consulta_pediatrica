@@ -13,8 +13,6 @@ class PatientsController < ApplicationController
   end
 
   active_scaffold :patient do |conf|
-    #Agregar una columna para edad
-    conf.columns.add :age
 
     #Configuración de las columnas que se mostrarán al listar
     conf.list.columns = [:photograph, :last_name, :first_name, :age, :emails, :addresses, :consultations]
