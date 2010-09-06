@@ -23,7 +23,16 @@ class Patient < ActiveRecord::Base
     years = date.year
     months = date.month - 1
     days = date.day - 1
-    age = "#{years} años #{months} meses #{days} dias"
+    age = ""
+    unless years.zero?
+      age += "#{years} years "
+    end
+    unless months.zero?
+      age += "#{months} months "
+    end
+    unless days.zero?
+      age += "#{days} days"
+    end
     age
   end
 
