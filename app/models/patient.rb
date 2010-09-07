@@ -16,10 +16,10 @@ class Patient < ActiveRecord::Base
   end
 
   def age
-    now = DateTime.now
+    now = Date.today
     birth = self.date_of_birth.to_datetime
-    days_since_birth = ( now - birth ).to_i
-    date = Date.new(0,1,1) + days_since_birth
+    days_since_birth = ( now - birth ).to_i + 1
+    date = Date.new(0) + days_since_birth
     years = date.year
     months = date.month - 1
     days = date.day - 1
