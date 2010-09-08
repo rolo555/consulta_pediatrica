@@ -20,6 +20,11 @@ class PatientsController < ApplicationController
     #Configuración de las columnas que se excluiran para todas las acciones
     conf.columns.exclude :created_at, :updated_at, :consultations, :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at
 
+    conf.action_links.add :clone, 
+      :type => :record,
+      :confirm => "Are you sure to clone patient?",
+      :parameters => { :controller => 'patients', :action => 'new' }
+
     #Configuración de las acciones que se mostrarán
     conf.actions = [:create, :search, :update, :delete, :show, :nested, :subform, :list]
 
@@ -32,6 +37,17 @@ class PatientsController < ApplicationController
     conf.columns[:date_of_birth].options = {:end_year => Date.today.year-30, :start_year => Date.today.year}
 
     conf.columns[:consultations].label = ""
-
+  end
+  
+  def do_new
+    @params_id = params[:id]
+    if @params_id.present?
+      @record = Patient.find(@params_id).clone_patient
+    else
+      @record = active_scaffold_config.model.new
+      apply_constraints_to_record(@record)
+      params[:eid] = @old_eid if @remove_eid
+      @record
+    end
   end
 end

@@ -36,6 +36,14 @@ class Patient < ActiveRecord::Base
     age
   end
 
-  validates_presence_of :first_name, :last_name, :date_of_birth  
+  validates_presence_of :first_name, :last_name, :date_of_birth
 
+  def clone_patient
+    twin = self.clone
+    twin.first_name += " TWIN"
+    twin.photograph = nil
+    twin.created_at = DateTime.now
+    twin.updated_at = DateTime.now
+    twin
+  end
 end
