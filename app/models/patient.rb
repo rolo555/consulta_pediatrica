@@ -8,7 +8,7 @@ class Patient < ActiveRecord::Base
 
   #Fotografía
   has_attached_file :photograph, 
-    :styles => { :thumb => "100x100>" },
+    :styles => { :thumbnail => "100x100>" },
     :default_url => "missing.png"
 
   def to_label

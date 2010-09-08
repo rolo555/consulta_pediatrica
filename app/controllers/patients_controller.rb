@@ -20,8 +20,8 @@ class PatientsController < ApplicationController
     #Configuración de las columnas que se excluiran para todas las acciones
     conf.columns.exclude :created_at, :updated_at, :consultations, :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at
 
-    conf.action_links.add :clone, 
-      :type => :record,
+    conf.action_links.add :clone,
+      :type => :member,
       :confirm => "Are you sure to clone patient?",
       :parameters => { :controller => 'patients', :action => 'new' }
 
