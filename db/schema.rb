@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100904223452) do
+ActiveRecord::Schema.define(:version => 20100908151922) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20100904223452) do
     t.integer  "photograph_file_size"
     t.datetime "photograph_updated_at"
     t.integer  "place_id"
+    t.decimal  "amount"
   end
 
   create_table "phone_numbers", :force => true do |t|

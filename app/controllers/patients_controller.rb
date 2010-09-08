@@ -10,6 +10,10 @@ class PatientsController < ApplicationController
     action.columns.add_subgroup "Medical data" do |group|
       group.add :referenced_by, :observations
     end
+    action.columns.add_subgroup "Amount" do |group|
+      group.add :amount
+      group.collapsed = true
+    end
   end
 
   active_scaffold :patient do |conf|
