@@ -10,9 +10,9 @@ module Components
       attr_accessor :parent_controller
 
       alias_method_chain :process_cleanup, :render_component
-      alias_method_chain :set_session_options, :render_component
+      alias_method_chain :session=, :render_component
       alias_method_chain :flash, :render_component
-      alias_method_chain :assign_shortcuts, :render_component
+      alias_method_chain :perform_action, :render_component
       alias_method_chain :send_response, :render_component
 
       alias_method :component_request?, :parent_controller
@@ -35,6 +35,11 @@ module Components
   end
 
   module InstanceMethods
+    def perform_action_with_render_component
+      perform_action_without_render_component
+      remove_instance_variable(:@_flash) if defined? @_flash
+    end
+
     # Extracts the action_name from the request parameters and performs that action.
     def process_with_components(request, response, method = :perform_action, *arguments) #:nodoc:
       flash.discard if component_request?
@@ -50,7 +55,7 @@ module Components
       # Renders the component specified as the response for the current method
       def render_component(options) #:doc:
         component_logging(options) do
-          render_for_text(component_response(options, true).body, response.headers["Status"])
+          render_for_text(component_response(options, true).body, response.status)
         end
       end
 
@@ -82,7 +87,7 @@ module Components
     private
       def component_response(options, reuse_response)
         klass    = component_class(options)
-        request  = request_for_component(klass.controller_name, options)
+        request  = request_for_component(klass.controller_path, options)
         new_response = reuse_response ? response : response.dup
 
         klass.process_with_components(request, new_response, self)
@@ -100,14 +105,14 @@ module Components
       # Create a new request object based on the current request.
       # The new request inherits the session from the current request,
       # bypassing any session options set for the component controller's class
-      def request_for_component(controller_name, options)
+      def request_for_component(controller_path, options)
         new_request         = request.dup
         new_request.session = request.session
 
         new_request.instance_variable_set(
           :@parameters,
           (options[:params] || {}).with_indifferent_access.update(
-            "controller" => controller_name, "action" => options[:action], "id" => options[:id]
+            "controller" => controller_path, "action" => options[:action], "id" => options[:id]
           )
         )
 
@@ -125,18 +130,12 @@ module Components
         end
       end
 
-      def set_session_options_with_render_component(request)
-        set_session_options_without_render_component(request) unless component_request?
+      def session_with_render_component=(options = {})
+        session_without_render_component=(options) unless component_request?
       end
 
       def process_cleanup_with_render_component
         process_cleanup_without_render_component unless component_request?
-      end
-      
-      def assign_shortcuts_with_render_component(request, response)
-        assign_shortcuts_without_flash(request, response)
-        flash(:refresh)
-        flash.sweep if @_session && !component_request?
       end
   end
 end
