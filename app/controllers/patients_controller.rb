@@ -24,6 +24,12 @@ class PatientsController < ApplicationController
     #Configuración de las columnas que se excluiran para todas las acciones
     conf.columns.exclude :created_at, :updated_at, :consultations, :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at
 
+    #Configuración del boton generar historial
+    conf.action_links.add :patient_history,
+      :type => :member,
+      :page => true
+
+    #Configuración del boton clonar
     conf.action_links.add :clone,
       :type => :member,
       :confirm => "Are you sure to clone patient?",
@@ -52,6 +58,17 @@ class PatientsController < ApplicationController
       apply_constraints_to_record(@record)
       params[:eid] = @old_eid if @remove_eid
       @record
+    end
+  end
+
+  def patient_history
+    @patient = Patient.find params[:id]
+    respond_to do |format|
+      format.pdf do
+        render :pdf => "patient_history",
+               :stylesheets => ["application","prince"],
+               :layout => "pdf"
+      end
     end
   end
 end
