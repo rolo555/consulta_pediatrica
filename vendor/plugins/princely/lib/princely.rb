@@ -26,7 +26,11 @@ class Princely
   #
   def initialize()
     # Finds where the application lives, so we can call it.
-    @exe_path = `which prince`.chomp
+    if RUBY_PLATFORM =~ /mingw/
+      @exe_path = '"C:/Program Files (x86)/Prince/Engine/bin/prince"'.chomp
+    else
+      @exe_path = 'which prince'.chomp
+    end
     raise "Cannot find prince command-line app in $PATH" if @exe_path.length == 0
   	@style_sheets = ''
   	@log_file = "#{RAILS_ROOT}/log/prince.log"
@@ -70,6 +74,7 @@ class Princely
     
     # Actually call the prince command, and pass the entire data stream back.
     pdf = IO.popen(path, "w+")
+    pdf.binmode
     pdf.puts(string)
     pdf.close_write
     result = pdf.gets(nil)
