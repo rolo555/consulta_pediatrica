@@ -5,6 +5,7 @@ class Patient < ActiveRecord::Base
   has_many :addresses, :dependent => :destroy
   has_many :phone_numbers, :dependent => :destroy
   belongs_to :place
+  belongs_to :patient_price
 
   #Fotografía
   has_attached_file :photograph, 
@@ -45,5 +46,12 @@ class Patient < ActiveRecord::Base
     twin.created_at = DateTime.now
     twin.updated_at = DateTime.now
     twin
+  end
+
+  def amount
+    if patient_price.present?
+      amount = self.patient_price.amount
+    end
+    amount
   end
 end

@@ -11,7 +11,7 @@ class PatientsController < ApplicationController
       group.add :referenced_by, :observations
     end
     action.columns.add_subgroup "Amount" do |group|
-      group.add :amount
+      group.add :patient_price
       group.collapsed = true
     end
   end
@@ -41,6 +41,8 @@ class PatientsController < ApplicationController
     conf.columns[:date_of_birth].options = {:end_year => Date.today.year-30, :start_year => Date.today.year}
 
     conf.columns[:consultations].label = ""
+
+    conf.columns[:patient_price].form_ui = :select
   end
   
   def do_new
