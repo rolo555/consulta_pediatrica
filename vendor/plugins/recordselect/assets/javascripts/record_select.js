@@ -1,17 +1,4 @@
-document.observe("dom:loaded", function() {
-  RecordSelect.document_loaded = true;
-  document.on('ajax:before', 'div.record-select * li a', function(event) {
-    var link = event.findElement();
-    if (link) {
-      if (RecordSelect.notify(link) == false) {
-        event.stop();
-      } else {
-        link.toggleClassName("selected");
-      }
-    }
-    return true;
-  });  
-});    
+Event.observe(window, 'load', function() {RecordSelect.document_loaded = true});
 
 Form.Element.AfterActivity = function(element, callback, delay) {
   element = $(element);
@@ -35,7 +22,7 @@ RecordSelect.notify = function(item) {
   if (onselect)
   {
     try {
-      onselect(item.parentNode.id.substr(2), (item.down('label') || item).innerHTML.unescapeHTML(), e);
+      onselect(item.parentNode.id.substr(2), (item.down('label') || item).innerHTML, e);
     } catch(e) {
       alert(e);
     }
@@ -296,8 +283,8 @@ RecordSelect.Single.prototype = Object.extend(new RecordSelect.Abstract(), {
   },
 
   onselect: function(id, value) {
-    if (this.options.onchange) this.options.onchange(id, value);
     this.set(id, value);
+    if (this.options.onchange) this.options.onchange(id, value);
     this.close();
   },
 
@@ -305,7 +292,7 @@ RecordSelect.Single.prototype = Object.extend(new RecordSelect.Abstract(), {
    * sets the id/label
    */
   set: function(id, label) {
-    this.obj.value = label.unescapeHTML();
+    this.obj.value = label;
     this.hidden_input.value = id;
   }
 });

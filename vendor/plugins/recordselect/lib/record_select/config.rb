@@ -8,7 +8,7 @@ module RecordSelect
 
       @per_page = options[:per_page]
 
-      @search_on = [options[:search_on]].flatten unless options[:search_on].nil?
+      @search_on = [options[:search_on]].flatten
 
       @order_by = options[:order_by]
 
@@ -44,7 +44,7 @@ module RecordSelect
     end
 
     def order_by
-      @order_by ||= "#{model.table_name}.#{model.primary_key} ASC"
+      @order_by ||= "#{model.primary_key} ASC" unless @order_by == false
     end
 
     def full_text_search?

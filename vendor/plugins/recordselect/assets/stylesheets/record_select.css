@@ -26,10 +26,6 @@
   text-align: center;
 }
 
-.record-select form .search_submit {
-  display: none;
-}
-
 .record-select ol,
 .record-select li {
   margin: 0px;
