@@ -49,6 +49,8 @@ class PatientsController < ApplicationController
     conf.columns[:consultations].label = ""
 
     conf.columns[:patient_price].form_ui = :select
+
+    conf.columns[:place].form_ui = :record_select
   end
   
   def do_new
