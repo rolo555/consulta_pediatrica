@@ -1,8 +1,5 @@
 require 'test_helper'
 
-class PatientTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+class PatientTest < Test::Unit::TestCase
+  should validate_presence_of :first_name
 end

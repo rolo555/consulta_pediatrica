@@ -1,8 +1,4 @@
 require 'test_helper'
 
-class PhoneNumberTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+class PhoneNumberTest <  Test::Unit::TestCase
 end

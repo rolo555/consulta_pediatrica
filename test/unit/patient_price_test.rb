@@ -1,8 +1,4 @@
 require 'test_helper'
 
-class PatientPriceTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+class PatientPriceTest <  Test::Unit::TestCase
 end
