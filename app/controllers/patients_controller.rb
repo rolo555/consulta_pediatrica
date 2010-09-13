@@ -11,7 +11,7 @@ class PatientsController < ApplicationController
       group.add :referenced_by, :observations
     end
     action.columns.add_subgroup "Amount" do |group|
-      group.add :patient_price
+      group.add :consultation_price
       group.collapsed = true
     end
   end
@@ -48,7 +48,7 @@ class PatientsController < ApplicationController
 
     conf.columns[:consultations].label = ""
 
-    conf.columns[:patient_price].form_ui = :select
+    conf.columns[:consultation_price].form_ui = :select
 
     conf.columns[:place].form_ui = :record_select
   end
