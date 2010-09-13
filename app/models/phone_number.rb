@@ -1,3 +1,5 @@
+include ModelHelper
+
 class PhoneNumber < ActiveRecord::Base
   #Relaciones
   belongs_to :patient
@@ -10,7 +12,7 @@ class PhoneNumber < ActiveRecord::Base
   end
 
   def before_validation
-    self.number.strip! if self.number.presence
+    clean_whitespaces self.number
   end
 
 end

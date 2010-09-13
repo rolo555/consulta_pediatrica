@@ -1,3 +1,5 @@
+include ModelHelper
+
 class Patient < ActiveRecord::Base
   #Relaciones
   has_many :emails, :dependent => :destroy
@@ -42,11 +44,11 @@ class Patient < ActiveRecord::Base
   end
 
   def before_validation
-    self.first_name.strip! if self.first_name.presence
-    self.last_name.strip! if self.last_name.presence
-    self.mother.strip! if self.mother.presence
-    self.father.strip! if self.father.presence
-    self.referenced_by.strip! if self.referenced_by.presence
+    clean_whitespaces self.first_name,
+      self.last_name,
+      self.mother,
+      self.father,
+      self.referenced_by
   end
 
   def clone_patient

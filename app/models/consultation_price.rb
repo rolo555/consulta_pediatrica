@@ -1,3 +1,5 @@
+include ModelHelper
+
 class ConsultationPrice < ActiveRecord::Base
   #Relaciones
   has_many :patients
@@ -10,8 +12,8 @@ class ConsultationPrice < ActiveRecord::Base
     "Type of Price: #{price_type}\nAmount: #{amount}"
   end
 
-    def before_validation
-    self.price_type.strip! if self.price_type.presence
+  def before_validation
+    clean_whitespaces self.price_type
   end
 
 end

@@ -1,3 +1,5 @@
+include ModelHelper
+
 class Address < ActiveRecord::Base
   #Relaciones
   belongs_to :patient
@@ -10,7 +12,7 @@ class Address < ActiveRecord::Base
   end
 
   def before_validation
-    self.address.strip! if self.address.presence
+    clean_whitespaces self.address
   end
 
 end

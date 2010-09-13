@@ -1,3 +1,5 @@
+include ModelHelper
+
 class Place < ActiveRecord::Base
   #Relaciones
   has_many :patients
@@ -13,8 +15,7 @@ class Place < ActiveRecord::Base
   end
 
   def before_validation
-    self.city.strip! if self.city.presence
-    self.country.strip! if self.country.presence
+    clean_whitespaces self.city,
+      self.country
   end
-  
 end
