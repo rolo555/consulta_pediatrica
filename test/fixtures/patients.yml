@@ -1,27 +1,18 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  address: MyString
-  phone_number: MyString
+spaces:
+  first_name: ' Rolando '
+  last_name: ' Spaces '
   date_of_birth: 2010-09-02
-  father: MyString
-  mother: MyString
-  contact_emails: MyString
-  origin: MyString
-  referenced_by: MyString
-  observations: MyText
+  father: ' Dad '
+  mother: ' Mom '
+  referenced_by: ' Dr. Who '
 
 two:
   first_name: MyString
   last_name: MyString
-  address: MyString
-  phone_number: MyString
   date_of_birth: 2010-09-02
   father: MyString
   mother: MyString
-  contact_emails: MyString
-  origin: MyString
   referenced_by: MyString
   observations: MyText

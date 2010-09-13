@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PatientTest < Test::Unit::TestCase
+class PatientTest < ActiveSupport::TestCase
   should validate_presence_of :first_name
   should validate_presence_of :last_name
   should validate_presence_of :date_of_birth
@@ -10,9 +10,10 @@ class PatientTest < Test::Unit::TestCase
     eval(
       "
       def sanitizate_#{f}
-        patient = Patient.new(:first_name => ' r ', :last_name => ' r ', :mother => ' r ', :father => ' r ', :referenced_by => ' r ')
+        patient = patients(:spaces)
         patient.before_validation
-        assert_equal('r', patient.instance_eval('#{f}'))
+        actual = patient.instance_eval('#{f}')
+        assert(actual.eql? actual.strip)
       end
       "
     )
