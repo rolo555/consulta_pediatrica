@@ -36,3 +36,19 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+def sanitizate(f)
+  fixture = self.class.name.gsub!("Test", "").underscore.pluralize
+  eval(
+    "
+    def sanitizate_#{f}
+      record = #{fixture}(:spaces)
+      record.before_validation
+      actual = record.instance_eval('#{f}')
+      assert(actual.eql?(actual.strip), 'The field {#{f} = ' + actual + ' } have whitespaces')
+    end
+    "
+  )
+  eval("sanitizate_#{f}")
+end
+

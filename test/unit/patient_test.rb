@@ -6,19 +6,12 @@ class PatientTest < ActiveSupport::TestCase
   should validate_presence_of :date_of_birth
   should validate_uniqueness_of(:first_name).scoped_to(:last_name, :date_of_birth).case_insensitive
 
-  def sanitizate(f)
-    eval(
-      "
-      def sanitizate_#{f}
-        patient = patients(:spaces)
-        patient.before_validation
-        actual = patient.instance_eval('#{f}')
-        assert(actual.eql? actual.strip)
-      end
-      "
-    )
-    eval("sanitizate_#{f}")
-  end
+  should have_many(:emails).dependent(:destroy)
+  should have_many(:consultations).dependent(:destroy)
+  should have_many(:addresses).dependent(:destroy)
+  should have_many(:phone_numbers).dependent(:destroy)
+  should belong_to(:place)
+  should belong_to(:patient_price)
 
   should "sanitizate first_name" do
     sanitizate("first_name")
@@ -39,11 +32,4 @@ class PatientTest < ActiveSupport::TestCase
   should "sanitizate referenced_by" do
     sanitizate("referenced_by")
   end
-
-  should have_many(:emails).dependent(:destroy)
-  should have_many(:consultations).dependent(:destroy)
-  should have_many(:addresses).dependent(:destroy)
-  should have_many(:phone_numbers).dependent(:destroy)
-  should belong_to(:place)
-  should belong_to(:patient_price)
 end

@@ -1,8 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  city: MyString
-  country: MyString
+#Fixture used by sanitizate method in test_helper.rb
+spaces:
+  city: " Cochabamba "
+  country: " Bolivia "
 
 two:
   city: MyString

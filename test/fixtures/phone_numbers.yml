@@ -1,7 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  number: MyString
+#Fixture used by sanitizate method in test_helper.rb
+spaces:
+  number: " 123-666-DUDE "
 
 two:
   number: MyString

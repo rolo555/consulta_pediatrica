@@ -1,5 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+#Fixture used by sanitizate method in test_helper.rb
 spaces:
   first_name: ' Rolando '
   last_name: ' Spaces '
