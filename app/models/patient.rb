@@ -32,12 +32,14 @@ class Patient < ActiveRecord::Base
     days = date.day - 1
     age = ""
     unless years.zero?
-      age += "#{years} years "
+      age += "#{years} years"
     end
     unless months.zero?
-      age += "#{months} months "
+      age += " " unless age.empty?
+      age += "#{months} months"
     end
     unless days.zero?
+      age += " " unless age.empty?
       age += "#{days} days"
     end
     age

@@ -32,4 +32,32 @@ class PatientTest < ActiveSupport::TestCase
   should "sanitizate referenced_by" do
     sanitizate("referenced_by")
   end
+
+  should "to label" do
+    patient = patients(:juan)
+    patient.before_validation
+    assert_equal(patient.to_label, "Juansito Pinto")
+  end
+
+  should "two days of age" do
+    date = Date.today - 1
+    patient = patients(:juan)
+    patient.date_of_birth = date
+    assert_equal(patient.age, "2 days")
+  end
+
+  should "two months of age" do
+    date = Date.today << 2
+    patient = patients(:juan)
+    patient.date_of_birth = date
+    assert_equal(patient.age, "2 months")
+  end
+
+  should "two years of age" do
+    date = Date.today << 24
+    patient = patients(:juan)
+    patient.date_of_birth = date
+    assert_equal(patient.age, "2 years")
+  end
+
 end

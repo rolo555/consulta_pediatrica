@@ -17,3 +17,8 @@ two:
   mother: MyString
   referenced_by: MyString
   observations: MyText
+
+juan:
+  first_name: Juansito
+  last_name: Pinto
+  date_of_birth: 2010-09-02
