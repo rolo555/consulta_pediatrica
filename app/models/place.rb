@@ -1,9 +1,11 @@
 class Place < ActiveRecord::Base
+  #Relaciones
   has_many :patients
+
+  #Validaciones
   validates_presence_of :city, :country
   validates_uniqueness_of :city,
     :scope => [:country],
-#    :message => " and Country already exist",
     :case_sensitive => false
 
   def to_label

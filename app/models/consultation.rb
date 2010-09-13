@@ -1,4 +1,4 @@
 class Consultation < ActiveRecord::Base
-    belongs_to :patient
-
+  #Relaciones
+  belongs_to :patient
 end
