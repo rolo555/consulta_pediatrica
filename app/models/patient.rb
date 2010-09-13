@@ -5,7 +5,7 @@ class Patient < ActiveRecord::Base
   has_many :addresses, :dependent => :destroy
   has_many :phone_numbers, :dependent => :destroy
   belongs_to :place
-  belongs_to :patient_price
+  belongs_to :consultation_price
 
   #Fotografía
   has_attached_file :photograph, 

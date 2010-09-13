@@ -45,5 +45,5 @@ class PatientTest < ActiveSupport::TestCase
   should have_many(:addresses).dependent(:destroy)
   should have_many(:phone_numbers).dependent(:destroy)
   should belong_to(:place)
-  should belong_to(:patient_price)
+  should belong_to(:consultation_price)
 end
