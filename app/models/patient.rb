@@ -12,6 +12,10 @@ class Patient < ActiveRecord::Base
     :styles => { :thumbnail => "100x100>" },
     :default_url => "missing.png"
 
+  #Validaciones
+  validates_presence_of :first_name, :last_name, :date_of_birth
+  validates_uniqueness_of :first_name, :scope => [:last_name, :date_of_birth], :case_sensitive => false
+
   def to_label
     "#{first_name} #{last_name}"
   end
@@ -36,9 +40,6 @@ class Patient < ActiveRecord::Base
     end
     age
   end
-
-  validates_presence_of :first_name, :last_name, :date_of_birth
-  validates_uniqueness_of :first_name, :scope => [:last_name, :date_of_birth], :case_sensitive => false
 
   def before_validation
     self.first_name.strip! if self.first_name.presence
