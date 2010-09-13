@@ -1,5 +1,8 @@
 class Address < ActiveRecord::Base
+  #Relaciones
   belongs_to :patient
+
+  #Validaciones
   validates_presence_of :address
 
   def to_label

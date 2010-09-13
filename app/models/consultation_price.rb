@@ -1,5 +1,8 @@
 class ConsultationPrice < ActiveRecord::Base
+  #Relaciones
   has_many :patients
+
+  #Validaciones
   validates_uniqueness_of :price_type, :case_sensitive => false
   validates_presence_of :price_type, :amount
 
