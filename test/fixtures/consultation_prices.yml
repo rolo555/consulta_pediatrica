@@ -1,8 +1,8 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  price_type: MyString
-  amount: 9.99
+spaces:
+  price_type: "  cariiiiisimo    "
+  amount: 9999.99
 
 two:
   price_type: MyString
