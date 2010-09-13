@@ -44,7 +44,7 @@ class PatientsController < ApplicationController
     add_sub_groups conf.show
 
     #Configuracion de [:date_of_birth] para que muestre mas años
-    conf.columns[:date_of_birth].options = {:end_year => Date.today.year-30, :start_year => Date.today.year}
+    conf.columns[:date_of_birth].options = {:end_year => Date.today.year-30, :start_year => Date.today.year, :include_blank => false }
 
     conf.columns[:consultations].label = ""
 

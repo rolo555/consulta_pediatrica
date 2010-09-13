@@ -38,6 +38,15 @@ class Patient < ActiveRecord::Base
   end
 
   validates_presence_of :first_name, :last_name, :date_of_birth
+  validates_uniqueness_of :first_name, :scope => [:last_name, :date_of_birth], :case_sensitive => false
+
+  def before_validation
+    self.first_name.strip! if self.first_name.presence
+    self.last_name.strip! if self.last_name.presence
+    self.mother.strip! if self.mother.presence
+    self.father.strip! if self.father.presence
+    self.referenced_by.strip! if self.referenced_by.presence
+  end
 
   def clone_patient
     twin = self.clone
