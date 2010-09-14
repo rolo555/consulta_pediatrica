@@ -59,10 +59,10 @@ class PatientsController < ApplicationController
       @record = Patient.find(@params_id).clone_patient
     else
       @record = active_scaffold_config.model.new
-      apply_constraints_to_record(@record)
-      params[:eid] = @old_eid if @remove_eid
-      @record
     end
+    apply_constraints_to_record(@record)
+    params[:eid] = @old_eid if @remove_eid
+    @record
   end
 
   def patient_history
