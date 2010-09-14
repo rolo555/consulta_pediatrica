@@ -59,8 +59,8 @@ class Patient < ActiveRecord::Base
   end
 
   def amount
-    if patient_price.present?
-      amount = self.patient_price.amount
+    if consultation_price.present?
+      amount = self.consultation_price.amount
     end
     amount
   end
