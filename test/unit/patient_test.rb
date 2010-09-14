@@ -36,28 +36,71 @@ class PatientTest < ActiveSupport::TestCase
   should "to label" do
     patient = patients(:juan)
     patient.before_validation
-    assert_equal(patient.to_label, "Juansito Pinto")
+    assert_equal("Juansito Pinto", patient.to_label)
   end
 
-  should "two days of age" do
-    date = Date.today - 1
-    patient = patients(:juan)
-    patient.date_of_birth = date
-    assert_equal(patient.age, "2 days")
-  end
+  context "age" do
+    should "be one day" do
+      date = Date.today - 1
+      patient = patients(:juan)
+      patient.date_of_birth = date
+      assert_equal("1 days", patient.age)
+    end
 
-  should "two months of age" do
-    date = Date.today << 2
-    patient = patients(:juan)
-    patient.date_of_birth = date
-    assert_equal(patient.age, "2 months")
-  end
+    should "be empty" do
+      date = Date.today
+      patient = patients(:juan)
+      patient.date_of_birth = date
+      assert_equal("", patient.age)
+    end
 
-  should "two years of age" do
-    date = Date.today << 24
-    patient = patients(:juan)
-    patient.date_of_birth = date
-    assert_equal(patient.age, "2 years")
-  end
+    should "be two days" do
+      date = Date.today - 2
+      patient = patients(:juan)
+      patient.date_of_birth = date
+      assert_equal("2 days", patient.age)
+    end
 
+    should "be two months" do
+      date = Date.today << 2
+      patient = patients(:juan)
+      patient.date_of_birth = date
+      assert_equal("2 months", patient.age)
+    end
+
+    should "be two years three months" do
+      date = (Date.today << 24) << 3
+      patient = patients(:juan)
+      patient.date_of_birth = date
+      assert_equal("2 years 3 months", patient.age)
+    end
+
+    should "be eleven months eight days" do
+      date = (Date.today << 11) - 8
+      patient = patients(:juan)
+      patient.date_of_birth = date
+      assert_equal("11 months 8 days", patient.age)
+    end
+
+    should "be two months ten days" do
+      date = (Date.today << 2) - 10
+      patient = patients(:juan)
+      patient.date_of_birth = date
+      assert_equal("2 months 10 days", patient.age)
+    end
+
+    should "be two years 6 months 1 days" do
+      date = ((Date.today << 24) << 6) - 1
+      patient = patients(:juan)
+      patient.date_of_birth = date
+      assert_equal("2 years 6 months 1 days", patient.age)
+    end
+
+    should "be two years 10 days" do
+      date = (Date.today << 24) - 10
+      patient = patients(:juan)
+      patient.date_of_birth = date
+      assert_equal("2 years 10 days", patient.age)
+    end
+  end
 end
