@@ -15,7 +15,7 @@ class Patient < ActiveRecord::Base
     :default_url => "missing.png"
 
   #Validaciones
-  validates_presence_of :first_name, :last_name, :date_of_birth
+  validates_presence_of :first_name, :last_name, :date_of_birth, :place
   validates_uniqueness_of :first_name, :scope => [:last_name, :date_of_birth], :case_sensitive => false
 
   def to_label

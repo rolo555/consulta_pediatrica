@@ -46,10 +46,12 @@ module ActiveScaffold
         record_select_options.merge!(column.options)
         record_select_options[:onchange] = "function(id, label) { this.value = id; #{record_select_options[:onchange]} }" if record_select_options[:onchange]
 
+        new_button = link_to("", { :controller => remote_controller, :action => 'new', :must_close => true }, { :style => 'background-image: url("/images/active_scaffold/default/add.gif"); padding-left: 15px; background-repeat: no-repeat;', :popup => ['Help' , 'width=auto,height=auto'] })
+
         if multiple
           record_multi_select_field(options[:name], value || [], record_select_options)
         else
-          record_select_field(options[:name], value || column.association.klass.new, record_select_options)
+          record_select_field(options[:name], value || column.association.klass.new, record_select_options) + " " + new_button
         end
       end
     end
