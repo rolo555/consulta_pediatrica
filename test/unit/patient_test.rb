@@ -8,6 +8,7 @@ class PatientTest < ActiveSupport::TestCase
 
   should have_many(:emails).dependent(:destroy)
   should have_many(:consultations).dependent(:destroy)
+  should have_many(:family_records).dependent(:destroy)
   should have_many(:addresses).dependent(:destroy)
   should have_many(:phone_numbers).dependent(:destroy)
   should belong_to(:place)

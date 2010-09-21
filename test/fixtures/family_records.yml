@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  pathology: MyString
+  ralation_ship: MyString
+  patient_id: 1
+
+two:
+  pathology: MyString
+  ralation_ship: MyString
+  patient_id: 1
