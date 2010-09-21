@@ -740,8 +740,9 @@ display: none;
    ============================== */
 
 .active-scaffold li.sub-section {
-clear: left;
+float: left;
 padding: 5px 0;
+width: 33%;
 }
 
 /* Form :: Association Sub-Forms
