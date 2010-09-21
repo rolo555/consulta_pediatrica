@@ -4,6 +4,7 @@ class PatientTest < ActiveSupport::TestCase
   should validate_presence_of :first_name
   should validate_presence_of :last_name
   should validate_presence_of :date_of_birth
+  should validate_presence_of :consultation_price
   should validate_uniqueness_of(:first_name).scoped_to(:last_name, :date_of_birth).case_insensitive
 
   should have_many(:emails).dependent(:destroy)
