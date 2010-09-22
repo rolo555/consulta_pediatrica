@@ -19,10 +19,10 @@ class PatientsController < ApplicationController
   active_scaffold :patient do |conf|
 
     #Configuración de las columnas que se mostrarán al listar
-    conf.list.columns = [:photograph, :last_name, :first_name, :age, :emails, :addresses, :consultations, :family_records]
+    conf.list.columns = [:photograph, :last_name, :first_name, :age, :emails, :addresses, :consultations, :family_records, :allergies]
 
     #Configuración de las columnas que se excluiran para todas las acciones
-    conf.columns.exclude :created_at, :updated_at, :consultations, :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at, :family_records
+    conf.columns.exclude :created_at, :updated_at, :consultations, :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at, :family_records, :allergies
 
     #Configuración del boton generar historial
     conf.action_links.add :patient_history,
@@ -50,6 +50,8 @@ class PatientsController < ApplicationController
 
     conf.columns[:family_records].label = ""
 
+    conf.columns[:allergies].label = ""
+
     conf.columns[:consultation_price].form_ui = :select
 
     conf.columns[:place].form_ui = :record_select
@@ -72,8 +74,8 @@ class PatientsController < ApplicationController
     respond_to do |format|
       format.pdf do
         render :pdf => "patient_history",
-               :stylesheets => ["application","prince"],
-               :layout => "pdf"
+          :stylesheets => ["application","prince"],
+          :layout => "pdf"
       end
     end
   end
