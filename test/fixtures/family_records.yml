@@ -2,10 +2,10 @@
 
 one:
   pathology: MyString
-  ralation_ship: MyString
+  relation_ship: MyString
   patient_id: 1
 
 two:
   pathology: MyString
-  ralation_ship: MyString
+  relation_ship: MyString
   patient_id: 1
