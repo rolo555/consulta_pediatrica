@@ -13,6 +13,7 @@ class PatientTest < ActiveSupport::TestCase
   should have_many(:allergies).dependent(:destroy)
   should have_many(:addresses).dependent(:destroy)
   should have_many(:phone_numbers).dependent(:destroy)
+  should have_one(:perinatal_record).dependent(:destroy)
   should belong_to(:place)
   should belong_to(:consultation_price)
 
