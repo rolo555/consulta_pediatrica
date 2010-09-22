@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  patient_id: 1
+  number_of_pregnancy: 1
+  childbirth: 1
+  cesarea: 1
+  abortions: 1
+  weight: 1.5
+  height: 1.5
+  head_circumference: 1.5
+  body_perimeter: 1.5
+  weeks_of_gestation: 1
+  apgar1: 1
+  apgar2: 1
+  type_of_birth: MyString
+  jaundice: false
+  observations: MyText
+
+two:
+  patient_id: 1
+  number_of_pregnancy: 1
+  childbirth: 1
+  cesarea: 1
+  abortions: 1
+  weight: 1.5
+  height: 1.5
+  head_circumference: 1.5
+  body_perimeter: 1.5
+  weeks_of_gestation: 1
+  apgar1: 1
+  apgar2: 1
+  type_of_birth: MyString
+  jaundice: false
+  observations: MyText

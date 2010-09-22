@@ -8,6 +8,7 @@ class Patient < ActiveRecord::Base
   has_many :allergies, :dependent => :destroy
   has_many :addresses, :dependent => :destroy
   has_many :phone_numbers, :dependent => :destroy
+  has_one :perinatal_record, :dependent => :destroy
   belongs_to :place
   belongs_to :consultation_price
 

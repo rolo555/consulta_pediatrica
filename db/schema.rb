@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100921231737) do
+ActiveRecord::Schema.define(:version => 20100922012627) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -83,6 +83,26 @@ ActiveRecord::Schema.define(:version => 20100921231737) do
     t.datetime "photograph_updated_at"
     t.integer  "place_id"
     t.integer  "consultation_price_id"
+  end
+
+  create_table "perinatal_records", :force => true do |t|
+    t.integer  "patient_id"
+    t.integer  "number_of_pregnancy"
+    t.integer  "childbirth"
+    t.integer  "cesarea"
+    t.integer  "abortions"
+    t.float    "weight"
+    t.float    "height"
+    t.float    "head_circumference"
+    t.float    "body_perimeter"
+    t.integer  "weeks_of_gestation"
+    t.integer  "apgar1"
+    t.integer  "apgar2"
+    t.string   "type_of_birth"
+    t.boolean  "jaundice"
+    t.text     "observations"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "phone_numbers", :force => true do |t|

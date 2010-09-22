@@ -12,4 +12,7 @@ module PatientsHelper
       image_tag "icons/allergy.png", :title => "Allergies"
     end
   end
+  def patient_perinatal_record_column(record)
+    image_tag "icons/perinatalRecord.png", :title => "Perinatal Records"
+  end
 end

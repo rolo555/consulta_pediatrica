@@ -1,7 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :allergies
-
-
+  
+  map.resources :perinatal_records, :active_scaffold => true
   map.resources :allergies, :active_scaffold => true
   map.resources :family_records, :active_scaffold => true
   map.resources :patient_prices, :active_scaffold => true
