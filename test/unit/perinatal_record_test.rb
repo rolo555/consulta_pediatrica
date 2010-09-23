@@ -13,6 +13,18 @@ class PerinatalRecordTest < ActiveSupport::TestCase
   should validate_numericality_of :height
   should validate_numericality_of :head_circumference
   should validate_numericality_of :body_perimeter
+  should allow_value(nil).for(:number_of_pregnancy)
+  should allow_value(nil).for(:childbirth)
+  should allow_value(nil).for(:cesarea)
+  should allow_value(nil).for(:abortions)
+  should allow_value(nil).for(:weeks_of_gestation)
+  should allow_value(nil).for(:apgar1)
+  should allow_value(nil).for(:apgar2)
+  should allow_value(nil).for(:weight)
+  should allow_value(nil).for(:height)
+  should allow_value(nil).for(:head_circumference)
+  should allow_value(nil).for(:body_perimeter)
+
 
   float = 0.5
   neg = -1
