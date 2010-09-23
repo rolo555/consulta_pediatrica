@@ -6,6 +6,7 @@ class ConsultationPriceTest < ActiveSupport::TestCase
   should validate_numericality_of(:amount)
   should have_many(:patients)
   should validate_uniqueness_of(:price_type).case_insensitive
+  should_not allow_value(9.99).for(:amount)
 
   def test_to_label
     c_price = ConsultationPrice.new(:price_type => "price type", :amount => 1.0 )
@@ -14,13 +15,5 @@ class ConsultationPriceTest < ActiveSupport::TestCase
 
   should "sanitizate price_type" do
     sanitizate("price_type")
-  end
-
-  context "amount" do
-    should "be integer" do
-      price = consultation_prices(:non_integer)
-      price.save
-      assert_equal false, price.valid?
-    end
   end
 end
