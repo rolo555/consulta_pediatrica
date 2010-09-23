@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20100922012627) do
 
   create_table "consultation_prices", :force => true do |t|
     t.string   "price_type"
-    t.decimal  "amount"
+    t.integer  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
