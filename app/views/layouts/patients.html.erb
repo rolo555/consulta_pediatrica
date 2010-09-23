@@ -9,6 +9,11 @@
   <%= active_scaffold_includes %>
   <%= record_select_includes %>
   <%= stylesheet_link_tag 'lightbox' %>
+  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen, projection' %>
+  <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
+  <!--[if lt IE 8]>
+  <%= stylesheet_link_tag 'blueprint/ie', :media => 'screen, projection' %>
+  <![endif]-->
 </head>
 <body>
 
