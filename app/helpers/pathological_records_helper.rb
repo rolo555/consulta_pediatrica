@@ -1,0 +1,2 @@
+module PathologicalRecordsHelper
+end

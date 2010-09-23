@@ -15,4 +15,10 @@ module PatientsHelper
   def patient_perinatal_record_column(record)
     image_tag "icons/perinatalRecord.png", :title => "Perinatal Records"
   end
+  def patient_surgical_records_column(record)
+    image_tag "icons/surgicalRecord.png", :title => "Surgical Records"
+  end
+  def patient_pathological_records_column(record)
+    image_tag "icons/pathologicalRecord.png", :title => "Pathological Records"
+  end
 end

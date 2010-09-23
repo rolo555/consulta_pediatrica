@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  patient_id: 1
+  date: 2010-09-23
+  diagnosis: MyString
+  treatment: MyString
+
+two:
+  patient_id: 1
+  date: 2010-09-23
+  diagnosis: MyString
+  treatment: MyString
