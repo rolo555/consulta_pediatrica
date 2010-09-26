@@ -61,6 +61,11 @@ class PatientsController < ApplicationController
     conf.columns[:consultation_price].form_ui = :select
 
     conf.columns[:place].form_ui = :record_select
+
+    #Configuracion de :perinatal_record para que sea un nested action
+    conf.columns[:perinatal_record].set_link 'nested',
+      :controller =>'patients',
+      :parameters => { :associations => :perinatal_record }
   end
   
   def do_new
