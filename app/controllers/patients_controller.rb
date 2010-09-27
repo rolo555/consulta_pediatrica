@@ -19,7 +19,7 @@ class PatientsController < ApplicationController
   active_scaffold :patient do |conf|
 
     #Configuración de las columnas que se mostrarán al listar
-    conf.list.columns = [:photograph, :last_name, :first_name, :age, :emails, :addresses, :consultations, :family_records, :allergies, :perinatal_record, :surgical_records, :pathological_records]
+    conf.list.columns = [:photograph, :last_name, :first_name, :age, :consultations, :family_records, :allergies, :perinatal_record, :surgical_records, :pathological_records]
 
     #Configuración de las columnas que se excluiran para todas las acciones
     conf.columns.exclude :created_at, :updated_at, :consultations, :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at, :family_records, :allergies, :perinatal_record, :surgical_records, :pathological_records
