@@ -3,7 +3,7 @@ class FamilyRecord < ActiveRecord::Base
   belongs_to :patient
 
   #Validaciones
-  validates_presence_of :pathology
-  validates_presence_of :relation_ship
+  validates_presence_of :pathology, :relation_ship
+  validates_length_of :pathology, :relation_ship, :maximum => 50, :allow_nil => true
 
 end

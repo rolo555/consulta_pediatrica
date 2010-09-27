@@ -6,6 +6,7 @@ class Place < ActiveRecord::Base
 
   #Validaciones
   validates_presence_of :city, :country
+  validates_length_of :city, :country, :maximum => 50, :allow_nil => true
   validates_uniqueness_of :city,
     :scope => [:country],
     :case_sensitive => false

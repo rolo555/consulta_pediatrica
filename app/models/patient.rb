@@ -22,6 +22,7 @@ class Patient < ActiveRecord::Base
   #Validaciones
   validates_presence_of :first_name, :last_name, :date_of_birth, :place, :consultation_price
   validates_uniqueness_of :first_name, :scope => [:last_name, :date_of_birth], :case_sensitive => false
+  validates_length_of :first_name, :last_name, :emails, :mother, :father, :referenced_by, :maximum => 50, :allow_nil => true
 
   def to_label
     "#{first_name} #{last_name}"
