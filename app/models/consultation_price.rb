@@ -9,7 +9,11 @@ class ConsultationPrice < ActiveRecord::Base
   validates_presence_of :price_type, :amount
   validates_numericality_of :amount, :only_integer => true, :greater_than_or_equal_to => 0
   validates_length_of :price_type, :maximum => 50, :allow_nil => true
+  validates_uniqueness_of :default, :if => :is_going_to_be_default
 
+  def is_going_to_be_default
+    self.default
+  end
   def to_label
     "Type of Price: #{price_type}\nAmount: #{amount}"
   end
