@@ -1,0 +1,52 @@
+#logo {
+    margin: auto;
+    display: block;
+}
+
+#nav_container {
+    border-bottom: solid 1px #ccc;
+}
+
+#nav {
+    margin: auto;
+    padding: 0;
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+    overflow: hidden;
+}
+
+#nav li {
+    float: left;
+    margin-right: 0;
+    margin-left: 1em;
+}
+
+#nav li a {
+    text-decoration: none;
+}
+
+#nav li a:visited {
+    color: #3399ff;
+}
+
+#nav li a {
+    padding: 1em;
+    display: block;
+    background-color: #eee;
+    border: solid 1px #ddd;
+    border-bottom: none;
+    color: #3399ff;
+}
+
+#nav li a:hover {
+    background-color: #ffffcc;
+}
+
+#nav li a:active {
+    border: solid 1px #ccc;
+    border-bottom: solid 1px #fff;
+    color: #666;
+    cursor: default;
+    background-color: #fff;
+}
