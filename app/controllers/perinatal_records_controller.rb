@@ -1,5 +1,20 @@
 class PerinatalRecordsController < ApplicationController
+  def self.add_sub_groups (action)
+    action.columns.add_subgroup "" do |group|
+      group.add :number_of_pregnancy, :childbirth, :cesarea, :abortions, :weight
+    end
+    action.columns.add_subgroup "" do |group|
+      group.add :height, :head_circumference, :body_perimeter, :weeks_of_gestation, :apgar1, :apgar2
+    end
+    action.columns.add_subgroup "" do |group|
+      group.add :type_of_birth, :jaundice, :observations
+    end
+  end
+
   active_scaffold :perinatal_record do |conf|
+    conf.list.per_page = 10
+    conf.search.live = true
+    
     #Configuración de las columnas que se mostrarán
     conf.columns = [:number_of_pregnancy, :childbirth, :cesarea, :abortions, :weight, :height, :head_circumference, :body_perimeter, :weeks_of_gestation, :apgar1, :apgar2, :type_of_birth, :jaundice, :observations ]
 
@@ -11,5 +26,10 @@ class PerinatalRecordsController < ApplicationController
 
     #Configuración de las acciones que se mostrarán
     conf.actions = [:create, :search, :update, :delete, :show, :nested, :subform, :list]
+
+    #Configuración de los agrupados por categorias para la acción create
+    add_sub_groups conf.create
+    add_sub_groups conf.update
+    add_sub_groups conf.show
   end
 end
