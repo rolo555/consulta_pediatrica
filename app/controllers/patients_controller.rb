@@ -18,6 +18,8 @@ class PatientsController < ApplicationController
 
   active_scaffold :patient do |conf|
 
+    conf.search.live = true
+
     #Configuración de las columnas que se mostrarán al listar
     conf.list.columns = [:photograph, :last_name, :first_name, :age, :consultations, :family_records, :allergies, :perinatal_record, :surgical_records, :pathological_records]
 
