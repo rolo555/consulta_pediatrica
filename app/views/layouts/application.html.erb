@@ -16,18 +16,20 @@
   <![endif]-->
 </head>
 <body>
-  <%= image_tag 'logo.png', :id => 'logo' %>
-  <div id="nav_container">
-    <ul id="nav">
-      <li><%= link_to 'Patients', :controller => 'Patients' %></li>
-      <li><%= link_to 'Places', :controller => 'places' %></li>
-      <li><%= link_to 'Consultation prices', :controller => 'consultation_prices' %></li>
-      <li><%= link_to 'Laboratory profiles' %></li>
-      <li><%= link_to 'Medical certificates' %></li>
-      <li><%= link_to 'Vaccines' %></li>
-      <li><%= link_to 'Drugs' %></li>
-    </ul>
-  </div>
+  <% unless params[:must_close] %>
+    <%= image_tag 'logo.png', :id => 'logo' %>
+    <div id="nav_container">
+      <ul id="nav">
+        <li><%= link_to 'Patients', :controller => 'Patients' %></li>
+        <li><%= link_to 'Places', :controller => 'places' %></li>
+        <li><%= link_to 'Consultation prices', :controller => 'consultation_prices' %></li>
+        <li><%= link_to 'Laboratory profiles' %></li>
+        <li><%= link_to 'Medical certificates' %></li>
+        <li><%= link_to 'Vaccines' %></li>
+        <li><%= link_to 'Drugs' %></li>
+      </ul>
+    </div>
+  <% end %>
   
 <%= yield %>
 
