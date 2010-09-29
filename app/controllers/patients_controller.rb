@@ -18,6 +18,7 @@ class PatientsController < ApplicationController
 
   active_scaffold :patient do |conf|
 
+    conf.list.per_page = 10
     conf.search.live = true
 
     #Configuración de las columnas que se mostrarán al listar
