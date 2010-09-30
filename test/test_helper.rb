@@ -43,7 +43,7 @@ def sanitizate(f)
     "
     def sanitizate_#{f}
       record = #{fixture}(:spaces)
-      record.before_validation
+      record.valid?
       actual = record.instance_eval('#{f}')
       assert(actual.eql?(actual.strip), 'The field {#{f} = ' + actual + ' } have whitespaces')
     end
