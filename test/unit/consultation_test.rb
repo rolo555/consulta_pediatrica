@@ -1,12 +1,6 @@
 require 'test_helper'
 
 class ConsultationTest < ActiveSupport::TestCase
-#    t.float    "weight"
-#    t.float    "height"
-#    t.float    "head_circumference"
-#    t.float    "anterior_fontanel"
-#    t.float    "temperature"
-#    t.decimal  "amount"
   neg = -1
   should belong_to :patient
   should validate_numericality_of :weight
