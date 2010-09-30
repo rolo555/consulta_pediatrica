@@ -1,10 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+spaces:
+  patient_id: 1
+  date: 2010-09-23
+  pathology: ' MyString '
+  procedure: '  MyString  '
+
 one:
   patient_id: 1
   date: 2010-09-23
-  pathology: MyString
-  procedure: MyString
+  pathology: pathology
+  procedure: procedure
 
 two:
   patient_id: 1
