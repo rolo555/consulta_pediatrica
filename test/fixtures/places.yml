@@ -5,6 +5,10 @@ spaces:
   city: " Cochabamba "
   country: " Bolivia "
 
+one:
+  city: city
+  country: country
+
 two:
   city: MyString
   country: MyString

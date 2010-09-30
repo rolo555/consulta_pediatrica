@@ -5,10 +5,14 @@ class PlaceTest < ActiveSupport::TestCase
   should validate_presence_of :city
   should validate_presence_of :country
   should validate_uniqueness_of(:city).scoped_to(:country).case_insensitive
+  should_not allow_value(@long_string).for(:city)
+  should_not allow_value(@long_string).for(:country)
 
-  def test_to_label
-    place = Place.new(:city => "city", :country => "country")
-    assert_equal(place.to_label, "city country");
+  context "to_label" do
+    should "concat city and country" do
+      place = places(:one)
+      assert_equal(place.to_label, "city country");
+    end
   end
 
   should "sanitizate city" do
@@ -18,5 +22,4 @@ class PlaceTest < ActiveSupport::TestCase
   should "sanitizate country" do
     sanitizate("country")
   end
-
 end
