@@ -6,7 +6,7 @@ class PhoneNumber < ActiveRecord::Base
 
   #Validaciones
   validates_presence_of :number
-  validates_length_of :numer, :maximum => 50, :allow_nil => true
+  validates_length_of :number, :maximum => 50, :allow_nil => true
 
   def to_label
     number
