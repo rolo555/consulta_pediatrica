@@ -6,14 +6,13 @@ class PhoneNumber < ActiveRecord::Base
 
   #Validaciones
   validates_presence_of :number
-  validates_length_of :number, :maximum => 50, :allow_nil => true
+  validates_length_of :number, :maximum => 50
 
   def to_label
-    number
+    number.to_s
   end
 
   def before_validation
     clean_whitespaces self.number
   end
-
 end

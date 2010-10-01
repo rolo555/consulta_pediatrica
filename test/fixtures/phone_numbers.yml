@@ -4,5 +4,8 @@
 spaces:
   number: " 123-666-DUDE "
 
+one:
+  number: 720 12345
+
 two:
   number: MyString
