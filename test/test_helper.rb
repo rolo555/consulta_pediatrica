@@ -52,5 +52,5 @@ def sanitizate(f)
   eval("sanitizate_#{f}")
 end
 
-@long_string = 'A'*51
+@long_string = 'A'*101
 
