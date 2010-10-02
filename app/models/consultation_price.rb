@@ -14,6 +14,7 @@ class ConsultationPrice < ActiveRecord::Base
   def is_going_to_be_default
     self.default
   end
+
   def to_label
     "Type of Price: #{price_type}\nAmount: #{amount}"
   end
