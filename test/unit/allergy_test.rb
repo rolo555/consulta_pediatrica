@@ -16,4 +16,9 @@ class AllergyTest < ActiveSupport::TestCase
     sanitizate "reaction"
   end
 
+  def test_to_label
+    allergy = Allergy.new(:substance => "Substance")
+    assert_equal(allergy.to_label, "Substance");
+  end
+
 end

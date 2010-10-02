@@ -11,4 +11,8 @@ class Allergy < ActiveRecord::Base
     clean_whitespaces self.substance, self.reaction
   end
 
+  def to_label
+    "#{substance}"
+  end
+
 end
