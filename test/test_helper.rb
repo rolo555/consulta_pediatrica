@@ -52,5 +52,24 @@ def sanitizate(f)
   eval("sanitizate_#{f}")
 end
 
-@long_string = 'A'*51
+def should_be_positive_number(field)
+  should allow_value('').for(field)
+  should allow_value(nil).for(field)
+  should_not allow_value('abcd').for(field)
+  should_not allow_value('-1').for(field)
+end
 
+def should_be_positive_integer_non_zero(field)
+  should_not allow_value('0').for(field)
+  should_be_positive_integer field
+end
+  
+def should_be_positive_integer(field)
+  should_not allow_value('0.5').for(field)
+  should_be_positive_number field
+end
+
+def should_be_positive_float(field)
+  should allow_value('0.5').for(field)
+  should_be_positive_number field
+end

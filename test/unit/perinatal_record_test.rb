@@ -2,48 +2,61 @@ require 'test_helper'
 
 class PerinatalRecordTest < ActiveSupport::TestCase
   should belong_to :patient
-  should validate_numericality_of :number_of_pregnancy
-  should validate_numericality_of :childbirth
-  should validate_numericality_of :cesarea
-  should validate_numericality_of :abortions
-  should validate_numericality_of :weeks_of_gestation
-  should validate_numericality_of :apgar1
-  should validate_numericality_of :apgar2
-  should validate_numericality_of :weight
-  should validate_numericality_of :height
-  should validate_numericality_of :head_circumference
-  should validate_numericality_of :body_perimeter
-  should allow_value(nil).for(:number_of_pregnancy)
-  should allow_value(nil).for(:childbirth)
-  should allow_value(nil).for(:cesarea)
-  should allow_value(nil).for(:abortions)
-  should allow_value(nil).for(:weeks_of_gestation)
-  should allow_value(nil).for(:apgar1)
-  should allow_value(nil).for(:apgar2)
-  should allow_value(nil).for(:weight)
-  should allow_value(nil).for(:height)
-  should allow_value(nil).for(:head_circumference)
-  should allow_value(nil).for(:body_perimeter)
 
+  should_be_positive_integer_non_zero :number_of_pregnancy
+  should_be_positive_integer :childbirth
+  should_be_positive_integer :cesarea
+  should_be_positive_integer :abortions
+  should_be_positive_integer_non_zero :weeks_of_gestation
+  should_be_positive_integer :apgar1
+  should_be_positive_integer :apgar2
 
-  float = 0.5
-  neg = -1
-  should_not allow_value(float).for(:number_of_pregnancy)
-  should_not allow_value(neg).for(:number_of_pregnancy)
-  should_not allow_value(float).for(:childbirth)
-  should_not allow_value(neg).for(:childbirth)
-  should_not allow_value(float).for(:cesarea)
-  should_not allow_value(neg).for(:cesarea)
-  should_not allow_value(float).for(:abortions)
-  should_not allow_value(neg).for(:abortions)
-  should_not allow_value(float).for(:weeks_of_gestation)
-  should_not allow_value(neg).for(:weeks_of_gestation)
-  should_not allow_value(float).for(:apgar1)
-  should_not allow_value(neg).for(:apgar1)
-  should_not allow_value(float).for(:apgar2)
-  should_not allow_value(neg).for(:apgar2)
-  should_not allow_value(neg).for(:weight)
-  should_not allow_value(neg).for(:height)
-  should_not allow_value(neg).for(:head_circumference)
-  should_not allow_value(neg).for(:body_perimeter)
+  should_be_positive_float :weight
+  should_be_positive_float :height
+  should_be_positive_float :head_circumference
+  should_be_positive_float :body_perimeter
+
+  should "sanitizate number_of_pregnancy" do
+    sanitizate "number_of_pregnancy"
+  end
+
+  should "sanitizate childbirth" do
+    sanitizate "childbirth"
+  end
+
+  should "sanitizate cesarea" do
+    sanitizate "cesarea"
+  end
+
+  should "sanitizate abortions" do
+    sanitizate "abortions"
+  end
+
+  should "sanitizate weeks_of_gestation" do
+    sanitizate "weeks_of_gestation"
+  end
+
+  should "sanitizate apgar1" do
+    sanitizate "apgar1"
+  end
+
+  should "sanitizate apgar2" do
+    sanitizate "apgar2"
+  end
+
+  should "sanitizate weight" do
+    sanitizate "weight"
+  end
+
+  should "sanitizate height" do
+    sanitizate "height"
+  end
+
+  should "sanitizate head_circumference" do
+    sanitizate "head_circumference"
+  end
+
+  should "sanitizate body_perimeter" do
+    sanitizate "body_perimeter"
+  end
 end

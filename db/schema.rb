@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100928215313) do
+ActiveRecord::Schema.define(:version => 20101002211528) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20100928215313) do
 
   create_table "consultation_prices", :force => true do |t|
     t.string   "price_type"
-    t.integer  "amount"
+    t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "default"
@@ -97,22 +97,22 @@ ActiveRecord::Schema.define(:version => 20100928215313) do
 
   create_table "perinatal_records", :force => true do |t|
     t.integer  "patient_id"
-    t.integer  "number_of_pregnancy"
-    t.integer  "childbirth"
-    t.integer  "cesarea"
-    t.integer  "abortions"
-    t.float    "weight"
-    t.float    "height"
-    t.float    "head_circumference"
-    t.float    "body_perimeter"
-    t.integer  "weeks_of_gestation"
-    t.integer  "apgar1"
-    t.integer  "apgar2"
     t.string   "type_of_birth"
     t.boolean  "jaundice"
     t.text     "observations"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "number_of_pregnancy"
+    t.string   "childbirth"
+    t.string   "cesarea"
+    t.string   "abortions"
+    t.string   "weeks_of_gestation"
+    t.string   "apgar1"
+    t.string   "apgar2"
+    t.string   "height"
+    t.string   "weight"
+    t.string   "head_circumference"
+    t.string   "body_perimeter"
   end
 
   create_table "phone_numbers", :force => true do |t|
