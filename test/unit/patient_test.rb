@@ -7,11 +7,10 @@ class PatientTest < ActiveSupport::TestCase
   should validate_presence_of :consultation_price
   should validate_presence_of :place
   should validate_uniqueness_of(:first_name).scoped_to(:last_name, :date_of_birth).case_insensitive
-  should_not allow_value(@long_string).for(:first_name)
-  should_not allow_value(@long_string).for(:last_name)
-  should_not allow_value(@long_string).for(:emails)
-  should_not allow_value(@long_string).for(:mother)
-  should_not allow_value(@long_string).for(:father)
+  should_not allow_value(long_string).for(:first_name)
+  should_not allow_value(long_string).for(:last_name)
+  should_not allow_value(long_string).for(:mother)
+  should_not allow_value(long_string).for(:father)
 
   should have_many(:emails).dependent(:destroy)
   should have_many(:consultations).dependent(:destroy)
@@ -20,7 +19,7 @@ class PatientTest < ActiveSupport::TestCase
   should have_many(:addresses).dependent(:destroy)
   should have_many(:phone_numbers).dependent(:destroy)
   should have_many(:surgical_records).dependent(:destroy)
-  should have_one(:pathological_records).dependent(:destroy)
+  should have_many(:pathological_records).dependent(:destroy)
   should have_one(:perinatal_record).dependent(:destroy)
   should belong_to(:place)
   should belong_to(:consultation_price)
