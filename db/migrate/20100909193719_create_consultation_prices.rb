@@ -2,7 +2,7 @@ class CreateConsultationPrices < ActiveRecord::Migration
   def self.up
     create_table :consultation_prices do |t|
       t.string :price_type
-      t.decimal :amount
+      t.integer :amount
 
       t.timestamps
     end
