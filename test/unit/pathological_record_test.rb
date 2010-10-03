@@ -4,8 +4,8 @@ class PathologicalRecordTest < ActiveSupport::TestCase
   should belong_to :patient
   should validate_presence_of :diagnosis
   should validate_presence_of :treatment
-  should_not allow_value(@long_string).for(:diagnosis)
-  should_not allow_value(@long_string).for(:treatment)
+  should_not allow_value(long_string).for(:diagnosis)
+  should_not allow_value(long_string).for(:treatment)
 
   should "sanitizate diagnosis" do
     sanitizate "diagnosis"

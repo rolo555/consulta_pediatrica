@@ -35,6 +35,9 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def self.long_string
+      'A'*101
+  end
 end
 
 def sanitizate(f)
@@ -52,5 +55,4 @@ def sanitizate(f)
   eval("sanitizate_#{f}")
 end
 
-@long_string = 'A'*101
 

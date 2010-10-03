@@ -10,7 +10,7 @@ class EmailTest < ActiveSupport::TestCase
   should_not allow_value("mail.com").for(:address)
   should_not allow_value("@.com").for(:address)
   should_not allow_value("mail@com").for(:address)
-  should_not allow_value(@long_string).for(:address)
+  should_not allow_value(long_string).for(:address)
 
 
   def test_to_label
