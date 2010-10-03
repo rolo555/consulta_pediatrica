@@ -31,5 +31,9 @@ class PerinatalRecordsController < ApplicationController
     add_sub_groups conf.create
     add_sub_groups conf.update
     add_sub_groups conf.show
+
+    #Configuracion de type_of_birth para que sea muestre en un select box
+    conf.columns[:type_of_birth].form_ui = :select
+    conf.columns[:type_of_birth].options = {:options => [:cesarea, :childbirth]}
   end
 end
