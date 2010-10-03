@@ -3,11 +3,14 @@
 spaces:
   price_type: "  cariiiiisimo    "
   amount: 9999
+  default: true
 
 two:
   price_type: MyString
   amount: 9
+  default: false
 
 non_integer:
   price_type: Super oferta
   amount: 99.99
+  default: false

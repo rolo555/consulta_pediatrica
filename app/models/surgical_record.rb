@@ -4,7 +4,8 @@ class SurgicalRecord < ActiveRecord::Base
 
   #Validaciones
   validates_presence_of :pathology, :procedure
-  validates_length_of :pathology, :procedure, :maximum => 50
+  validates_length_of :pathology, :maximum => 50, :if => "self.pathology.presence"
+  validates_length_of :procedure, :maximum => 50, :if => "self.procedure.presence"
 
   def to_label
     "#{pathology} #{procedure}"
