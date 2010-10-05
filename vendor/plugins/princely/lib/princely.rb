@@ -29,7 +29,7 @@ class Princely
     if RUBY_PLATFORM =~ /mingw/
       @exe_path = '"C:/Program Files (x86)/Prince/Engine/bin/prince"'.chomp
     else
-      @exe_path = 'which prince'.chomp
+      @exe_path = `which prince`.chomp
     end
     raise "Cannot find prince command-line app in $PATH" if @exe_path.length == 0
   	@style_sheets = ''
