@@ -17,7 +17,6 @@ class PatientsController < ApplicationController
   end
 
   active_scaffold :patient do |conf|
-
     conf.list.per_page = 10
     conf.search.live = true
 
@@ -81,7 +80,6 @@ class PatientsController < ApplicationController
     end
     apply_constraints_to_record(@record)
     params[:eid] = @old_eid if @remove_eid
-
     @record
   end
 
@@ -94,5 +92,10 @@ class PatientsController < ApplicationController
           :layout => "pdf"
       end
     end
+  end
+
+  def after_create_save(patient)
+    patient.perinatal_record = PerinatalRecord.new
+    patient.save
   end
 end

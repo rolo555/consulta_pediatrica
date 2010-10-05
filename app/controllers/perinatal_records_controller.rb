@@ -25,10 +25,9 @@ class PerinatalRecordsController < ApplicationController
     conf.columns.exclude :created_at, :updated_at, :patient
 
     #Configuración de las acciones que se mostrarán
-    conf.actions = [:create, :search, :update, :delete, :show, :nested, :subform, :list]
+    conf.actions = [:update, :show, :nested, :subform, :list]
 
     #Configuración de los agrupados por categorias para la acción create
-    add_sub_groups conf.create
     add_sub_groups conf.update
     add_sub_groups conf.show
 
