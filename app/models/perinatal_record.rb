@@ -32,8 +32,8 @@ class PerinatalRecord < ActiveRecord::Base
     :message => 'is not an integer positive number',
     :if => 'self.apgar2.presence'
   validates_format_of :weight,
-    :with => /^[0-9]*\.?[0-9]+$/,
-    :message => 'is not a float positive number',
+    :with => /^[0-9]*\.?[0-9]+(\s*(gr|lb|kg))*$/,
+    :message => 'is not a float positive number or the unit is incorrect',
     :if => 'self.weight.presence'
   validates_format_of :height,
     :with => /^[0-9]*\.?[0-9]+$/,
@@ -61,5 +61,9 @@ class PerinatalRecord < ActiveRecord::Base
       self.height,
       self.head_circumference,
       self.body_perimeter
+  end
+
+  def after_save
+    puts self.weight
   end
 end

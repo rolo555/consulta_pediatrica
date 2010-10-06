@@ -16,6 +16,11 @@ class PerinatalRecordTest < ActiveSupport::TestCase
   should_be_positive_float :head_circumference
   should_be_positive_float :body_perimeter
 
+  should allow_value('1.5 kg').for(:weight)
+  should allow_value('1500 gr').for(:weight)
+  should allow_value('1.5 kg').for(:weight)
+  should allow_value('3.3 lb').for(:weight)
+  
   should "sanitizate number_of_pregnancy" do
     sanitizate "number_of_pregnancy"
   end
