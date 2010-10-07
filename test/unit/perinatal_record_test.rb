@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'mocha'
 
 class PerinatalRecordTest < ActiveSupport::TestCase
   should belong_to :patient
@@ -18,7 +19,6 @@ class PerinatalRecordTest < ActiveSupport::TestCase
 
   should allow_value('1.5 kg').for(:weight)
   should allow_value('1500 gr').for(:weight)
-  should allow_value('1.5 kg').for(:weight)
   should allow_value('3.3 lb').for(:weight)
   
   should "sanitizate number_of_pregnancy" do
@@ -63,5 +63,15 @@ class PerinatalRecordTest < ActiveSupport::TestCase
 
   should "sanitizate body_perimeter" do
     sanitizate "body_perimeter"
+  end
+
+  context 'after_save' do
+    should 'call function to_grams' do
+      string = ""
+      string.expects :to_grams
+      perinatal_record = PerinatalRecord.new
+      perinatal_record.weight = string
+      perinatal_record.save
+    end
   end
 end
