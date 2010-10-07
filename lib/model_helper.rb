@@ -22,3 +22,18 @@ class Date
     return years, months, days
   end
 end
+
+class String
+  def to_grams
+    quantity, unit = self.split
+    return quantity if unit.nil?
+    return case unit
+    when 'lb'
+      (453.59237 * quantity.to_f).to_i.to_s
+    when 'kg'
+      (1000 * quantity.to_f).to_i.to_s
+    when 'gr'
+      quantity.to_i.to_s
+    end
+  end
+end

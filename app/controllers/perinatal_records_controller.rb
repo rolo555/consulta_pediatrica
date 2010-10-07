@@ -34,5 +34,7 @@ class PerinatalRecordsController < ApplicationController
     #Configuracion de type_of_birth para que sea muestre en un select box
     conf.columns[:type_of_birth].form_ui = :select
     conf.columns[:type_of_birth].options = {:options => [:cesarea, :childbirth]}
+
+    conf.columns[:weight].description = "By default <em>gr</em>, you can use <em>lb</em> and <em>kg</em>"
   end
 end
