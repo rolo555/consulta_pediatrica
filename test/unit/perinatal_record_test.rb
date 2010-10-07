@@ -65,13 +65,18 @@ class PerinatalRecordTest < ActiveSupport::TestCase
     sanitizate "body_perimeter"
   end
 
-  context 'after_save' do
+  context 'save' do
     should 'call function to_grams' do
       string = ""
       string.expects :to_grams
       perinatal_record = PerinatalRecord.new
       perinatal_record.weight = string
       perinatal_record.save
+    end
+
+    should 'save an empty record' do
+      perinatal_record = PerinatalRecord.new
+      assert_equal true, perinatal_record.save
     end
   end
 end

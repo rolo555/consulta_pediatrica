@@ -64,6 +64,6 @@ class PerinatalRecord < ActiveRecord::Base
   end
 
   def after_save
-    self.weight = self.weight.to_grams
+    self.weight = self.weight.to_grams if !self.weight.nil?
   end
 end
