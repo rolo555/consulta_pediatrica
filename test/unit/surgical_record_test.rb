@@ -6,6 +6,7 @@ class SurgicalRecordTest < ActiveSupport::TestCase
   should validate_presence_of :procedure
   should_not allow_value(long_string).for(:pathology)
   should_not allow_value(long_string).for(:procedure)
+  should validate_uniqueness_of(:pathology).case_insensitive
 
   context "to_label" do
     should "concat pathology and procedure" do
