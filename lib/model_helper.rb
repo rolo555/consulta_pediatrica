@@ -29,11 +29,22 @@ class String
     return quantity if unit.nil?
     return case unit
     when 'lb'
-      (453.59237 * quantity.to_f).to_i.to_s
+      (453.59237 * quantity.to_f).round.to_s
     when 'kg'
-      (1000 * quantity.to_f).to_i.to_s
+      (1000 * quantity.to_f).round.to_s
     when 'gr'
-      quantity.to_i.to_s
+      quantity.to_f.round.to_s
+    end
+  end
+
+  def to_cms
+    quantity, unit = self.split
+    return quantity if unit.nil?
+    return case unit
+    when 'in'
+      (2.54 * quantity.to_f).round.to_s
+    when 'cm'
+      quantity.to_f.round.to_s
     end
   end
 end

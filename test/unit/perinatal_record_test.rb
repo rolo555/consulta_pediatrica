@@ -20,6 +20,9 @@ class PerinatalRecordTest < ActiveSupport::TestCase
   should allow_value('1.5 kg').for(:weight)
   should allow_value('1500 gr').for(:weight)
   should allow_value('3.3 lb').for(:weight)
+
+  should allow_value('12 in').for(:height)
+  should allow_value('30 cm').for(:height)
   
   should "sanitizate number_of_pregnancy" do
     sanitizate "number_of_pregnancy"
@@ -71,6 +74,14 @@ class PerinatalRecordTest < ActiveSupport::TestCase
       string.expects :to_grams
       perinatal_record = PerinatalRecord.new
       perinatal_record.weight = string
+      perinatal_record.save
+    end
+
+    should 'call function to_cms' do
+      string = ""
+      string.expects :to_cms
+      perinatal_record = PerinatalRecord.new
+      perinatal_record.height = string
       perinatal_record.save
     end
 

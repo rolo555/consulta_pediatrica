@@ -36,8 +36,8 @@ class PerinatalRecord < ActiveRecord::Base
     :message => 'is not a float positive number or the unit is incorrect',
     :if => 'self.weight.presence'
   validates_format_of :height,
-    :with => /^[0-9]*\.?[0-9]+$/,
-    :message => 'is not a float positive number',
+    :with => /^[0-9]*\.?[0-9]+(\s*(cm|in))*$/,
+    :message => 'is not a float positive number or the unit is incorrect',
     :if => 'self.height.presence'
   validates_format_of :head_circumference,
     :with => /^[0-9]*\.?[0-9]+$/,
@@ -65,5 +65,6 @@ class PerinatalRecord < ActiveRecord::Base
 
   def after_save
     self.weight = self.weight.to_grams if !self.weight.nil?
+    self.height = self.height.to_cms if !self.height.nil?
   end
 end
