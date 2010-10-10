@@ -7,3 +7,8 @@ one:
 two:
   name: MyString
   text: MyText
+
+spaces:
+  name: '  MyString  '
+  text: ' MyText '
+
