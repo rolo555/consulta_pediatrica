@@ -19,7 +19,11 @@ class SurgicalRecord < ActiveRecord::Base
   end
 
   def date_must_be_lower_than_tomorrow
-    (errors.add(:date, "can't be greater than today") if (self.date <=> Date.tomorrow) > 0 ) unless self.date.nil?
+    unless self.date.nil?
+      if (self.date <=> Date.today) > 0
+        errors.add :date, 'can\'t be greater than today'
+      end
+    end
   end
 
 end
