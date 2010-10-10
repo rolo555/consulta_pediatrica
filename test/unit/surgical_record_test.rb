@@ -7,6 +7,7 @@ class SurgicalRecordTest < ActiveSupport::TestCase
   should_not allow_value(long_string).for(:pathology)
   should_not allow_value(long_string).for(:procedure)
   should validate_uniqueness_of(:pathology).case_insensitive
+  should_not allow_value(Date.tomorrow).for(:date)
 
   context "to_label" do
     should "concat pathology and procedure" do
