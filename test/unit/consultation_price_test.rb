@@ -17,7 +17,7 @@ class ConsultationPriceTest < ActiveSupport::TestCase
 
   def test_to_label
     c_price = ConsultationPrice.new(:price_type => "price type", :amount => 1.0 )
-    assert_equal("Type of Price: price type\nAmount: 1.0", c_price.to_label);
+    assert_equal("Type of Price: price type\nAmount: 1", c_price.to_label);
   end
 
   should "sanitizate price_type" do
