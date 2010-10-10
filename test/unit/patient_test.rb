@@ -11,6 +11,7 @@ class PatientTest < ActiveSupport::TestCase
   should_not allow_value(long_string).for(:last_name)
   should_not allow_value(long_string).for(:mother)
   should_not allow_value(long_string).for(:father)
+  should_not allow_value(Date.tomorrow).for(:date_of_birth)
 
   should have_many(:emails).dependent(:destroy)
   should have_many(:consultations).dependent(:destroy)
