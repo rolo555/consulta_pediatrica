@@ -68,6 +68,13 @@ ActiveRecord::Schema.define(:version => 20101002211528) do
     t.datetime "updated_at"
   end
 
+  create_table "laboratory_profiles", :force => true do |t|
+    t.string   "name"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pathological_records", :force => true do |t|
     t.integer  "patient_id"
     t.date     "date"
