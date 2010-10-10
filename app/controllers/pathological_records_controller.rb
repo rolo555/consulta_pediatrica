@@ -4,5 +4,8 @@ class PathologicalRecordsController < ApplicationController
     conf.search.live = true
 
     conf.columns = [:date, :diagnosis, :treatment, :patient]
+
+    conf.columns[:date].options = {:end_year => Date.today.year-30, :start_year => Date.today.year, :include_blank => false }
+
   end
 end
