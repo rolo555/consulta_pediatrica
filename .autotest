@@ -5,7 +5,7 @@ require "test_notifier/autotest"
 require "autotest/timestamp"
 
 Autotest.add_hook :initialize do |autotest|
-  %w{.git .DS_Store ._* vendor tmp log doc coverage test/functional}.each do |exception|
+  [ /\/\./, /coverage\//, /config\//, /nbproject\//, /test\/functional\// ].each do |exception|
     autotest.add_exception(exception)
   end
 end
