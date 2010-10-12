@@ -10,8 +10,7 @@ class EmailTest < ActiveSupport::TestCase
   should_not allow_value("mail.com").for(:address)
   should_not allow_value("@.com").for(:address)
   should_not allow_value("mail@com").for(:address)
-  should_not allow_value(long_string).for(:address)
-
+  should ensure_length_of(:address).is_at_most(50)
 
   def test_to_label
     mail = Email.new(:address => "mail@mail.com")
@@ -21,5 +20,4 @@ class EmailTest < ActiveSupport::TestCase
   should "sanitizate address" do
     sanitizate("address")
   end
-
 end

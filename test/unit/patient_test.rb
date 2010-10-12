@@ -7,10 +7,11 @@ class PatientTest < ActiveSupport::TestCase
   should validate_presence_of :consultation_price
   should validate_presence_of :place
   should validate_uniqueness_of(:first_name).scoped_to(:last_name, :date_of_birth).case_insensitive
-  should_not allow_value(long_string).for(:first_name)
-  should_not allow_value(long_string).for(:last_name)
-  should_not allow_value(long_string).for(:mother)
-  should_not allow_value(long_string).for(:father)
+  
+  should ensure_length_of(:first_name).is_at_most(50)
+  should ensure_length_of(:last_name).is_at_most(50)
+  should ensure_length_of(:mother).is_at_most(50)
+  should ensure_length_of(:father).is_at_most(50)
   should_not allow_value(Date.tomorrow).for(:date_of_birth)
 
   should have_many(:emails).dependent(:destroy)

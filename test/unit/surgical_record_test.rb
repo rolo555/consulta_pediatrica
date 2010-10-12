@@ -4,8 +4,8 @@ class SurgicalRecordTest < ActiveSupport::TestCase
   should belong_to :patient
   should validate_presence_of :pathology
   should validate_presence_of :procedure
-  should_not allow_value(long_string).for(:pathology)
-  should_not allow_value(long_string).for(:procedure)
+  should ensure_length_of(:pathology).is_at_most(50)
+  should ensure_length_of(:procedure).is_at_most(50)
   should validate_uniqueness_of(:pathology).case_insensitive
   should_not allow_value(Date.tomorrow).for(:date)
 
