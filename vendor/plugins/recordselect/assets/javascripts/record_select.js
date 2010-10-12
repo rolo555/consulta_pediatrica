@@ -26,9 +26,8 @@ RecordSelect.notify = function(item) {
     } catch(e) {
       alert(e);
     }
-    return false;
   }
-  else return true;
+  return true;
 }
 
 RecordSelect.Abstract = Class.create();

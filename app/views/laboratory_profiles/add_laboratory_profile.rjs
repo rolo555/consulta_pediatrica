@@ -1,0 +1,2 @@
+page.assign 'text', @lab.text
+page << " getElementsByAttribute(document, 'textarea', 'name', 'laboratory')[0].value += text"

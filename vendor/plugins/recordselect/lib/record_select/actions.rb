@@ -41,7 +41,11 @@ module RecordSelect
       elsif record_select_config.notify
         send(record_select_config.notify, record)
       end
-      render :nothing => true
+      if @view
+        render @view, :layout => false
+      else
+        render :nothing => true
+      end
     end
 
     protected
