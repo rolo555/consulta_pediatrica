@@ -50,7 +50,7 @@ class PerinatalRecord < ActiveRecord::Base
 
   protected
   def before_validation
-    clean_whitespaces self.number_of_pregnancy,
+    sanitizate_strings self.number_of_pregnancy,
       self.childbirth,
       self.cesarea,
       self.abortions,

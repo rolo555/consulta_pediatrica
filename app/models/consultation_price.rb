@@ -20,7 +20,7 @@ class ConsultationPrice < ActiveRecord::Base
   end
 
   def before_validation
-    clean_whitespaces self.price_type
+    sanitizate_strings self.price_type
   end
 
 end

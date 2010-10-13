@@ -10,7 +10,7 @@ class Allergy < ActiveRecord::Base
   validates_uniqueness_of :substance, :case_sensitive => false
 
   def before_validation
-    clean_whitespaces self.substance, self.reaction
+    sanitizate_strings self.substance, self.reaction
   end
 
   def to_label

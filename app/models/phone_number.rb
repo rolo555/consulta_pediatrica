@@ -13,6 +13,6 @@ class PhoneNumber < ActiveRecord::Base
   end
 
   def before_validation
-    clean_whitespaces self.number
+    sanitizate_strings self.number
   end
 end

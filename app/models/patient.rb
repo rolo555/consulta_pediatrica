@@ -53,11 +53,11 @@ class Patient < ActiveRecord::Base
   end
 
   def before_validation
-    clean_whitespaces self.first_name,
-      self.last_name,
-      self.mother,
-      self.father,
-      self.referenced_by
+    sanitizate_strings :first_name,
+      :last_name,
+      :mother,
+      :father,
+      :referenced_by
   end
 
   def clone_patient

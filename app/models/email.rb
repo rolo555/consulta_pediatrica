@@ -16,7 +16,7 @@ class Email < ActiveRecord::Base
   end
 
   def before_validation
-    clean_whitespaces self.address
+    sanitizate_strings self.address
   end
   
 end

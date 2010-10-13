@@ -1,6 +1,15 @@
 module ModelHelper
-  def clean_whitespaces(*args)
-    args.each { |field| field.strip! if field.presence }
+
+  def sanitizate_strings(*args)
+    args.each { |field| clean_whitespaces(field) }
+  end
+
+  def clean_whitespaces(field)
+    send(field).strip! if send(field).presence
+  end
+
+  def string_attributes
+    self.class.columns.delete_if {|c| c.type != :string }.map {|c| c.name.to_sym }
   end
 end
 

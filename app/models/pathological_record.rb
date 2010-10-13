@@ -8,7 +8,7 @@ class PathologicalRecord < ActiveRecord::Base
   validate :date_must_be_lower_than_tomorrow
 
   def before_validation
-    clean_whitespaces self.diagnosis, self.treatment
+    sanitizate_strings self.diagnosis, self.treatment
   end
 
   protected

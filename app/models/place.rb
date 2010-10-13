@@ -19,7 +19,7 @@ class Place < ActiveRecord::Base
 
   protected
   def before_validation
-    clean_whitespaces self.city,
+    sanitizate_strings self.city,
       self.country
   end
 end

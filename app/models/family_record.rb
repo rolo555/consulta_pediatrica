@@ -9,6 +9,6 @@ class FamilyRecord < ActiveRecord::Base
 
 
   def before_validation
-    clean_whitespaces self.pathology, self.relation_ship
+    sanitizate_strings self.pathology, self.relation_ship
   end
 end
