@@ -24,49 +24,7 @@ class PerinatalRecordTest < ActiveSupport::TestCase
   should allow_value('12 in').for(:height)
   should allow_value('30 cm').for(:height)
   
-  should "sanitizate number_of_pregnancy" do
-    sanitizate "number_of_pregnancy"
-  end
-
-  should "sanitizate childbirth" do
-    sanitizate "childbirth"
-  end
-
-  should "sanitizate cesarea" do
-    sanitizate "cesarea"
-  end
-
-  should "sanitizate abortions" do
-    sanitizate "abortions"
-  end
-
-  should "sanitizate weeks_of_gestation" do
-    sanitizate "weeks_of_gestation"
-  end
-
-  should "sanitizate apgar1" do
-    sanitizate "apgar1"
-  end
-
-  should "sanitizate apgar2" do
-    sanitizate "apgar2"
-  end
-
-  should "sanitizate weight" do
-    sanitizate "weight"
-  end
-
-  should "sanitizate height" do
-    sanitizate "height"
-  end
-
-  should "sanitizate head_circumference" do
-    sanitizate "head_circumference"
-  end
-
-  should "sanitizate body_perimeter" do
-    sanitizate "body_perimeter"
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings PerinatalRecord
 
   context 'save' do
     should 'call function to_grams' do

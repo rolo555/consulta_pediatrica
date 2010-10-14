@@ -1,6 +1,9 @@
 include ModelHelper
 
 class PhoneNumber < ActiveRecord::Base
+
+  protected :before_validation
+
   #Relaciones
   belongs_to :patient
 
@@ -13,6 +16,6 @@ class PhoneNumber < ActiveRecord::Base
   end
 
   def before_validation
-    clean_whitespaces self.number
+    sanitizate_strings :number
   end
 end

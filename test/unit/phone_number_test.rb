@@ -3,7 +3,7 @@ require 'test_helper'
 class PhoneNumberTest < ActiveSupport::TestCase
   should belong_to :patient
   should validate_presence_of :number
-  should_not allow_value(long_string).for(:number)
+  should ensure_length_of(:number).is_at_most(50)
 
   context "to_label" do
     should "be the number" do
@@ -12,7 +12,6 @@ class PhoneNumberTest < ActiveSupport::TestCase
     end
   end
 
-  should "sanitizate phone_number" do
-    sanitizate "number"
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings PhoneNumber
+
 end

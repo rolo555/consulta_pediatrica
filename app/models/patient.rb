@@ -1,6 +1,9 @@
 include ModelHelper
 
 class Patient < ActiveRecord::Base
+
+  protected :before_validation
+
   #Relaciones
   has_many :emails, :dependent => :destroy
   has_many :consultations, :dependent => :destroy
@@ -53,11 +56,7 @@ class Patient < ActiveRecord::Base
   end
 
   def before_validation
-    clean_whitespaces self.first_name,
-      self.last_name,
-      self.mother,
-      self.father,
-      self.referenced_by
+    sanitizate_strings :first_name, :last_name, :mother, :father, :referenced_by
   end
 
   def clone_patient
@@ -76,7 +75,6 @@ class Patient < ActiveRecord::Base
     amount
   end
 
-  protected
   def date_of_birth_must_be_lower_than_tomorrow
     unless self.date_of_birth.nil?
       if (self.date_of_birth <=> Date.today) > 0

@@ -1,4 +1,7 @@
 class FamilyRecord < ActiveRecord::Base
+
+  protected :before_validation
+  
   #Relaciones
   belongs_to :patient
 
@@ -9,6 +12,6 @@ class FamilyRecord < ActiveRecord::Base
 
 
   def before_validation
-    clean_whitespaces self.pathology, self.relation_ship
+    sanitizate_strings :pathology, :relation_ship
   end
 end

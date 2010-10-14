@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
+require 'mocha'
 
 class ActiveSupport::TestCase
   # Transactional fixtures accelerate your tests by wrapping each test method
@@ -35,9 +36,6 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  def self.long_string
-      'A'*101
-  end
 end
 
 def sanitizate(f)
@@ -75,4 +73,16 @@ end
 def should_be_positive_float(field)
   should allow_value('0.5').for(field)
   should_be_positive_number field
+end
+
+def valid_method_should_call_clean_whitespaces_of_all_strings(klass, exclude_fields = [])
+  context 'valid? method' do
+    should 'call clean_whitespaces of all strings' do
+      object = klass.new
+      object.string_attributes.delete_if {|e| exclude_fields.include? e }.each do |attr|
+        object.expects(:clean_whitespaces).with(attr)
+      end
+      object.valid?
+    end
+  end
 end
