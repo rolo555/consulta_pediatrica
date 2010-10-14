@@ -1,9 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-spaces:
-  pathology: "  pathology  "
-  relation_ship: "  reation ship  "
-
 one:
   pathology: MyString
   relation_ship: MyString

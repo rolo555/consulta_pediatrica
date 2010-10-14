@@ -1,10 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-#Fixture used by sanitizate method in test_helper.rb
-spaces:
-  city: " Cochabamba "
-  country: " Bolivia "
-
 one:
   city: city
   country: country

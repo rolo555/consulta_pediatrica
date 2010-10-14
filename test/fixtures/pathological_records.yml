@@ -1,9 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-spaces:
-  diagnosis: "  diagnosis  "
-  treatment: "  treatment  "
-
 one:
   patient_id: 1
   date: 2010-09-23

@@ -1,9 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-spaces:
-  substance: "  substance  "
-  reaction: "  reaction  "
-
 one:
   substance: MyString
   reaction: MyString

@@ -1,9 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-#Fixture used by sanitizate method in test_helper.rb
-spaces:
-  number: " 123-666-DUDE "
-
 one:
   number: 720 12345
 

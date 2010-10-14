@@ -1,14 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-#Fixture used by sanitizate method in test_helper.rb
-spaces:
-  first_name: ' Rolando '
-  last_name: ' Spaces '
-  date_of_birth: 2010-09-02
-  father: ' Dad '
-  mother: ' Mom '
-  referenced_by: ' Dr. Who '
-
 two:
   first_name: MyString
   last_name: MyString

@@ -1,10 +1,5 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-spaces:
-  price_type: "  cariiiiisimo    "
-  amount: 9999
-  default: true
-
 two:
   price_type: MyString
   amount: 9
