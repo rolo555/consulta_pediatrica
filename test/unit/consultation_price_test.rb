@@ -17,9 +17,10 @@ class ConsultationPriceTest < ActiveSupport::TestCase
     assert_equal(cp.is_going_to_be_default, true);
   end
 
-  def test_to_label
-    c_price = ConsultationPrice.new(:price_type => "price type", :amount => 1.0 )
-    assert_equal("Type of Price: price type\nAmount: 1", c_price.to_label);
+  context 'to_label method' do
+    should 'return price_type and amount' do
+      consultation_price = ConsultationPrice.new :price_type => "Casi gratis", :amount => 1
+      assert_equal 'Casi gratis - 1', consultation_price.to_label
+    end
   end
-
 end

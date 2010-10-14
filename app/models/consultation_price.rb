@@ -19,11 +19,10 @@ class ConsultationPrice < ActiveRecord::Base
   end
 
   def to_label
-    "Type of Price: #{price_type}\nAmount: #{amount}"
+    "#{price_type} - #{amount}"
   end
 
   def before_validation
     sanitizate_strings :price_type
   end
-
 end

@@ -9,12 +9,11 @@ class PlaceTest < ActiveSupport::TestCase
   should ensure_length_of(:country).is_at_most(50)
 
   context "to_label" do
-    should "concat city and country" do
-      place = places :one
-      assert_equal place.to_label, "city country"
+    should "return city and country" do
+      place = Place.new :country => 'Tanganika', :city => '???'
+      assert_equal '??? Tanganika', place.to_label
     end
   end
 
   valid_method_should_call_clean_whitespaces_of_all_strings Place
-
 end

@@ -1,3 +1,5 @@
+include ModelHelper
+
 class Allergy < ActiveRecord::Base
 
   protected :before_validation
@@ -19,5 +21,4 @@ class Allergy < ActiveRecord::Base
   def to_label
     "#{substance}"
   end
-
 end

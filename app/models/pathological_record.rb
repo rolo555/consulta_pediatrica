@@ -21,5 +21,8 @@ class PathologicalRecord < ActiveRecord::Base
       end
     end
   end
-  
+
+  def to_label
+    diagnosis
+  end
 end

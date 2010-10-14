@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class AllergyTest < ActiveSupport::TestCase
+
   should belong_to :patient
   should validate_presence_of :substance
   should validate_presence_of :reaction
@@ -10,9 +11,10 @@ class AllergyTest < ActiveSupport::TestCase
 
   valid_method_should_call_clean_whitespaces_of_all_strings Allergy
 
-  def test_to_label
-    allergy = Allergy.new(:substance => "Substance")
-    assert_equal(allergy.to_label, "Substance");
+  context 'to_label method' do
+    should 'return substance' do
+      allergy = Allergy.new :substance => 'Substance'
+      assert_equal 'Substance', allergy.to_label
+    end
   end
-
 end

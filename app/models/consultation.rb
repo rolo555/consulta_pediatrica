@@ -27,4 +27,6 @@ class Consultation < ActiveRecord::Base
     :only_integer => true,
     :greater_than_or_equal_to => 0,
     :allow_nil => true
+
+  #FIXME: Consultation necesita método to_label
 end

@@ -10,12 +10,12 @@ class SurgicalRecordTest < ActiveSupport::TestCase
   should_not allow_value(Date.tomorrow).for(:date)
 
   context "to_label" do
-    should "concat pathology and procedure" do
-      surgical_record = surgical_records(:one)
-      assert_equal(surgical_record.to_label, "pathology procedure");
+    should "return pathology and procedure" do
+      surgical_record = SurgicalRecord.new :pathology => 'pathology',
+        :procedure => 'procedure'
+      assert_equal surgical_record.to_label, 'pathology procedure'
     end
   end
 
   valid_method_should_call_clean_whitespaces_of_all_strings SurgicalRecord
-
 end

@@ -14,9 +14,10 @@ class EmailTest < ActiveSupport::TestCase
 
   valid_method_should_call_clean_whitespaces_of_all_strings Email
 
-  def test_to_label
-    mail = Email.new(:address => "mail@mail.com")
-    assert_equal(mail.to_label, "mail@mail.com");
+  context 'to_label method' do
+    should 'return address' do
+      email = Email.new :address => 'mail@mail.com'
+      assert_equal 'mail@mail.com', email.to_label
+    end
   end
-
 end

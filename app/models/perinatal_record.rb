@@ -70,4 +70,6 @@ class PerinatalRecord < ActiveRecord::Base
     self.weight = self.weight.to_grams if !self.weight.nil?
     self.height = self.height.to_cms if !self.height.nil?
   end
+
+  #FIXME: PerinatalRecord necesita método to_label
 end

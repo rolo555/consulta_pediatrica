@@ -1,3 +1,5 @@
+include ModelHelper
+
 class FamilyRecord < ActiveRecord::Base
 
   protected :before_validation
@@ -10,8 +12,9 @@ class FamilyRecord < ActiveRecord::Base
   validates_length_of :pathology, :maximum => 50, :if => "self.pathology.presence"
   validates_length_of :relation_ship, :maximum => 50, :if => "self.relation_ship.presence"
 
-
   def before_validation
     sanitizate_strings :pathology, :relation_ship
   end
+
+  #FIXME: FamilyRecord necesita método to_label
 end

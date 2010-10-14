@@ -10,4 +10,10 @@ class PathologicalRecordTest < ActiveSupport::TestCase
 
   valid_method_should_call_clean_whitespaces_of_all_strings PathologicalRecord
 
+  context 'to_label method' do
+    should 'return diagnosis' do
+      pathological_record = PathologicalRecord.new :diagnosis => 'Resfrío'
+      assert_equal 'Resfrío', pathological_record.to_label
+    end
+  end
 end

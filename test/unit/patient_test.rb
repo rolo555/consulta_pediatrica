@@ -29,10 +29,11 @@ class PatientTest < ActiveSupport::TestCase
 
   valid_method_should_call_clean_whitespaces_of_all_strings Patient, [:photograph_content_type, :photograph_file_name]
 
-  should "to label" do
-    patient = patients(:juan)
-    patient.before_validation
-    assert_equal("Juansito Pinto", patient.to_label)
+  context 'to_label method' do
+    should 'return first_name and last_name' do
+      patient = Patient.new :first_name => 'Juansito', :last_name => 'Pinto'
+      assert_equal 'Juansito Pinto', patient.to_label
+    end
   end
 
   context "age" do

@@ -20,5 +20,4 @@ class Email < ActiveRecord::Base
   def before_validation
     sanitizate_strings :address
   end
-  
 end

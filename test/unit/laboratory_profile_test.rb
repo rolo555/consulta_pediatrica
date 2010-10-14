@@ -7,4 +7,10 @@ class LaboratoryProfileTest < ActiveSupport::TestCase
 
   valid_method_should_call_clean_whitespaces_of_all_strings LaboratoryProfile
 
+  context 'to_label method' do
+    should 'return name' do
+      laboratory_profile = LaboratoryProfile.new :name => 'Muestra de sangre'
+      assert_equal 'Muestra de sangre', laboratory_profile.to_label
+    end
+  end
 end
