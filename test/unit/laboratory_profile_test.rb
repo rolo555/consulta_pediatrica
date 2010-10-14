@@ -5,8 +5,6 @@ class LaboratoryProfileTest < ActiveSupport::TestCase
   should validate_presence_of :text
   should ensure_length_of(:name).is_at_most(50)
 
-  should "sanitizate name" do
-    sanitizate "name"
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings LaboratoryProfile
 
 end

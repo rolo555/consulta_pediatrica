@@ -15,11 +15,6 @@ class PlaceTest < ActiveSupport::TestCase
     end
   end
 
-  should "sanitizate city" do
-    sanitizate "city"
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings Place
 
-  should "sanitizate country" do
-    sanitizate "country"
-  end
 end

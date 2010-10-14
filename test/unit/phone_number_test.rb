@@ -12,7 +12,6 @@ class PhoneNumberTest < ActiveSupport::TestCase
     end
   end
 
-  should "sanitizate phone_number" do
-    sanitizate "number"
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings PhoneNumber
+
 end

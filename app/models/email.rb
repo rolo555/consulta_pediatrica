@@ -2,6 +2,8 @@ include ModelHelper
 
 class Email < ActiveRecord::Base
 
+  protected :before_validation
+
   #Relaciones
   belongs_to :patient
 
@@ -16,7 +18,7 @@ class Email < ActiveRecord::Base
   end
 
   def before_validation
-    sanitizate_strings self.address
+    sanitizate_strings :address
   end
   
 end

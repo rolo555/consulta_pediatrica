@@ -12,6 +12,7 @@ class PatientTest < ActiveSupport::TestCase
   should ensure_length_of(:last_name).is_at_most(50)
   should ensure_length_of(:mother).is_at_most(50)
   should ensure_length_of(:father).is_at_most(50)
+
   should_not allow_value(Date.tomorrow).for(:date_of_birth)
 
   should have_many(:emails).dependent(:destroy)
@@ -26,25 +27,7 @@ class PatientTest < ActiveSupport::TestCase
   should belong_to(:place)
   should belong_to(:consultation_price)
 
-  should "sanitizate first_name" do
-    sanitizate("first_name")
-  end
-
-  should "sanitizate last_name" do
-    sanitizate("last_name")
-  end
-
-  should "sanitizate mother" do
-    sanitizate("mother")
-  end
-
-  should "sanitizate father" do
-    sanitizate("father")
-  end
-
-  should "sanitizate referenced_by" do
-    sanitizate("referenced_by")
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings Patient, [:photograph_content_type, :photograph_file_name]
 
   should "to label" do
     patient = patients(:juan)

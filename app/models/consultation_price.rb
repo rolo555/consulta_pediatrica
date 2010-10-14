@@ -1,6 +1,9 @@
 include ModelHelper
 
 class ConsultationPrice < ActiveRecord::Base
+
+  protected :before_validation
+
   #Relaciones
   has_many :patients
 
@@ -20,7 +23,7 @@ class ConsultationPrice < ActiveRecord::Base
   end
 
   def before_validation
-    sanitizate_strings self.price_type
+    sanitizate_strings :price_type
   end
 
 end

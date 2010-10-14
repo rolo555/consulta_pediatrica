@@ -1,4 +1,7 @@
 class Allergy < ActiveRecord::Base
+
+  protected :before_validation
+
   #Relaciones
   belongs_to :patient
 
@@ -10,7 +13,7 @@ class Allergy < ActiveRecord::Base
   validates_uniqueness_of :substance, :case_sensitive => false
 
   def before_validation
-    sanitizate_strings self.substance, self.reaction
+    sanitizate_strings :substance, :reaction
   end
 
   def to_label

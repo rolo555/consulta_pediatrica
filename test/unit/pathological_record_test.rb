@@ -8,12 +8,6 @@ class PathologicalRecordTest < ActiveSupport::TestCase
   should ensure_length_of(:treatment).is_at_most(50)
   should_not allow_value(Date.tomorrow).for(:date)
 
-  should "sanitizate diagnosis" do
-    sanitizate "diagnosis"
-  end
-
-  should "sanitizate treatment" do
-    sanitizate "treatment"
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings PathologicalRecord
 
 end

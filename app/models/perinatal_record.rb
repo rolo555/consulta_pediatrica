@@ -1,4 +1,7 @@
 class PerinatalRecord < ActiveRecord::Base
+
+  protected :before_validation
+
   #Relaciones
   belongs_to :patient
 
@@ -48,19 +51,19 @@ class PerinatalRecord < ActiveRecord::Base
     :message => 'is not a float positive number',
     :if => 'self.body_perimeter.presence'
 
-  protected
   def before_validation
-    sanitizate_strings self.number_of_pregnancy,
-      self.childbirth,
-      self.cesarea,
-      self.abortions,
-      self.weeks_of_gestation,
-      self.apgar1,
-      self.apgar2,
-      self.weight,
-      self.height,
-      self.head_circumference,
-      self.body_perimeter
+    sanitizate_strings :number_of_pregnancy,
+      :childbirth,
+      :cesarea,
+      :abortions,
+      :weeks_of_gestation,
+      :apgar1,
+      :apgar2,
+      :weight,
+      :height,
+      :head_circumference,
+      :body_perimeter,
+      :type_of_birth
   end
 
   def after_save

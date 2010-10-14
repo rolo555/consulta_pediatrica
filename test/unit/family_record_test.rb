@@ -7,12 +7,6 @@ class FamilyRecordTest < ActiveSupport::TestCase
   should ensure_length_of(:pathology).is_at_most(50)
   should ensure_length_of(:relation_ship).is_at_most(50)
 
-  should "sanitizate pathology" do
-    sanitizate "pathology"
-  end
-
-  should "sanitizate relation_ship" do
-    sanitizate "relation_ship"
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings FamilyRecord
 
 end

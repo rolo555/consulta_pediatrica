@@ -8,13 +8,7 @@ class AllergyTest < ActiveSupport::TestCase
   should ensure_length_of(:substance).is_at_most(50)
   should ensure_length_of(:reaction).is_at_most(50)
 
-  should "sanitizate substance" do
-    sanitizate "substance"
-  end
-
-  should "sanitizate reaction" do
-    sanitizate "reaction"
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings Allergy
 
   def test_to_label
     allergy = Allergy.new(:substance => "Substance")

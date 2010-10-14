@@ -1,4 +1,7 @@
 class SurgicalRecord < ActiveRecord::Base
+
+  protected :before_validation
+
   #Relaciones
   belongs_to :patient
 
@@ -13,9 +16,8 @@ class SurgicalRecord < ActiveRecord::Base
     "#{pathology} #{procedure}"
   end
 
-  protected
   def before_validation
-    sanitizate_strings self.pathology, self.procedure
+    sanitizate_strings :pathology, :procedure
   end
 
   def date_must_be_lower_than_tomorrow

@@ -1,6 +1,9 @@
 include ModelHelper
 
 class Place < ActiveRecord::Base
+
+  protected :before_validation
+
   #Relaciones
   has_many :patients
 
@@ -17,9 +20,7 @@ class Place < ActiveRecord::Base
     "#{city} #{country}"
   end
 
-  protected
   def before_validation
-    sanitizate_strings self.city,
-      self.country
+    sanitizate_strings :city, :country
   end
 end

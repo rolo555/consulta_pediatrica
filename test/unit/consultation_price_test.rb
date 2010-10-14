@@ -10,6 +10,8 @@ class ConsultationPriceTest < ActiveSupport::TestCase
   should_not allow_value(9.99).for(:amount)
   should_not allow_value(-1).for(:amount)
 
+  valid_method_should_call_clean_whitespaces_of_all_strings ConsultationPrice
+
   def is_going_to_be_default_test
     cp = ConsultationPrice.new(:default => true)
     assert_equal(cp.is_going_to_be_default, true);
@@ -20,7 +22,4 @@ class ConsultationPriceTest < ActiveSupport::TestCase
     assert_equal("Type of Price: price type\nAmount: 1", c_price.to_label);
   end
 
-  should "sanitizate price_type" do
-    sanitizate("price_type")
-  end
 end

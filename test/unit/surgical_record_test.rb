@@ -16,11 +16,6 @@ class SurgicalRecordTest < ActiveSupport::TestCase
     end
   end
 
-  should "sanitizate pathology" do
-    sanitizate("pathology")
-  end
+  valid_method_should_call_clean_whitespaces_of_all_strings SurgicalRecord
 
-  should "sanitizate procedure" do
-    sanitizate("procedure")
-  end
 end

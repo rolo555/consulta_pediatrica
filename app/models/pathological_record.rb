@@ -1,4 +1,7 @@
 class PathologicalRecord < ActiveRecord::Base
+
+  protected :before_validation
+
   #Relations
   belongs_to :patient
 
@@ -8,10 +11,9 @@ class PathologicalRecord < ActiveRecord::Base
   validate :date_must_be_lower_than_tomorrow
 
   def before_validation
-    sanitizate_strings self.diagnosis, self.treatment
+    sanitizate_strings :diagnosis, :treatment
   end
 
-  protected
   def date_must_be_lower_than_tomorrow
     unless self.date.nil?
       if (self.date <=> Date.today) > 0
