@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
     :full_text_search => true
 
   active_scaffold :place do |conf|
-    conf.columns.exclude :patients
+    conf.columns.exclude :patients, :created_at, :updated_at
   end
 
   def index
