@@ -1,7 +1,7 @@
 class ConsultationsController < ApplicationController
   active_scaffold :consultation do |conf|
     #Configuración de las columnas que se mostrarán 
-    conf.columns = [:weight, :height, :head_circumference, :anterior_fontanel, :temperature, :current_condition, :diagnosis, :medical_certificate, :recipe, :order, :laboratory, :existing_laboratories, :amount]
+    conf.columns = [:weight, :height, :head_circumference, :anterior_fontanel, :temperature, :current_condition, :diagnosis, :existing_diagnoses, :medical_certificate, :recipe, :order, :laboratory, :existing_laboratories, :amount]
 
     #Configuración de las columnas que se mostrarán al listar
     conf.list.columns = [:created_at, :diagnosis, :recipe, :amount]

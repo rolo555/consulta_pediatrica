@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  
+  map.resources :diagnostics, :active_scaffold => true, :collection => {:browse => :get}, :member => {:select => :post}
   map.resources :laboratory_profiles, :active_scaffold => true, :collection => {:browse => :get}, :member => {:select => :post}
   map.resources :pathological_records, :active_scaffold => true
   map.resources :surgical_records, :active_scaffold => true
