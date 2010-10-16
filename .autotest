@@ -1,7 +1,7 @@
 require "autotest/growl"
 require "autotest/restart"
 require "redgreen/autotest"
-require "test_notifier/autotest"
+require "test_notifier/runner/autotest"
 require "autotest/timestamp"
 
 Autotest.add_hook :initialize do |autotest|
