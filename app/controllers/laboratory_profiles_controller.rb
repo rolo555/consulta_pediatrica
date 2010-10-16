@@ -12,7 +12,7 @@ class LaboratoryProfilesController < ApplicationController
   end
 
   def add_laboratory_profile(record)
-    @lab = LaboratoryProfile.find(params[:id])
+    @laboratory_profile = LaboratoryProfile.find(params[:id])
     @view = 'add_laboratory_profile'
   end
 end
