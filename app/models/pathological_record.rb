@@ -1,3 +1,5 @@
+include ModelHelper
+
 class PathologicalRecord < ActiveRecord::Base
 
   protected :before_validation
