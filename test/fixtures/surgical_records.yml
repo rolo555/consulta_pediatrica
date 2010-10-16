@@ -2,18 +2,24 @@
 
 spaces:
   patient_id: 1
-  date: 2010-09-23
+  year: 2000
+  month: 1
+  day: 1
   pathology: ' MyString '
   procedure: '  MyString  '
 
 one:
   patient_id: 1
-  date: 2010-09-23
+  year: 2000
+  month: 1
+  day: 1
   pathology: pathology
   procedure: procedure
 
 two:
   patient_id: 1
-  date: 2010-09-23
+  year: 2000
+  month: 1
+  day: 1
   pathology: MyString
   procedure: MyString
