@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+spaces:
+  concept: " concept "
+  price: 1
+  is_always_used: true
+
+one:
+  concept: MyString
+  price: 1
+  is_always_used: false
+
+two:
+  concept: MyString
+  price: 1
+  is_always_used: false
