@@ -1,11 +1,9 @@
-include ModelHelper
-
-class LaboratoryProfile < ActiveRecord::Base
+class Diagnostic < ActiveRecord::Base
 
   protected :before_validation
-  
+
   #Validaciones
-  validates_presence_of :name, :text
+  validates_presence_of :name
   validates_length_of :name, :maximum => 50, :if => "self.name.presence"
   validates_uniqueness_of :name
 

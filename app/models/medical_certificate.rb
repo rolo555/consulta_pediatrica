@@ -1,9 +1,8 @@
 include ModelHelper
 
-class LaboratoryProfile < ActiveRecord::Base
-
+class MedicalCertificate < ActiveRecord::Base
   protected :before_validation
-  
+
   #Validaciones
   validates_presence_of :name, :text
   validates_length_of :name, :maximum => 50, :if => "self.name.presence"
@@ -14,6 +13,6 @@ class LaboratoryProfile < ActiveRecord::Base
   end
 
   def to_label
-    "#{name}"
+    name
   end
 end

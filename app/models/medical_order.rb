@@ -1,7 +1,6 @@
 include ModelHelper
 
-class LaboratoryProfile < ActiveRecord::Base
-
+class MedicalOrder < ActiveRecord::Base
   protected :before_validation
   
   #Validaciones
