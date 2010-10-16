@@ -1,3 +1,5 @@
+include ModelHelper
+
 class SurgicalRecord < ActiveRecord::Base
   #Relaciones
   belongs_to :patient

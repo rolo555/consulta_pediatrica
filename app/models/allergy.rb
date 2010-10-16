@@ -1,3 +1,5 @@
+include ModelHelper
+
 class Allergy < ActiveRecord::Base
   #Relaciones
   belongs_to :patient

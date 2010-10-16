@@ -1,3 +1,5 @@
+include ModelHelper
+
 class FamilyRecord < ActiveRecord::Base
   #Relaciones
   belongs_to :patient
