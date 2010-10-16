@@ -10,4 +10,8 @@ module ConsultationsHelper
   def consultation_existing_medical_certificates_form_column(record, options)
     link_to_record_select 'Pick a existing medical certificates', 'medical_certificates', :onselect => ""
   end
+
+  def consultation_existing_orders_form_column(record, options)
+    link_to_record_select 'Pick a existing medical orders', 'medical_orders', :onselect => ""
+  end
 end
