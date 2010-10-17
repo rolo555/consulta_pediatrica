@@ -50,3 +50,7 @@
     cursor: default;
     background-color: #fff;
 }
+
+.autocomplete_field {
+    vertical-align: top;
+}
