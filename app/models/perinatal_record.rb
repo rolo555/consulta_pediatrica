@@ -1,3 +1,5 @@
+include ModelHelper
+
 class PerinatalRecord < ActiveRecord::Base
 
   protected :before_validation

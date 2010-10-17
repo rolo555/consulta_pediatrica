@@ -7,7 +7,8 @@ class SurgicalRecordTest < ActiveSupport::TestCase
   should ensure_length_of(:pathology).is_at_most(50)
   should ensure_length_of(:procedure).is_at_most(50)
   should validate_uniqueness_of(:pathology).case_insensitive
-  should_not allow_value(Date.tomorrow).for(:date)
+#  should_not allow_value(Date.tomorrow).for(:date)
+  should_not allow_value(Date.today.year+1).for(:year)
 
   context "to_label" do
     should "return pathology and procedure" do
