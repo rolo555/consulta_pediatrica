@@ -14,9 +14,9 @@ class SurgicalRecordTest < ActiveSupport::TestCase
     should "return pathology and procedure" do
       surgical_record = SurgicalRecord.new :pathology => 'pathology',
         :procedure => 'procedure'
-      assert_equal surgical_record.to_label, 'pathology procedure'
+      assert_equal 'pathology procedure', surgical_record.to_label
     end
   end
 
-  valid_method_should_call_clean_whitespaces_of_all_strings SurgicalRecord
+  valid_method_should_call_clean_whitespaces_of_all_strings SurgicalRecord, [:day, :month, :year]
 end
