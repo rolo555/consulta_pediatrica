@@ -3,9 +3,7 @@ class PlacesController < ApplicationController
     :search_on => ['city', 'country'],
     :full_text_search => true
 
-  active_scaffold :place do |conf|
-    conf.columns.exclude :patients, :created_at, :updated_at
-  end
+  active_scaffold :place 
 
   def index
     if params[:must_close]

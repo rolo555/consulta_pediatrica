@@ -24,7 +24,7 @@ class PatientsController < ApplicationController
     conf.list.columns = [:photograph, :last_name, :first_name, :age, :consultations, :family_records, :allergies, :perinatal_record, :surgical_records, :pathological_records]
 
     #Configuración de las columnas que se excluiran para todas las acciones
-    conf.columns.exclude :created_at, :updated_at, :consultations, :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at, :family_records, :allergies, :perinatal_record, :surgical_records, :pathological_records
+    conf.columns.exclude :photograph_content_type, :photograph_file_name, :photograph_file_size, :photograph_updated_at, :family_records, :allergies, :perinatal_record, :surgical_records, :pathological_records, :consultations
 
     #Configuración del boton generar historial
     conf.action_links.add :patient_history,

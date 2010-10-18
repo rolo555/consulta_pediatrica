@@ -8,7 +8,6 @@ class MedicalOrdersController < ApplicationController
     conf.list.per_page = 10
     conf.search.live = true 
     conf.list.columns = [:name, :text]
-    conf.columns.exclude :created_at, :updated_at
   end
 
   def add_medical_order(record)

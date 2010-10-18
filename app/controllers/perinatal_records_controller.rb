@@ -21,9 +21,6 @@ class PerinatalRecordsController < ApplicationController
     #Configuración de las columnas que se mostrarán al listar
     conf.list.columns = [:number_of_pregnancy, :weight, :height, :weeks_of_gestation, :type_of_birth ]
 
-    #Configuración de las columnas que se excluiran para todas las acciones
-    conf.columns.exclude :created_at, :updated_at, :patient
-
     #Configuración de las acciones que se mostrarán
     conf.actions = [:update, :show, :nested, :subform, :list]
 

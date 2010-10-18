@@ -6,10 +6,7 @@ class ConsultationsController < ApplicationController
       :recipe, :order, :laboratory, :amount]
 
     #Configuración de las columnas que se mostrarán al listar
-    conf.list.columns = [:created_at, :diagnosis, :recipe, :amount]
-
-    #Configuración de las columnas que se excluiran para todas las acciones
-    conf.columns.exclude :created_at, :updated_at, :patient
+    conf.list.columns = [:diagnosis, :recipe, :amount]
 
     #Configuración de las acciones que se mostrarán
     conf.actions = [:create, :search, :update, :delete, :show, :nested, :subform, :list]

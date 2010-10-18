@@ -8,7 +8,6 @@ class DiagnosticsController < ApplicationController
     conf.list.per_page = 10
     conf.search.live = true
     conf.list.columns = [:name]
-    conf.columns.exclude :created_at, :updated_at
   end
 
   def add_diagnostic(record)
