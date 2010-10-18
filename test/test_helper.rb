@@ -79,7 +79,7 @@ def valid_method_should_call_clean_whitespaces_of_all_strings(klass, exclude_fie
   context 'valid? method' do
     should 'call clean_whitespaces of all strings' do
       object = klass.new
-      object.string_attributes.delete_if {|e| exclude_fields.include? e }.each do |attr|
+      (object.string_attributes - exclude_fields).each do |attr|
         object.expects(:clean_whitespaces).with(attr)
       end
       object.valid?
