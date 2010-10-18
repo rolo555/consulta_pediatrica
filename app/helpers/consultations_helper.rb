@@ -1,17 +1,17 @@
 module ConsultationsHelper
-  def consultation_existing_laboratories_form_column(record, options)
-    link_to_record_select 'Pick a existing laboratories', 'laboratory_profiles', :onselect => ""
+  def consultation_laboratory_form_column(record, options)
+    text_area_and_link_to_record_select :laboratory, options, :laboratory_profiles
   end
 
-  def consultation_existing_diagnoses_form_column(record, options)
-    link_to_record_select 'Pick a existing diagnoses', 'diagnostics', :onselect => ""
+  def consultation_diagnosis_form_column(record, options)
+    text_area_and_link_to_record_select :diagnosis, options, :diagnostics
   end
 
-  def consultation_existing_medical_certificates_form_column(record, options)
-    link_to_record_select 'Pick a existing medical certificates', 'medical_certificates', :onselect => ""
+  def consultation_medical_certificate_form_column(record, options)
+    text_area_and_link_to_record_select :medical_certificate, options, :medical_certificates
   end
 
-  def consultation_existing_orders_form_column(record, options)
-    link_to_record_select 'Pick a existing medical orders', 'medical_orders', :onselect => ""
+  def consultation_order_form_column(record, options)
+    text_area_and_link_to_record_select :order, options, :medical_orders
   end
 end
