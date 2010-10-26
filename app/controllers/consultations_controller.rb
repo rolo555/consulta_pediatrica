@@ -8,6 +8,10 @@ class ConsultationsController < ApplicationController
     #Configuración de las columnas que se mostrarán al listar
     conf.list.columns = [:diagnosis, :recipe, :amount]
 
+    #Configuración de cómo se mostrará la columna amount
+    conf.columns[:amount].options[:format] = :currency
+    conf.columns[:amount].options[:i18n_options] = { :precision => 0 }
+
     #Configuración de las acciones que se mostrarán
     conf.actions = [:create, :search, :update, :delete, :show, :nested, :subform, :list]
   end
