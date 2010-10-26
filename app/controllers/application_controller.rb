@@ -8,6 +8,13 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   ActiveScaffold.set_defaults do |conf|
+    #Ignorar columnas de la fecha de creación y última actualización
     conf.ignore_columns.add [:created_at, :updated_at]
+
+    #Mostrar 10 elementos al listar
+    conf.list.per_page = 10
+
+    #Utilizar search con ajax
+    conf.search.live = true
   end
 end
