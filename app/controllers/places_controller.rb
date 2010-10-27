@@ -3,7 +3,10 @@ class PlacesController < ApplicationController
     :search_on => ['city', 'country'],
     :full_text_search => true
 
-  active_scaffold :place 
+  active_scaffold :place do |conf|
+    #Configuración de las columnas que se mostrarán
+    conf.columns = [:city, :country]
+  end
 
   def index
     if params[:must_close]

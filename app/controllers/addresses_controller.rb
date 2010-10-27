@@ -1,9 +1,9 @@
 class AddressesController < ApplicationController
   active_scaffold :address do |conf|
-    #Excluir de todas las columnas la relación patient
-    conf.columns.exclude :patient
+    #Configuración de las columnas que se mostrarán
+    conf.columns = [:address]
 
     #Agregar a las columnas de listar la relación patient
-    conf.list.columns << :patient
+    conf.list.columns.add :patient
   end
 end

@@ -4,11 +4,7 @@ class DiagnosticsController < ApplicationController
     :full_text_search => true,
     :notify => :add_diagnostic
 
-  active_scaffold :diagnostics do |conf|
-    conf.list.per_page = 10
-    conf.search.live = true
-    conf.list.columns = [:name]
-  end
+  active_scaffold :diagnostics
 
   def add_diagnostic(record)
     @diagnostic = Diagnostic.find(params[:id])

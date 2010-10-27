@@ -1,5 +1,4 @@
 class SurgicalRecordsController < ApplicationController
-
   def self.add_sub_groups (action)
     action.columns.add_subgroup "" do |group|
       group.add :pathology, :procedure
@@ -10,14 +9,14 @@ class SurgicalRecordsController < ApplicationController
   end
 
   active_scaffold :surgical_records do |conf|
-    conf.list.per_page = 10
-    conf.search.live = true
-    
-    conf.columns = [:year, :month, :day, :pathology, :procedure, :patient]
+    #Configuración de las columnas que se mostrarán
+    conf.columns = [:year, :month, :day, :pathology, :procedure]
+
+    #Agregar a las columnas de listar la relación patient
+    conf.list.columns.add :patient
 
     add_sub_groups conf.create
     add_sub_groups conf.update
     add_sub_groups conf.show
-
   end
 end

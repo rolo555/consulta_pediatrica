@@ -5,9 +5,8 @@ class MedicalCertificatesController < ApplicationController
     :notify => :add_medical_certificate
 
   active_scaffold :medical_certificates do |conf|
-    conf.list.per_page = 10
-    conf.search.live = true 
-    conf.list.columns = [:name, :text]
+    #Configuración de las columnas que se mostrarán
+    conf.columns = [:name, :text]
   end
 
   def add_medical_certificate(record)

@@ -1,6 +1,6 @@
 class ConsultationsController < ApplicationController
   active_scaffold :consultation do |conf|
-    #Configuración de las columnas que se mostrarán 
+    #Configuración de las columnas que se mostrarán
     conf.columns = [:weight, :height, :head_circumference, :anterior_fontanel,
       :temperature, :current_condition, :diagnosis, :medical_certificate, 
       :recipe, :order, :laboratory, :amount]
@@ -11,9 +11,6 @@ class ConsultationsController < ApplicationController
     #Configuración de cómo se mostrará la columna amount
     conf.columns[:amount].options[:format] = :currency
     conf.columns[:amount].options[:i18n_options] = { :precision => 0 }
-
-    #Configuración de las acciones que se mostrarán
-    conf.actions = [:create, :search, :update, :delete, :show, :nested, :subform, :list]
   end
 
   def default_values(consultation)
@@ -31,5 +28,4 @@ class ConsultationsController < ApplicationController
     @record = default_values(@record)
     @record
   end
-  
 end

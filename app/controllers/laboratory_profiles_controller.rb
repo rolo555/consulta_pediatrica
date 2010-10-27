@@ -5,9 +5,8 @@ class LaboratoryProfilesController < ApplicationController
     :notify => :add_laboratory_profile
 
   active_scaffold :laboratory_profiles do |conf|
-    conf.list.per_page = 10
-    conf.search.live = true 
-    conf.list.columns = [:name, :text]
+    #Configuración de las columnas que se mostrarán
+    conf.columns = [:name, :text]
   end
 
   def add_laboratory_profile(record)
