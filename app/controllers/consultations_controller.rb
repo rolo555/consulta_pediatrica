@@ -6,7 +6,7 @@ class ConsultationsController < ApplicationController
       :recipe, :order, :laboratory, :amount]
 
     #Configuración de las columnas que se mostrarán al listar
-    conf.list.columns = [:diagnosis, :recipe, :amount]
+    conf.list.columns = [:diagnosis, :recipe, :amount, :images]
 
     #Configuración de cómo se mostrará la columna amount
     conf.columns[:amount].options[:format] = :currency

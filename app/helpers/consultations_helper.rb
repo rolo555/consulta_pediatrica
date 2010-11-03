@@ -14,4 +14,12 @@ module ConsultationsHelper
   def consultation_order_form_column(record, options)
     text_area_and_link_to_record_select :order, options, :medical_orders
   end
+
+  def consultation_images_column(record)
+    if record.images.empty?
+      "None"
+    else
+      record.images.size.to_s
+    end
+  end
 end
