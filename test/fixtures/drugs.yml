@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  how_often_in_hours: 1
+  how_often_in_wight: 1
+  recipe: MyText
+
+two:
+  name: MyString
+  how_often_in_hours: 1
+  how_often_in_wight: 1
+  recipe: MyText
