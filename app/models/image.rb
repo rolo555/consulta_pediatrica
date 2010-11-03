@@ -4,4 +4,5 @@ class Image < ActiveRecord::Base
     :styles => { :thumbnail => "100x100>" }
   #FIXME: Se tiene que poner default_url?
   #    :default_url => "missing.png"
+  belongs_to :imaginable, :polymorphic => true
 end

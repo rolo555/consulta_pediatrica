@@ -1,6 +1,7 @@
 class Consultation < ActiveRecord::Base
   #Relaciones
   belongs_to :patient
+  has_many :images, :as => :imaginable
 
   #Validaciones
   validates_numericality_of :weight,

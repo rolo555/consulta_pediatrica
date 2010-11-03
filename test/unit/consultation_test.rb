@@ -3,6 +3,7 @@ require 'test_helper'
 class ConsultationTest < ActiveSupport::TestCase
   neg = -1
   should belong_to :patient
+  should have_many(:images)#.dependent(:destroy)
   should validate_numericality_of :weight
   should_not allow_value(neg).for(:weight)
   should allow_value(nil).for(:weight)
