@@ -184,6 +184,25 @@ ActiveRecord::Schema.define(:version => 20101103200701) do
     t.datetime "updated_at"
   end
 
+  create_table "surgeries", :force => true do |t|
+    t.string   "pre_operatiove_diagnosis"
+    t.string   "post_operative_diagnosis"
+    t.string   "sugeon"
+    t.string   "assistant"
+    t.string   "anesthesia_doctor"
+    t.text     "procedure"
+    t.text     "complicacions"
+    t.integer  "total_amount"
+    t.integer  "hospital_amount"
+    t.integer  "surgion_amount"
+    t.integer  "anesthesia_doctor_amount"
+    t.integer  "assistant_amount"
+    t.integer  "istrumentalist"
+    t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "surgical_records", :force => true do |t|
     t.integer  "patient_id"
     t.string   "pathology"
