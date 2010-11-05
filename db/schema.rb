@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(:version => 20101103200701) do
     t.datetime "updated_at"
   end
 
+  create_table "drugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "how_often_in_hours"
+    t.integer  "how_often_in_wight"
+    t.text     "recipe"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "emails", :force => true do |t|
     t.string   "address"
     t.integer  "patient_id"
