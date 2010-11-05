@@ -16,10 +16,10 @@ module ConsultationsHelper
   end
 
   def consultation_images_column(record)
-    if record.images.empty?
-      "None"
-    else
-      record.images.size.to_s
+    unless record.images.empty?
+      record.images.collect { |i|
+        image_tag i.image.url(:thumbnail)
+      }
     end
   end
 end
