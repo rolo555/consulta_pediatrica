@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  days_of_hospitalization: 1
+  surgery_time: MyString
+  medical_expenses: 9.99
+
+two:
+  days_of_hospitalization: 1
+  surgery_time: MyString
+  medical_expenses: 9.99

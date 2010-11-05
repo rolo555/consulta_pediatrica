@@ -6,6 +6,8 @@ class HospitalExpense < ActiveRecord::Base
   validates_length_of :concept, :maximum => 50, :if => "self.concept.presence"
   validates_uniqueness_of :concept, :case_sensitive => false
 
+  has_and_belongs_to_many :surgery_quotations
+
   def before_validation
     clean_whitespaces :concept
   end
