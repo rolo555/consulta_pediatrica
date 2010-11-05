@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016205212) do
+ActiveRecord::Schema.define(:version => 20101103225827) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(:version => 20101016205212) do
 
   create_table "diagnostics", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "drugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "how_often_in_hours"
+    t.integer  "how_often_in_wight"
+    t.text     "recipe"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -160,6 +169,25 @@ ActiveRecord::Schema.define(:version => 20101016205212) do
   create_table "places", :force => true do |t|
     t.string   "city"
     t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "surgeries", :force => true do |t|
+    t.string   "pre_operatiove_diagnosis"
+    t.string   "post_operative_diagnosis"
+    t.string   "sugeon"
+    t.string   "assistant"
+    t.string   "anesthesia_doctor"
+    t.text     "procedure"
+    t.text     "complicacions"
+    t.integer  "total_amount"
+    t.integer  "hospital_amount"
+    t.integer  "surgion_amount"
+    t.integer  "anesthesia_doctor_amount"
+    t.integer  "assistant_amount"
+    t.integer  "istrumentalist"
+    t.integer  "patient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
