@@ -17,9 +17,9 @@ module ConsultationsHelper
 
   def consultation_images_column(record)
     unless record.images.empty?
-      record.images.collect { |image|
-        image_tag image.url(:thumbnail)
-      }.concat
+      record.images.collect { |i|
+        image_tag i.image.url(:thumbnail)
+      }
     end
   end
 end
