@@ -26,7 +26,7 @@ class PatientsController < ApplicationController
     conf.columns.exclude :photograph_content_type, :photograph_file_name,
       :photograph_file_size, :photograph_updated_at, :family_records,
       :allergies, :perinatal_record, :surgical_records, :pathological_records,
-      :consultations
+      :consultations, :surgeries
 
     #Configuración del boton generar historial
     conf.action_links.add :patient_history,
