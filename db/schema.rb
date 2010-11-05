@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101103200701) do
+ActiveRecord::Schema.define(:version => 20101105033412) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -87,6 +87,13 @@ ActiveRecord::Schema.define(:version => 20101103200701) do
     t.string   "concept"
     t.integer  "price"
     t.boolean  "is_always_used"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hospital_expenses_surgery_quotations", :force => true do |t|
+    t.integer  "surgery_quotation_id"
+    t.integer  "hospital_expense_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -199,6 +206,15 @@ ActiveRecord::Schema.define(:version => 20101103200701) do
     t.integer  "assistant_amount"
     t.integer  "istrumentalist"
     t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "surgery_quotations", :force => true do |t|
+    t.integer  "days_of_hospitalization"
+    t.string   "surgery_time"
+    t.decimal  "medical_expenses"
+    t.integer  "consultation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
