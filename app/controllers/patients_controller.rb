@@ -20,7 +20,7 @@ class PatientsController < ApplicationController
     #Configuración de las columnas que se mostrarán al listar
     conf.list.columns = :photograph, :last_name, :first_name, :age, 
       :consultations, :family_records, :allergies, :perinatal_record,
-      :surgical_records, :pathological_records
+      :surgical_records, :pathological_records, :surgeries
 
     #Configuración de las columnas que se excluiran para todas las acciones
     conf.columns.exclude :photograph_content_type, :photograph_file_name,
@@ -62,6 +62,8 @@ class PatientsController < ApplicationController
     conf.columns[:consultation_price].form_ui = :select
 
     conf.columns[:place].form_ui = :record_select
+
+    conf.columns[:surgeries].label = ""
 
     #Configuracion de :perinatal_record para que sea un nested action
     conf.columns[:perinatal_record].set_link 'nested',

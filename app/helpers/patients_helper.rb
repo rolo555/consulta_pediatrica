@@ -21,4 +21,7 @@ module PatientsHelper
   def patient_pathological_records_column(record)
     image_tag "icons/pathologicalRecord.png", :title => "Pathological Records"
   end
+  def patient_surgeries_column(record)
+    image_tag "icons/surgery.png", :title => "Surgeries"
+  end
 end
