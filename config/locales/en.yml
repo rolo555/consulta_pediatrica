@@ -3,13 +3,6 @@
 
 en:
   activerecord:
-    models:
-      patient:
-        one: "Model in singular"
-        other: "Model in plural"
-    attributes:
-      model_name:
-        column_name: "Localized column name"
          # Action View
   number:
     # Used in number_with_delimiter()
@@ -32,7 +25,7 @@ en:
       format:
         # Where is the currency sign? %u is the currency unit, %n the number (default: $5.00)
         format: "%n %u"
-        unit: "€"
+        unit: "Bs"
         # These three are to override number.format and are optional
         separator: ","
         delimiter: "."
@@ -289,3 +282,58 @@ en:
 
       full_messages:
         format: "%{attribute} %{message}"
+
+    models:
+      address:
+        one: "Direccion"
+        other: "Direcciones"
+      patient:
+        one: "Paciente"
+        other: "Pacientes"
+      allergy:
+        one: "Alergia"
+        other: "Alergias"
+      consultation_price:
+        one: "Precio de consulta"
+        other: "Precios de consulta"
+      consultation:
+        one: "Consulta"
+        other: "Consultas"
+    attributes:
+      address:
+        address: "Direccion"
+      patient:
+        photograph: "Fotografia"
+        first_name: "Nombre"
+        last_name: "Apellido"
+        date_of_birth: "Fecha de nacimiento"
+        father: "Padre"
+        mother: "Madre"
+        observations: "Observaciones"
+        age: "Edad"
+        referenced_by: "Enviado por"
+      allergy:
+        substance: "Sustancia"
+        reaction: "Reaccion"
+      consultation_price:
+        price_type: "Tipo de precio"
+        amount: "Monto"
+        default: "Por defecto"
+      consultation:
+        weight: "Peso"
+        height: "Altura"
+#        head_circumference: ""
+
+
+#    models:
+
+
+        
+#    models:
+#      
+#    attributes:
+#      patient:
+#        
+
+#    models:
+#      allergy:
