@@ -4,7 +4,7 @@ class CreateSurgicalRecords < ActiveRecord::Migration
       t.integer :patient_id
       t.date :date
       t.string :pathology
-      t.string :procedure
+      t.text :procedure
 
       t.timestamps
     end
