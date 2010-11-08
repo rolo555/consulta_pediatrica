@@ -1,16 +1,10 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# Spanish translations for Rails
+# by Francisco Fernando García Nieto (ffgarcianieto@gmail.com)
+# contributors:
+#  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
 
-en:
-  activerecord:
-    models:
-      patient:
-        one: "Model in singular"
-        other: "Model in plural"
-    attributes:
-      model_name:
-        column_name: "Localized column name"
-         # Action View
+"es":
+  # Action View
   number:
     # Used in number_with_delimiter()
     # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
@@ -183,7 +177,7 @@ en:
       #       attributes:
       #         login:
       #           blank: "This is a custom blank message for User login"
-      # Will define custom blank validation message for User model and
+      # Will define custom blank validation message for User model and 
       # custom blank validation message for login attribute of User model.
       #models:
 
