@@ -192,11 +192,12 @@ ActiveRecord::Schema.define(:version => 20101105221033) do
   end
 
   create_table "surgeries", :force => true do |t|
-    t.string   "pre_operatiove_diagnosis"
+    t.string   "pre_operative_diagnosis"
     t.string   "post_operative_diagnosis"
     t.string   "sugeon"
     t.string   "assistant"
     t.string   "anesthesia_doctor"
+    t.string   "instrumentalist"
     t.text     "procedure"
     t.text     "complicacions"
     t.integer  "total_amount"
@@ -204,7 +205,7 @@ ActiveRecord::Schema.define(:version => 20101105221033) do
     t.integer  "surgion_amount"
     t.integer  "anesthesia_doctor_amount"
     t.integer  "assistant_amount"
-    t.integer  "istrumentalist"
+    t.integer  "instrumentalist_amount"
     t.integer  "patient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -222,7 +223,7 @@ ActiveRecord::Schema.define(:version => 20101105221033) do
   create_table "surgical_records", :force => true do |t|
     t.integer  "patient_id"
     t.string   "pathology"
-    t.string   "procedure"
+    t.text     "procedure"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "year"
