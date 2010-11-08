@@ -10,7 +10,7 @@ one:
   complicacions: MyText
   total_amount: 1
   hospital_amount: 1
-  surgion_amoun: 1
+  surgion_amount: 1
   anesthesia_doctor_amount: 1
   assistant_amount: 1
   istrumentalist: 1
@@ -26,7 +26,7 @@ two:
   complicacions: MyText
   total_amount: 1
   hospital_amount: 1
-  surgion_amoun: 1
+  surgion_amount: 1
   anesthesia_doctor_amount: 1
   assistant_amount: 1
   istrumentalist: 1
