@@ -287,9 +287,6 @@ en:
       address:
         one: "Direccion"
         other: "Direcciones"
-      patient:
-        one: "Paciente"
-        other: "Pacientes"
       allergy:
         one: "Alergia"
         other: "Alergias"
@@ -299,19 +296,57 @@ en:
       consultation:
         one: "Consulta"
         other: "Consultas"
+      diagnostic:
+        one: "Diagnostico"
+        other: "Diagnosticos"
+      drug:
+        one: "Medicamento"
+        other: "Medicamentos"
+      email:
+        one: "Correo"
+        other: "Correos"
+      family_record:
+        one: "Registro familiar"
+        other: "Registros familiares"
+      hospital_expense:
+        one: "Gasto hospitalario"
+        other: "Gastos hospitalarios"
+      laboratory_profile:
+        one: "Perfil de laboratorio"
+        other: "Perfiles de laboratorio"
+      medical_certificate:
+        one: "Certificado medico"
+        other: "Certificados medicos"
+      medical_order:
+        one: "Orden medico"
+        other: "Ordenes medicos"
+      pathological_record:
+        one: "Registro patologico"
+        other: "Registros patologicos"
+      patient:
+        one: "Paciente"
+        other: "Pacientes"
+      perinatal_record:
+        one: "Registro perinatal"
+        other: "Registros perinatales"
+      phone_number:
+        one: "Numero telefonico"
+        other: "Numeros telefonicos"
+      place:
+        one: "Lugar"
+        other: "Lugares"
+      surgery:
+        one: "Cirugia"
+        other: "Cirugias"
+      surgical_record:
+        one: "Registro de Cirugia"
+        other: "Registros de Cirugia"
+      surgical_staff:
+        one: "Personal de Cirugia"
+        other: "Personal de Cirugia"
     attributes:
       address:
         address: "Direccion"
-      patient:
-        photograph: "Fotografia"
-        first_name: "Nombre"
-        last_name: "Apellido"
-        date_of_birth: "Fecha de nacimiento"
-        father: "Padre"
-        mother: "Madre"
-        observations: "Observaciones"
-        age: "Edad"
-        referenced_by: "Enviado por"
       allergy:
         substance: "Sustancia"
         reaction: "Reaccion"
@@ -321,19 +356,94 @@ en:
         default: "Por defecto"
       consultation:
         weight: "Peso"
-        height: "Altura"
-#        head_circumference: ""
-
-
-#    models:
-
-
-        
-#    models:
-#      
-#    attributes:
-#      patient:
-#        
-
-#    models:
-#      allergy:
+        height: "Talla"
+        head_circumference: "Perimetro Cefalico"
+        anterior_fontanel: "Fontanel anterior"
+        temperature: "Temperatura"
+        amount: "Monto"
+        current_condition: "Condicion actual"
+        diagnosis: "Diagnostico"
+        medical_certificate: "Certificado medico"
+        recipe: "Receta"
+        order: "Orden"
+        laboratory: "Laboratorio"
+      diagnostic:
+        name: "Nombre"
+      drug:
+        name: "Nombre"
+        how_often_in_hours: "Frecuencia en horas"
+        how_often_in_wight: "Frecuencia en peso"
+        recipe: "Receta"
+      email:
+        address: "Direccion"
+      family_record:
+        pathology: "Patologia"
+        relation_ship: "Relacion"
+      hospital_expense:
+        concept: "Concepto"
+        price: "Precio"
+        is_always_used: "Es siempre usado"
+      laboratory_profile:
+        name: "Nombre"
+        text: "Texto"
+      medical_certificate:
+        name: "Nombre"
+        text: "Texto"
+      medical_order:
+        name: "Nombre"
+        text: "Texto"
+      pathological_record:
+        date: "Fecha"
+        diagnosis: "Diagnostico"
+        treatment: "Tratamiento"
+      patient:
+        photograph: "Fotografia"
+        first_name: "Nombre"
+        last_name: "Apellido"
+        date_of_birth: "Fecha de nacimiento"
+        father: "Padre"
+        mother: "Madre"
+        observations: "Observaciones"
+        age: "Edad"
+        referenced_by: "Referencia"
+      perinatal_record:
+        type_of_birth: "Tipo de Nacimiento"
+        jaundice: "Ictericia"
+        observations: "Observaciones"
+        number_of_pregnancy: "Numero de Embarazo"
+        childbirth: "Numero de hijo"
+        cesarea: "Cesarea"
+        abortions: "Abortos"
+        weeks_of_gestation: "Semanas de gestacion"
+        apgar1: "apgar"
+        apgar2: ""
+        height: "Talla"
+        weight: "Peso"
+        head_circumference: "Perimetro Cefalico"
+        body_perimeter: "Perimetro Toracico"
+      phone_number:
+        number: "Numero"
+      place:
+        city: "Ciudad"
+        country: "Pais"
+      surgery:
+        pre_operatiove_diagnosis: "Diagnostico pre operatorio"
+        post_operative_diagnosis: "Diagnostico post operatorio"
+        sugeon: "Cirujano"
+        assistant: "Ayudante"
+        anesthesis_doctor: "Anestesiologo"
+        instrumentalist: "Istrumentalista"
+        precedure: "Proceso"
+        complications: "Complicaciones"
+        total_amount: "Monto total"
+        hospital_amount: "Monto para hospital"
+        surgion_amount: "Monto para cirujano"
+        anesthesia_doctor_amount: "Monto para anestesiologo"
+        assistant_amount: "Monto para ayudante"
+        instrumentalist_amount: "Monto para istrumentalista"
+      surgical_record:
+        pathology: "Patologia"
+        procedure: "Procedimiento"
+        year: "Año"
+        month: "Mes"
+        day: "Dia"
