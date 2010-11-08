@@ -1,6 +1,6 @@
 class CreateJoinSurgeryQuotationWithHospitalExpense < ActiveRecord::Migration
   def self.up
-    create_table :hospital_expenses_surgery_quotations do |t|
+    create_table :hospital_expenses_surgery_quotations, :id => false do |t|
       t.integer :surgery_quotation_id
       t.integer :hospital_expense_id
 
