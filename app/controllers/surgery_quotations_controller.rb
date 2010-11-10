@@ -7,5 +7,7 @@ class SurgeryQuotationsController < ApplicationController
 
     conf.columns[:medical_expenses].options[:format] = :currency
     conf.columns[:medical_expenses].options[:i18n_options] = { :precision => 0 }
+
+    conf.list.columns << :total_expenses
   end
 end
