@@ -13,6 +13,10 @@ class SurgeryQuotation < ActiveRecord::Base
   validates_numericality_of :surgery_time, :greater_than => 0
 
   def to_label
-    medical_expenses
+    total_expenses
+  end
+
+  def total_expenses
+    medical_expenses + hospital_expenses.map { |e| e.price }.sum
   end
 end
