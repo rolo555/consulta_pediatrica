@@ -8,7 +8,7 @@ class Surgery < ActiveRecord::Base
   #Validaciones
   validates_presence_of :sugeon, :anesthesia_doctor, :total_amount
   validates_length_of :sugeon, :maximum => 50, :if => "self.sugeon.presence"
-  validates_length_of :pre_operatiove_diagnosis, :maximum => 50, :if => "self.pre_operatiove_diagnosis.presence"
+  validates_length_of :pre_operative_diagnosis, :maximum => 50, :if => "self.pre_operative_diagnosis.presence"
   validates_length_of :post_operative_diagnosis, :maximum => 50, :if => "self.post_operative_diagnosis.presence"
   validates_length_of :assistant, :maximum => 50, :if => "self.assistant.presence"
   validates_length_of :anesthesia_doctor, :maximum => 50, :if => "self.anesthesia_doctor.presence"
@@ -16,19 +16,19 @@ class Surgery < ActiveRecord::Base
   validates_numericality_of :total_amount,
     :only_integer => true,
     :greater_than_or_equal_to => 0,
-    :allow_nil => false
+    :if => "self.total_amount.presence"
 
   validates_numericality_of :hospital_amount,
     :only_integer => true,
     :greater_than_or_equal_to => 0,
-    :allow_nil => false
+    :if => "self.hospital_amount.presence"
 
   def before_validation
-    sanitizate_strings :pre_operatiove_diagnosis, :post_operative_diagnosis, :sugeon, :assistant, :anesthesia_doctor
+    sanitizate_strings :pre_operative_diagnosis, :post_operative_diagnosis, :sugeon, :assistant, :anesthesia_doctor
   end
 
   def to_label
-    "#{pre_operatiove_diagnosis}"
+    "#{pre_operative_diagnosis}"
   end
 
 end
