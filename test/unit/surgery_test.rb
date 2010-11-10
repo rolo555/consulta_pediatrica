@@ -1,8 +1,5 @@
 require 'test_helper'
 
 class SurgeryTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+  should have_many(:images)#.dependent(:destroy)
 end
