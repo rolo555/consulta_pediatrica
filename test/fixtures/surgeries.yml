@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  pre_operatiove_diagnosis: MyString
+  pre_operative_diagnosis: MyString
   post_operative_diagnosis: MyString
   sugeon: MyString
   assistant: MyString
@@ -10,14 +10,14 @@ one:
   complicacions: MyText
   total_amount: 1
   hospital_amount: 1
-  surgion_amoun: 1
+  surgion_amount: 1
   anesthesia_doctor_amount: 1
   assistant_amount: 1
-  istrumentalist: 1
+  instrumentalist: 1
   patient_id: 1
 
 two:
-  pre_operatiove_diagnosis: MyString
+  pre_operative_diagnosis: MyString
   post_operative_diagnosis: MyString
   sugeon: MyString
   assistant: MyString
@@ -26,8 +26,8 @@ two:
   complicacions: MyText
   total_amount: 1
   hospital_amount: 1
-  surgion_amoun: 1
+  surgion_amount: 1
   anesthesia_doctor_amount: 1
   assistant_amount: 1
-  istrumentalist: 1
+  instrumentalist: 1
   patient_id: 1
