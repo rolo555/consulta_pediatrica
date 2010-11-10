@@ -4,6 +4,7 @@ class Surgery < ActiveRecord::Base
 
   #Relaciones
   belongs_to :patient
+  has_many :images, :as => :imaginable
 
   #Validaciones
   validates_presence_of :sugeon, :anesthesia_doctor, :total_amount

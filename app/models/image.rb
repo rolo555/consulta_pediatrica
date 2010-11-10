@@ -10,5 +10,6 @@ class Image < ActiveRecord::Base
 
   #Validaciones
   #FIXME: No esta funcionando la validación
-  validates_presence_of :image_file_name
+  #validates_presence_of :image
+  validates_attachment_presence :image
 end
