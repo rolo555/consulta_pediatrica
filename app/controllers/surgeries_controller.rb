@@ -13,8 +13,10 @@ class SurgeriesController < ApplicationController
     end
   end
   
-  active_scaffold :surgeries do |conf|    
-    conf.columns.exclude :patient, :anesthesia_doctor_amount, :assistant_amount, :instrumentalist, :surgion_amount, :istrumentalist, :images
+  active_scaffold :surgeries do |conf|
+    conf.columns = :pre_operative_diagnosis, :post_operative_diagnosis,
+      :procedure, :complicacions, :sugeon, :anesthesia_doctor, :assistant,
+      :total_amount, :hospital_amount, :instrumentalist_amount
     conf.list.columns = :created_at, :pre_operative_diagnosis, :procedure, :total_amount, :surgion_amount, :images
 
     add_sub_groups conf.create
