@@ -19,4 +19,11 @@ class SurgeryQuotation < ActiveRecord::Base
   def total_expenses
     medical_expenses + hospital_expenses.map { |e| e.price }.sum
   end
+
+  def initialize
+    super()
+    if (@new_record)
+      self.hospital_expenses = HospitalExpense.find_all_by_is_always_used true
+    end
+  end
 end

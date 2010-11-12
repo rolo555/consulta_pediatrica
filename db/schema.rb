@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101105221033) do
+ActiveRecord::Schema.define(:version => 20101111225143) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -105,6 +105,15 @@ ActiveRecord::Schema.define(:version => 20101105221033) do
     t.datetime "image_updated_at"
     t.integer  "imaginable_id"
     t.string   "imaginable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "incomes", :force => true do |t|
+    t.text     "concept"
+    t.decimal  "amount"
+    t.integer  "payment_id"
+    t.string   "payment_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

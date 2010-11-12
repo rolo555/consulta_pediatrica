@@ -5,6 +5,7 @@ class Surgery < ActiveRecord::Base
   #Relaciones
   belongs_to :patient
   has_many :images, :as => :imaginable
+  has_one :income, :as => :payment
 
   #Validaciones
   validates_presence_of :sugeon, :anesthesia_doctor, :total_amount
@@ -28,8 +29,9 @@ class Surgery < ActiveRecord::Base
     sanitizate_strings :pre_operative_diagnosis, :post_operative_diagnosis, :sugeon, :assistant, :anesthesia_doctor
   end
 
-  def to_label
-    "#{pre_operative_diagnosis}"
+  def after_create
+    self.income = Income.new :concept => "Cirugía a #{patient.first_name} #{patient.last_name}",
+      :amount => total_amount
+    self.income.save
   end
-
 end
