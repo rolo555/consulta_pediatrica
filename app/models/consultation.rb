@@ -33,9 +33,15 @@ class Consultation < ActiveRecord::Base
 
   #FIXME: Consultation necesita método to_label
 
-  def after_create
-    self.income = Income.new :concept => "Consulta a #{patient.first_name} #{patient.last_name}",
-      :amount => amount
+  def before_create
+    self.income = Income.new
     self.income.save
   end
+
+  def after_save
+     self.income.concept = "Consulta a #{patient.first_name} #{patient.last_name}"
+     self.income.amount = amount
+     self.income.save
+  end
+
 end

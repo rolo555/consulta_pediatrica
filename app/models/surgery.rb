@@ -29,9 +29,15 @@ class Surgery < ActiveRecord::Base
     sanitizate_strings :pre_operative_diagnosis, :post_operative_diagnosis, :sugeon, :assistant, :anesthesia_doctor
   end
 
-  def after_create
-    self.income = Income.new :concept => "Cirugía a #{patient.first_name} #{patient.last_name}",
-      :amount => total_amount
+  def before_create
+    self.income = Income.new
     self.income.save
   end
+
+  def after_save
+     self.income.concept = "Cirugia a #{patient.first_name} #{patient.last_name}"
+     self.income.amount = total_amount
+     self.income.save
+  end
+
 end
