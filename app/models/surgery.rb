@@ -6,7 +6,7 @@ class Surgery < ActiveRecord::Base
   belongs_to :patient
   has_many :images, :as => :imaginable
   has_one :income, :as => :payment
-  has_and_belongs_to_many :surical_staff
+  has_and_belongs_to_many :surgical_staffs
 
   #Validaciones
   validates_presence_of :sugeon, :anesthesia_doctor, :total_amount

@@ -13,13 +13,13 @@ class SurgeriesController < ApplicationController
     end
 
     action.columns.add_subgroup "" do |group|
-      group.add :surgical_staff
+      group.add :surgical_staffs
     end
 
   end
   
   active_scaffold :surgeries do |conf|
-    conf.columns[:surgical_staff].form_ui = :record_select
+    conf.columns[:surgical_staffs].form_ui = :record_select
 
     conf.columns = :pre_operative_diagnosis, :post_operative_diagnosis,
       :procedure, :complicacions, :sugeon, :anesthesia_doctor, :assistant,
