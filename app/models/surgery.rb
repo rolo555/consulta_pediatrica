@@ -6,6 +6,7 @@ class Surgery < ActiveRecord::Base
   belongs_to :patient
   has_many :images, :as => :imaginable
   has_one :income, :as => :payment
+  has_and_belongs_to_many :surical_staff
 
   #Validaciones
   validates_presence_of :sugeon, :anesthesia_doctor, :total_amount
@@ -38,6 +39,10 @@ class Surgery < ActiveRecord::Base
      self.income.concept = "Cirugia a #{patient.first_name} #{patient.last_name}"
      self.income.amount = total_amount
      self.income.save
+  end
+
+  def to_label
+    "#{pre_operative_diagnosis}"
   end
 
 end
