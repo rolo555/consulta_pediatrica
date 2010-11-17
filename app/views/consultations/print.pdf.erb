@@ -19,7 +19,7 @@
   <p><%= @consultation.current_condition %></p>
 <% end %>
 
-<% if params[:record][print_diagnosis] ==  on %>
+<% if params[:record][:print_diagnosis] ==  "on" %>
   <p>Diagnosis:</p>
   <p><%= @consultation.diagnosis %></p>
 <% end %>

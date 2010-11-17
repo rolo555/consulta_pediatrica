@@ -43,7 +43,11 @@ class ConsultationsController < ApplicationController
 
     add_sub_groups conf.create
     add_sub_groups conf.update
-    add_sub_groups conf.show
+    #add_sub_groups conf.show
+
+    conf.action_links.add :print,
+      :type => :member
+    #      :parameters => { :id => "0" }
 
   end
 
@@ -64,14 +68,29 @@ class ConsultationsController < ApplicationController
   end
 
   def print
-    @consultation = Consultation.find params[:id]
-    respond_to do |format|
-      format.pdf do
-        render :pdf => "print",
-          :stylesheets => ["application","prince"],
-          :layout => "pdf"
+    if params[:record]
+      @consultation = Consultation.find params[:id]
+      respond_to do |format|
+        format.pdf do
+          render :pdf => "print",
+            :stylesheets => ["application","prince"],
+            :layout => "pdf"
+        end
       end
+    else
+      @record = Consultation.find params[:id]
+      render :layout => false
     end
   end
+  #  def print
+  #    @consultation = Consultation.find params[:id]
+  #    respond_to do |format|
+  #      format.pdf do
+  #        render :pdf => "print",
+  #          :stylesheets => ["application","prince"],
+  #          :layout => "pdf"
+  #      end
+  #    end
+  #  end
 
 end
