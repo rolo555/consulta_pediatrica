@@ -1,52 +1,51 @@
-<%= debug params[:record]  %>
 
 <h1>Consultation</h1>
-<% if params[:record][:print_personal_data] == "on" %>
+<% if params[:record][:print_personal_data] %>
   <p>Weight:</p>
-  <p><%= @consultation.weight %></p>
+  <p><%= params[:record][:weight] %></p>
   <p>Height:</p>
-  <p><%= @consultation.head_circumference %></p>
+  <p><%= params[:record][:height] %></p>
   <p>Head circumference:</p>
-  <p><%= @consultation.head_circumference %></p>
+  <p><%= params[:record][:head_circumference] %></p>
   <p>Anterior fontanel:</p>
-  <p><%= @consultation.anterior_fontanel %></p>
+  <p><%= params[:record][:anterior_fontanel] %></p>
   <p>Temperature:</p>
-  <p><%= @consultation.temperature %></p>
+  <p><%= params[:record][:temperature] %></p>
 <% end %>
 
-<% if params[:record][:print_current_condition] ==  "on" %>
+<% if params[:record][:print_current_condition] %>
   <p>Current condition:</p>
-  <p><%= @consultation.current_condition %></p>
+  <p><%= params[:record][:current_condition] %></p>
 <% end %>
 
-<% if params[:record][:print_diagnosis] ==  "on" %>
+<% if params[:record][:print_diagnosis] %>
   <p>Diagnosis:</p>
-  <p><%= @consultation.diagnosis %></p>
+  <p><%= params[:record][:diagnosis] %></p>
 <% end %>
 
-<% if params[:record][:print_medical_certificate] ==  "on" %>
+<% if params[:record][:print_medical_certificate] %>
   <p>Medical certificate:</p>
-  <p><%= @consultation.medical_certificate %></p>
+  <p><%= params[:record][:medical_certificate] %></p>
 <% end %>
 
-<% if params[:record][:print_recipe] ==  "on" %>
+<% if params[:record][:print_recipe] %>
   <p>Recipe:</p>
-  <p><%= @consultation.recipe %></p>
+  <p><%= params[:record][:recipe] %></p>
 <% end %>
 
-<% if params[:record][:print_order] ==  "on" %>
+<% if params[:record][:print_order] %>
   <p>Order:</p>
-  <p><%= @consultation.order %></p>
+  <p><%= params[:record][:order] %></p>
 <% end %>
 
-<% if params[:record][:print_laboratory] ==  "on" %>
+<% if params[:record][:print_laboratory] %>
   <p>Laboratory:</p>
-  <p><%= @consultation.laboratory %></p>
+  <p><%= params[:record][:laboratory] %></p>
 <% end %>
 
-<% if params[:record][:print_amount] ==  "on" %>
+<% if params[:record][:print_amount] %>
   <p>Amount:</p>
-  <p><%= @consultation.amount%></p>
+  <p><%= params[:record][:amount] %></p>
 <% end %>
 
 

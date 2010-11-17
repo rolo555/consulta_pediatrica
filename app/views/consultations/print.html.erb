@@ -1,26 +1,11 @@
 <% url_options = params_for(:action => :print) -%>
-<% xhr ||= request.xhr? -%>
 <%=
-if xhr
-    form_remote_tag :url => url_options,
-      :after => "$('#{loading_indicator_id(:action => :print, :id => params[:id])}').style.visibility = 'visible'; Form.disable('#{element_form_id(:action => :print)}');",
-      :complete => "$('#{loading_indicator_id(:action => :print, :id => params[:id])}').style.visibility = 'hidden'; Form.enable('#{element_form_id(:action => :print)}');",
-      :failure => "ActiveScaffold.report_500_response('#{active_scaffold_id}')",
-      :html => {
-      :href => url_for(url_options),
-      :onsubmit => onsubmit,
-      :id => element_form_id(:action => :print),
-      :class => 'print',
-      :method => :put
-    }
-else
   form_tag url_options,
     :onsubmit => onsubmit,
     :id => element_form_id(:action => :print),
     :multipart => active_scaffold_config.update.multipart?,
     :class => 'print',
     :method => :put
-end
 %>
 
 <h4><%= @record.to_label.nil? ? active_scaffold_config.update.label : as_(:print_model, :model => clean_column_value(@record.to_label)) %></h4>
