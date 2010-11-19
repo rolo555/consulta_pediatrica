@@ -7,23 +7,18 @@ class Consultation < ActiveRecord::Base
 
   #Validaciones
   validates_numericality_of :weight,
-    :only_integer => true,
     :greater_than_or_equal_to => 0,
     :allow_nil => true
   validates_numericality_of :height,
-    :only_integer => true,
     :greater_than_or_equal_to => 0,
     :allow_nil => true
   validates_numericality_of :temperature,
-    :only_integer => true,
     :greater_than_or_equal_to => 0,
     :allow_nil => true
   validates_numericality_of :head_circumference,
-    :only_integer => true,
     :greater_than_or_equal_to => 0,
     :allow_nil => true
   validates_numericality_of :anterior_fontanel,
-    :only_integer => true,
     :greater_than_or_equal_to => 0,
     :allow_nil => true
   validates_numericality_of :amount,
@@ -31,9 +26,11 @@ class Consultation < ActiveRecord::Base
     :greater_than_or_equal_to => 0,
     :allow_nil => true
 
-  #FIXME: Consultation necesita método to_label
+  def to_label
+    "#{created_at.strftime("%d-%m-%Y %H:%M")} #{self.patient.first_name} #{self.patient.last_name} #{diagnosis} "
+  end
 
-  def before_create
+  def after_create
     self.income = Income.new
     self.income.save
   end

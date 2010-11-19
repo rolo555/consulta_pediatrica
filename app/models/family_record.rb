@@ -16,5 +16,7 @@ class FamilyRecord < ActiveRecord::Base
     sanitizate_strings :pathology, :relation_ship
   end
 
-  #FIXME: FamilyRecord necesita método to_label
+  def to_label
+    pathology
+  end
 end
