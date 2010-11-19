@@ -21,17 +21,17 @@
     <div id="nav_container">
       <ul id="nav">
         <%=  %>
-        <li><%= link_to active_scaffold_config_for(Patient).list.label, :controller => 'Patients' %></li>
-        <li><%= link_to active_scaffold_config_for(Place).list.label, :controller => 'places' %></li>
-        <li><%= link_to active_scaffold_config_for(ConsultationPrice).list.label, :controller => 'consultation_prices' %></li>
-        <li><%= link_to active_scaffold_config_for(LaboratoryProfile).list.label, :controller => 'laboratory_profiles' %></li>
-        <li><%= link_to active_scaffold_config_for(Diagnostic).list.label, :controller => 'diagnostics' %></li>
-        <li><%= link_to active_scaffold_config_for(MedicalCertificate).list.label, :controller => 'medical_certificates' %></li>
-        <li><%= link_to active_scaffold_config_for(MedicalOrder).list.label, :controller => 'medical_orders' %></li>
-        <li><%= link_to active_scaffold_config_for(Drug).list.label, :controller => 'drugs' %></li>
-        <li><%= link_to active_scaffold_config_for(HospitalExpense).list.label, :controller => 'hospital_expenses' %></li>
-        <li><%= link_to active_scaffold_config_for(SurgicalStaff).list.label, :controller => 'surgical_staffs' %></li>
-        <li><%= link_to active_scaffold_config_for(Income).list.label, :controller => 'incomes' %></li>
+        <li><%= link_to plural_for(Patient), :controller => 'patients' %></li>
+        <li><%= link_to plural_for(Place), :controller => 'places' %></li>
+        <li><%= link_to plural_for(ConsultationPrice), :controller => 'consultation_prices' %></li>
+        <li><%= link_to plural_for(LaboratoryProfile), :controller => 'laboratory_profiles' %></li>
+        <li><%= link_to plural_for(Diagnostic), :controller => 'diagnostics' %></li>
+        <li><%= link_to plural_for(MedicalCertificate), :controller => 'medical_certificates' %></li>
+        <li><%= link_to plural_for(MedicalOrder), :controller => 'medical_orders' %></li>
+        <li><%= link_to plural_for(Drug), :controller => 'drugs' %></li>
+        <li><%= link_to plural_for(HospitalExpense), :controller => 'hospital_expenses' %></li>
+        <li><%= link_to plural_for(SurgicalStaff), :controller => 'surgical_staffs' %></li>
+        <li><%= link_to plural_for(Income), :controller => 'incomes' %></li>
       </ul>
     </div>
   <% end %>
