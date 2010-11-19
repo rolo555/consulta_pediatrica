@@ -7,14 +7,14 @@ class ConsultationsController < ApplicationController
     action.columns.add_subgroup "current_condition" do |group|
       group.add :current_condition
     end
+    action.columns.add_subgroup "recipe" do |group|
+      group.add :recipe
+    end
     action.columns.add_subgroup "diagnosis" do |group|
       group.add :diagnosis
     end
     action.columns.add_subgroup "medical_certificate" do |group|
       group.add :medical_certificate
-    end
-    action.columns.add_subgroup "recipe" do |group|
-      group.add :recipe
     end
     action.columns.add_subgroup "order" do |group|
       group.add :order
@@ -41,8 +41,8 @@ class ConsultationsController < ApplicationController
     conf.columns[:amount].options[:format] = :currency
     conf.columns[:amount].options[:i18n_options] = { :precision => 0 }
 
-    add_sub_groups conf.create
-    add_sub_groups conf.update
+#    add_sub_groups conf.create
+#    add_sub_groups conf.update
     #add_sub_groups conf.show
 
     conf.action_links.add :print,
@@ -69,7 +69,8 @@ class ConsultationsController < ApplicationController
 
   def print
     if params[:record]
-      @consultation = Consultation.find params[:id]
+      consultation = Consultation.find params[:id]
+      @patient = consultation.patient
       respond_to do |format|
         format.pdf do
           render :pdf => "print",
