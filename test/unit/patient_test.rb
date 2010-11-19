@@ -29,7 +29,7 @@ class PatientTest < ActiveSupport::TestCase
 
   valid_method_should_call_clean_whitespaces_of_all_strings Patient, [:photograph_content_type, :photograph_file_name]
 
-  context 'to_label method' do
+  context 'to_label function' do
     should 'return first_name and last_name' do
       patient = Patient.new :first_name => 'Juansito', :last_name => 'Pinto'
       assert_equal 'Juansito Pinto', patient.to_label
@@ -98,6 +98,41 @@ class PatientTest < ActiveSupport::TestCase
       patient = patients(:juan)
       patient.date_of_birth = date
       assert_equal("2 years 10 days", patient.age)
+    end
+  end
+
+  context "clone_patient function" do
+    should "call clone function" do
+      patient = mock('patient', :first_name => 'Juansito')
+      patient.expects(:clone).once
+      patient.clone_patient
+    end
+
+    should "concat \"TWIN\" to first_name" do
+      patient = Patient.new :first_name => 'Juansito'
+      assert_equal 'Juansito TWIN', patient.clone_patient.first_name
+    end
+
+    should "set photograph to nil" do
+      patient = Patient.new :first_name => ''
+      assert_equal false, patient.clone_patient.photograph?
+    end
+  end
+
+  context "amount function" do
+    should "return consultation_price.amount if is present" do
+      consultation_price = ConsultationPrice.new
+      consultation_price.stubs(:present? => true, :amount => 999)
+      patient = Patient.new(:consultation_price => consultation_price)
+      assert_equal 999, patient.amount
+    end
+
+    should "return amount if consultation_price is not present" do
+      consultation_price = ConsultationPrice.new
+      consultation_price.stubs :present? => false, :amount => 999
+      patient = Patient.new
+      patient.stubs :consultation_price => consultation_price, :amount => 200
+      assert_equal 200, patient.amount
     end
   end
 end
