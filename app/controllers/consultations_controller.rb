@@ -49,6 +49,13 @@ class ConsultationsController < ApplicationController
       :type => :member
     #      :parameters => { :id => "0" }
 
+    conf.columns[:weight].description = " Kg. "
+    conf.columns[:height].description = " cm. "
+    conf.columns[:head_circumference].description = " cm. "
+    conf.columns[:anterior_fontanel].description = " cm. "
+    conf.columns[:temperature].description = " &#176;C "
+    conf.columns[:amount].description = " Bs. "
+
   end
 
   def default_values(consultation)
