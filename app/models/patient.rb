@@ -1,9 +1,7 @@
 include ModelHelper
 
 class Patient < ActiveRecord::Base
-
   protected :before_validation
-
   #Relaciones
   has_many :emails, :dependent => :destroy
   has_many :consultations, :dependent => :destroy
@@ -31,7 +29,7 @@ class Patient < ActiveRecord::Base
   validates_length_of :emails, :maximum => 50, :if => "self.emails.presence"
   validates_length_of :first_name, :maximum => 50, :if => "self.first_name.presence"
   validates_length_of :last_name, :maximum => 50, :if => "self.last_name.presence"
-  validate :date_of_birth_must_be_lower_than_tomorrow
+  validate :date_of_birth_cant_be_greater_than_today
 
   def to_label
     "#{first_name} #{last_name}"
@@ -76,7 +74,7 @@ class Patient < ActiveRecord::Base
     amount
   end
 
-  def date_of_birth_must_be_lower_than_tomorrow
+  def date_of_birth_cant_be_greater_than_today
     unless self.date_of_birth.nil?
       if (self.date_of_birth <=> Date.today) > 0
         errors.add :date_of_birth, 'can\'t be greater than today'
