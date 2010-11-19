@@ -290,6 +290,9 @@ es:
       allergy:
         one: "Alergia"
         other: "Alergias"
+      balance:
+        one: "Balance"
+        other: "Balances"
       consultation_price:
         one: "Precio de consulta"
         other: "Precios de consulta"
@@ -311,6 +314,9 @@ es:
       hospital_expense:
         one: "Gasto hospitalario"
         other: "Gastos hospitalarios"
+      income:
+        one: "Ingreso"
+        other: "Ingresos"
       laboratory_profile:
         one: "Perfil de laboratorio"
         other: "Perfiles de laboratorio"
@@ -350,6 +356,10 @@ es:
       allergy:
         substance: "Sustancia"
         reaction: "Reaccion"
+      balance:
+        date_start: "Fecha de inicio"
+        date_finish: "Fecha final"
+        created_at: "Creado en"
       consultation_price:
         price_type: "Tipo de precio"
         amount: "Monto"
@@ -383,6 +393,10 @@ es:
         concept: "Concepto"
         price: "Precio"
         is_always_used: "Es siempre usado"
+      income:
+        concept: "Concepto"
+        amount: "Monto"
+        created_at: "Creado en"
       laboratory_profile:
         name: "Nombre"
         text: "Texto"
@@ -406,6 +420,11 @@ es:
         observations: "Observaciones"
         age: "Edad"
         referenced_by: "Referencia"
+        consultation_price: "Precio de consulta"
+        place: "Lugar"
+        addresses: "Direcciones"
+        phone_numbers: "Numeros telefonicos"
+        emails: "Correos electronicos"
       perinatal_record:
         type_of_birth: "Tipo de Nacimiento"
         jaundice: "Ictericia"
@@ -447,6 +466,10 @@ es:
         year: "Año"
         month: "Mes"
         day: "Dia"
+      surgical_staff:
+        staff: "Personal"
+        peercentage: "Porcentage"
+        is_always_present: "Siempre esta presente"
 
   active_scaffold:
     add: 'Añadir'
@@ -459,7 +482,7 @@ es:
     close: 'Cerrar'
     create: 'Crear'
     create_model: 'Crear {{model}}'
-    create_another: 'Crear Otro {{model}}'
+    create_another: 'Crear Otro/a {{model}}'
     created_model: '{{model}} creado'
     create_new: 'Crear Nuevo'
     customize: 'Personalizar'
@@ -520,3 +543,16 @@ es:
     cant_destroy_record: "No se pudo borrar {{record}}"
     internal_error: 'Petición fallida (código 500, error interno)'
     version_inconsistency: 'Inconsistencia de versiones - este registro se ha modificado después de que empezó a editarlo.'
+
+    #Patient
+    patient_history: 'Historial de paciente'
+    clone: 'Clonar'
+    Personal data: 'Datos personales'
+    Parents data: 'Padres'
+    Medical data: 'Datos medicos'
+    Amount: 'Monto'
+    can't be greater than: 'no puede ser mayor que'
+    today: 'hoy'
+
+    #surgical_record
+    Date: 'Fecha'

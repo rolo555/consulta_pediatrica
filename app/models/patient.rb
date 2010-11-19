@@ -79,7 +79,7 @@ class Patient < ActiveRecord::Base
   def date_of_birth_must_be_lower_than_tomorrow
     unless self.date_of_birth.nil?
       if (self.date_of_birth <=> Date.today) > 0
-        errors.add :date_of_birth, 'can\'t be greater than today'
+        errors.add :date_of_birth, "#{as_('can\'t be greater than')} #{as_('today')}"
       end
     end
   end
