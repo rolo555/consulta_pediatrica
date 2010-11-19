@@ -1,10 +1,9 @@
-# Spanish translations for Rails
-# by Francisco Fernando García Nieto (ffgarcianieto@gmail.com)
-# contributors:
-#  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-"es":
-  # Action View
+es:
+  activerecord:
+         # Action View
   number:
     # Used in number_with_delimiter()
     # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
@@ -26,7 +25,7 @@
       format:
         # Where is the currency sign? %u is the currency unit, %n the number (default: $5.00)
         format: "%n %u"
-        unit: "€"
+        unit: "Bs"
         # These three are to override number.format and are optional
         separator: ","
         delimiter: "."
@@ -177,7 +176,7 @@
       #       attributes:
       #         login:
       #           blank: "This is a custom blank message for User login"
-      # Will define custom blank validation message for User model and 
+      # Will define custom blank validation message for User model and
       # custom blank validation message for login attribute of User model.
       #models:
 
@@ -283,3 +282,277 @@
 
       full_messages:
         format: "%{attribute} %{message}"
+
+    models:
+      address:
+        one: "Direccion"
+        other: "Direcciones"
+      allergy:
+        one: "Alergia"
+        other: "Alergias"
+      balance:
+        one: "Balance"
+        other: "Balances"
+      consultation_price:
+        one: "Precio de consulta"
+        other: "Precios de consulta"
+      consultation:
+        one: "Consulta"
+        other: "Consultas"
+      diagnostic:
+        one: "Diagnostico"
+        other: "Diagnosticos"
+      drug:
+        one: "Medicamento"
+        other: "Medicamentos"
+      email:
+        one: "Correo"
+        other: "Correos"
+      family_record:
+        one: "Registro familiar"
+        other: "Registros familiares"
+      hospital_expense:
+        one: "Gasto hospitalario"
+        other: "Gastos hospitalarios"
+      income:
+        one: "Ingreso"
+        other: "Ingresos"
+      laboratory_profile:
+        one: "Perfil de laboratorio"
+        other: "Perfiles de laboratorio"
+      medical_certificate:
+        one: "Certificado medico"
+        other: "Certificados medicos"
+      medical_order:
+        one: "Orden medico"
+        other: "Ordenes medicos"
+      pathological_record:
+        one: "Registro patologico"
+        other: "Registros patologicos"
+      patient:
+        one: "Paciente"
+        other: "Pacientes"
+      perinatal_record:
+        one: "Registro perinatal"
+        other: "Registros perinatales"
+      phone_number:
+        one: "Numero telefonico"
+        other: "Numeros telefonicos"
+      place:
+        one: "Lugar"
+        other: "Lugares"
+      surgery:
+        one: "Cirugia"
+        other: "Cirugias"
+      surgical_record:
+        one: "Registro de Cirugia"
+        other: "Registros de Cirugia"
+      surgical_staff:
+        one: "Personal de Cirugia"
+        other: "Personal de Cirugia"
+    attributes:
+      address:
+        address: "Direccion"
+      allergy:
+        substance: "Sustancia"
+        reaction: "Reaccion"
+      balance:
+        date_start: "Fecha de inicio"
+        date_finish: "Fecha final"
+        created_at: "Creado en"
+      consultation_price:
+        price_type: "Tipo de precio"
+        amount: "Monto"
+        default: "Por defecto"
+      consultation:
+        weight: "Peso"
+        height: "Talla"
+        head_circumference: "Perimetro Cefalico"
+        anterior_fontanel: "Fontanel anterior"
+        temperature: "Temperatura"
+        amount: "Monto"
+        current_condition: "Condicion actual"
+        diagnosis: "Diagnostico"
+        medical_certificate: "Certificado medico"
+        recipe: "Receta"
+        order: "Orden"
+        laboratory: "Laboratorio"
+      diagnostic:
+        name: "Nombre"
+      drug:
+        name: "Nombre"
+        how_often_in_hours: "Frecuencia en horas"
+        how_often_in_wight: "Frecuencia en peso"
+        recipe: "Receta"
+      email:
+        address: "Direccion"
+      family_record:
+        pathology: "Patologia"
+        relation_ship: "Relacion"
+      hospital_expense:
+        concept: "Concepto"
+        price: "Precio"
+        is_always_used: "Es siempre usado"
+      income:
+        concept: "Concepto"
+        amount: "Monto"
+        created_at: "Creado en"
+      laboratory_profile:
+        name: "Nombre"
+        text: "Texto"
+      medical_certificate:
+        name: "Nombre"
+        text: "Texto"
+      medical_order:
+        name: "Nombre"
+        text: "Texto"
+      pathological_record:
+        date: "Fecha"
+        diagnosis: "Diagnostico"
+        treatment: "Tratamiento"
+      patient:
+        photograph: "Fotografia"
+        first_name: "Nombre"
+        last_name: "Apellido"
+        date_of_birth: "Fecha de nacimiento"
+        father: "Padre"
+        mother: "Madre"
+        observations: "Observaciones"
+        age: "Edad"
+        referenced_by: "Referencia"
+        consultation_price: "Precio de consulta"
+        place: "Lugar"
+        addresses: "Direcciones"
+        phone_numbers: "Numeros telefonicos"
+        emails: "Correos electronicos"
+      perinatal_record:
+        type_of_birth: "Tipo de Nacimiento"
+        jaundice: "Ictericia"
+        observations: "Observaciones"
+        number_of_pregnancy: "Numero de Embarazo"
+        childbirth: "Numero de hijo"
+        cesarea: "Cesarea"
+        abortions: "Abortos"
+        weeks_of_gestation: "Semanas de gestacion"
+        apgar1: "apgar"
+        apgar2: ""
+        height: "Talla"
+        weight: "Peso"
+        head_circumference: "Perimetro Cefalico"
+        body_perimeter: "Perimetro Toracico"
+      phone_number:
+        number: "Numero"
+      place:
+        city: "Ciudad"
+        country: "Pais"
+      surgery:
+        pre_operatiove_diagnosis: "Diagnostico pre operatorio"
+        post_operative_diagnosis: "Diagnostico post operatorio"
+        sugeon: "Cirujano"
+        assistant: "Ayudante"
+        anesthesis_doctor: "Anestesiologo"
+        instrumentalist: "Istrumentalista"
+        precedure: "Proceso"
+        complications: "Complicaciones"
+        total_amount: "Monto total"
+        hospital_amount: "Monto para hospital"
+        surgion_amount: "Monto para cirujano"
+        anesthesia_doctor_amount: "Monto para anestesiologo"
+        assistant_amount: "Monto para ayudante"
+        instrumentalist_amount: "Monto para istrumentalista"
+      surgical_record:
+        pathology: "Patologia"
+        procedure: "Procedimiento"
+        year: "Año"
+        month: "Mes"
+        day: "Dia"
+      surgical_staff:
+        staff: "Personal"
+        peercentage: "Porcentage"
+        is_always_present: "Siempre esta presente"
+
+  active_scaffold:
+    add: 'Añadir'
+    add_existing: 'Añadir Existente'
+    add_existing_model: 'Añadir {{model}} Existente'
+    are_you_sure_to_delete: '¿Estás seguro de que quieres borrar {{label}}?'
+    cancel: 'Cancelar'
+    click_to_edit: 'Pulsa para editar'
+    click_to_reset: 'Pulsa para restaurar'
+    close: 'Cerrar'
+    create: 'Crear'
+    create_model: 'Crear {{model}}'
+    create_another: 'Crear Otro/a {{model}}'
+    created_model: '{{model}} creado'
+    create_new: 'Crear Nuevo'
+    customize: 'Personalizar'
+    delete: 'Borrar'
+    deleted_model: '{{model}} borrado'
+    delimiter: 'Delimitador'
+    download: 'Descargar'
+    edit: 'Editar'
+    export: 'Exportar'
+    'false': 'No'
+    filtered: '(Filtrado)'
+    found:
+      one: 'encontrado'
+      other: 'encontrados'
+    hide: 'Ocultar'
+    live_search: 'Buscar en Vivo'
+    loading: 'Cargando…'
+    nested_for_model: '{{nested_model}} de {{parent_model}}'
+    next: 'Siguiente'
+    no_entries: 'Sin entradas'
+    no_options: 'sin opciones'
+    omit_header: 'Omitir Cabecera'
+    options: 'Opciones'
+    pdf: 'PDF'
+    previous: 'Anterior'
+    print: 'Imprimir'
+    refresh: 'Recargar'
+    remove: 'Eliminar'
+    remove_file: 'Eliminar o Reemplazar archivo'
+    replace_with_new: 'Reemplazar con Nuevo'
+    revisions_for_model: 'Revisiones de {{model}}'
+    reset: 'Restaurar'
+    saving: 'Guardando…'
+    search: 'Buscar'
+    search_terms: 'Términos a buscar'
+    _select_: '- seleccionar -'
+    show: 'Ver'
+    show_model: 'Ver {{model}}'
+    _to_ : ' a '
+    'true': 'Sí'
+    update: 'Actualizar'
+    update_model: 'Actualizar {{model}}'
+    updated_model: '{{model}} actualizado'
+    '=': '='
+    '>=': '>='
+    '<=': '<='
+    '>': '>'
+    '<': '<'
+    '!=': '!='
+    between: 'Entre'
+    is_null: 'Es nulo'
+    is_not_null: 'No es nulo'
+    contains: 'Contiene'
+    begins_with: 'Empieza con'
+    ends_with: 'Termina con'
+
+    # error_messages
+    cant_destroy_record: "No se pudo borrar {{record}}"
+    internal_error: 'Petición fallida (código 500, error interno)'
+    version_inconsistency: 'Inconsistencia de versiones - este registro se ha modificado después de que empezó a editarlo.'
+
+    #Patient
+    patient_history: 'Historial de paciente'
+    clone: 'Clonar'
+    Personal data: 'Datos personales'
+    Parents data: 'Padres'
+    Medical data: 'Datos medicos'
+    Amount: 'Monto'
+    can't be greater than: 'no puede ser mayor que'
+    today: 'hoy'
+
+    #surgical_record
+    Date: 'Fecha'
