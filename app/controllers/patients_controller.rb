@@ -35,7 +35,7 @@ class PatientsController < ApplicationController
     #Botón clonar
     conf.action_links.add :clone,
       :type => :member,
-      :confirm => "Are you sure to clone patient?",
+      :confirm => as_(:clone_patient_question),
       :parameters => { :controller => 'patients', :action => 'new' }
 
     #:date_of_birth muestra muestre mas años
