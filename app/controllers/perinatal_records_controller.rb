@@ -34,5 +34,11 @@ class PerinatalRecordsController < ApplicationController
     conf.columns[:type_of_birth].options = {:options => [:cesarea, :childbirth]}
 
     conf.columns[:weight].description = "By default <em>gr</em>, you can use <em>lb</em> and <em>kg</em>"
+    conf.columns[:height].description = " cm. "
+    conf.columns[:head_circumference].description = " cm. "
+    conf.columns[:body_perimeter].description = " cm. "
+    conf.columns[:weeks_of_gestation].description = " semanas "
+    conf.columns[:apgar1].description = " /10 "
+    conf.columns[:apgar2].description = " /5 "
   end
 end
