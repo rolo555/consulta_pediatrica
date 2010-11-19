@@ -27,7 +27,7 @@ class Consultation < ActiveRecord::Base
     :allow_nil => true
 
   def to_label
-    "#{created_at.strftime("%d-%m-%Y %H:%M")} #{self.patient.first_name} #{self.patient.last_name} #{diagnosis} "
+    "#{created_at.strftime("%d de %b %H:%M")} #{self.patient.first_name} #{self.patient.last_name} #{diagnosis} "
   end
 
   def after_create
