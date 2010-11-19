@@ -1,6 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-two:
+one:
   first_name: MyString
   last_name: MyString
   date_of_birth: 2010-09-02

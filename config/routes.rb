@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  
   map.resources :balances, :active_scaffold => true
   map.resources :incomes, :active_scaffold => true
   map.resources :surgery_quotations, :active_scaffold => true
@@ -19,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :places, :active_scaffold => true, :collection => {:browse => :get}, :member => {:select => :post}
   map.resources :phone_numbers, :active_scaffold => true
   map.resources :consultations, :active_scaffold => true
+  map.resources :consultation_prices, :active_scaffold => true, :collection => {:browse => :get}, :member => {:select => :post}
   map.resources :addresses, :active_scaffold => true
   map.resources :patients, :active_scaffold => true
   map.resources :emails, :active_scaffold => true
