@@ -66,12 +66,10 @@ class PatientsController < ApplicationController
   end
 
   def do_new
-    @params_id = params[:id]
-    if @params_id.present?
-      @record = Patient.find(@params_id).clone_patient
+    if params[:id]
+      @record = Patient.find(params[:id]).clone_patient
     else
-      @record = active_scaffold_config.model.new
-      @record.consultation_price = ConsultationPrice.find(:first, :conditions => { :default => true })
+      @record = new_model
     end
     apply_constraints_to_record(@record)
     params[:eid] = @old_eid if @remove_eid
