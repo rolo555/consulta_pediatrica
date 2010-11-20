@@ -86,9 +86,4 @@ class PatientsController < ApplicationController
       end
     end
   end
-
-  def after_create_save(patient)
-    patient.perinatal_record = PerinatalRecord.new
-    patient.save
-  end
 end

@@ -135,4 +135,12 @@ class PatientTest < ActiveSupport::TestCase
       assert_equal 200, patient.amount
     end
   end
+
+  context "after create" do
+    should "create a PerinatalRecord" do
+      patient = patients :one
+      patient.save
+      assert_not_nil patient.perinatal_record
+    end
+  end
 end

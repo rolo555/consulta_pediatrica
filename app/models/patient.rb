@@ -81,4 +81,9 @@ class Patient < ActiveRecord::Base
       end
     end
   end
+
+  def after_create
+    self.perinatal_record = PerinatalRecord.new
+    self.perinatal_record.save
+  end
 end
