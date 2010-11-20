@@ -86,4 +86,8 @@ class Patient < ActiveRecord::Base
     self.perinatal_record = PerinatalRecord.new
     self.perinatal_record.save
   end
+
+  def before_create
+    self.consultation_price = ConsultationPrice.find_by_default(true)
+  end
 end
