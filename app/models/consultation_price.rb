@@ -1,7 +1,6 @@
 include ModelHelper
 
 class ConsultationPrice < ActiveRecord::Base
-
   protected :before_validation
 
   #Relaciones
@@ -13,6 +12,7 @@ class ConsultationPrice < ActiveRecord::Base
   validates_numericality_of :amount, :only_integer => true, :greater_than_or_equal_to => 0
   validates_length_of :price_type, :maximum => 50, :if => "self.price_type.presence"
   validates_uniqueness_of :default, :if => :is_going_to_be_default
+  validate :cant_exist_none_consultation_price
 
   def is_going_to_be_default
     self.default
@@ -24,5 +24,9 @@ class ConsultationPrice < ActiveRecord::Base
 
   def before_validation
     sanitizate_strings :price_type
+  end
+
+  def cant_exist_none_consultation_price
+    errors.add :default, as_("can\'t be false, because at least one consultation price must be default") if (self.default == false) and ConsultationPrice.find_by_default(true).nil?
   end
 end

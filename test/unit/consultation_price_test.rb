@@ -17,6 +17,14 @@ class ConsultationPriceTest < ActiveSupport::TestCase
     assert_equal(cp.is_going_to_be_default, true);
   end
 
+  should "not allow none default consultation price" do
+    default_price = mock()
+    ConsultationPrice.stubs(:find_by_default).with(true).returns(default_price)
+    consultation_price = consultation_prices :one
+    consultation_price.save
+    assert_equal false, consultation_price.valid?
+  end
+
   context 'to_label method' do
     should 'return price_type and amount' do
       consultation_price = ConsultationPrice.new :price_type => "Casi gratis", :amount => 1

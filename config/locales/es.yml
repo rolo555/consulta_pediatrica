@@ -560,3 +560,5 @@ es:
     #surgical_record
     Date: 'Fecha'
 
+    #Consultation price
+    can't be false, because at least one consultation price must be default: no puede ser falso, porque al menos un precio de consulta debe estar por defecto
