@@ -5,6 +5,11 @@ class DrugTest < ActiveSupport::TestCase
   should validate_presence_of :recipe
   should ensure_length_of(:name).is_at_most(50)
   should validate_uniqueness_of :name
+  should validate_numericality_of(:how_often_in_hours)
+  should validate_numericality_of(:how_often_in_weight)
+  should_be_positive_number(:how_often_in_hours)
+  should_be_positive_number(:how_often_in_weight)
+  should_not allow_value(25).for(:how_often_in_hours)
   #validates_numericality_of :how_often_in_hours, :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 24, :if => "self.how_often_in_hours.presence"
   #validates_numericality_of :how_often_in_wight, :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 100,:if => "self.how_often_in_wight.presence"
 
