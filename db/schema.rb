@@ -249,7 +249,6 @@ ActiveRecord::Schema.define(:version => 20101118000115) do
 
   create_table "surgical_staffs", :force => true do |t|
     t.string   "staff"
-    t.float    "percentage"
     t.boolean  "is_always_present"
     t.datetime "created_at"
     t.datetime "updated_at"
