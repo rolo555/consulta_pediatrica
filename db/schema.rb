@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20101118000115) do
   create_table "drugs", :force => true do |t|
     t.string   "name"
     t.integer  "how_often_in_hours"
-    t.integer  "how_often_in_wight"
+    t.integer  "how_often_in_weight"
     t.text     "recipe"
     t.datetime "created_at"
     t.datetime "updated_at"
