@@ -472,7 +472,7 @@ es:
     description:
       drug:
         how_often_in_hours: Cuan seguido por horas
-        how_often_in_weight: Cuan seguido por kilogramos
+        how_often_in_weight: Cuan seguido por gramos
 
   active_scaffold:
     add: 'Añadir'
