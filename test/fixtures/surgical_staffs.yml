@@ -2,10 +2,8 @@
 
 one:
   staff: MyString
-  percentage: 1.5
   is_always_present: false
 
 two:
   staff: MyString
-  percentage: 1.5
   is_always_present: false
