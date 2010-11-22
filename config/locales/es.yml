@@ -557,3 +557,6 @@ es:
 
     #surgical_record
     Date: 'Fecha'
+
+    #Are you sure to clone patient?
+    clone_patient_question: ¿Esta seguro de clonar el paciente?
