@@ -8,4 +8,8 @@ module SurgeriesHelper
       "-"
     end
   end
+
+  def surgery_doctors_amount_column(record)
+    record.calculate_doctors_amount
+  end
 end

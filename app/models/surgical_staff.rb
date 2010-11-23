@@ -1,7 +1,7 @@
 include ModelHelper
 
 class SurgicalStaff < ActiveRecord::Base
-  has_and_belongs_to_many :surgeries
+  has_many :surgeries_surgical_staffs
 
   validates_presence_of :staff
   validates_length_of :staff, :maximum => 50

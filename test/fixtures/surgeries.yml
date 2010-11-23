@@ -3,31 +3,19 @@
 one:
   pre_operative_diagnosis: MyString
   post_operative_diagnosis: MyString
-  sugeon: MyString
-  assistant: MyString
-  anesthesia_doctor: MyString
   procedure: MyText
-  complicacions: MyText
+  complications: MyText
   total_amount: 1
   hospital_amount: 1
-  surgion_amount: 1
-  anesthesia_doctor_amount: 1
-  assistant_amount: 1
-  instrumentalist: 1
+  doctors_percentage: 1.5
   patient_id: 1
 
 two:
   pre_operative_diagnosis: MyString
   post_operative_diagnosis: MyString
-  sugeon: MyString
-  assistant: MyString
-  anesthesia_doctor: MyString
   procedure: MyText
-  complicacions: MyText
+  complications: MyText
   total_amount: 1
   hospital_amount: 1
-  surgion_amount: 1
-  anesthesia_doctor_amount: 1
-  assistant_amount: 1
-  instrumentalist: 1
+  doctors_percentage: 1.5
   patient_id: 1

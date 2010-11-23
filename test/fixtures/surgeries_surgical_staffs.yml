@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  surgery_id: 1
+  surgical_staff_id: 1
+
+two:
+  surgery_id: 1
+  surgical_staff_id: 1

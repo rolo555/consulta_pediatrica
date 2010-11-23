@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class SurgicalStaffTest < ActiveSupport::TestCase
-  should have_and_belong_to_many :surgeries
+  should have_many :surgeries_surgical_staffs
 
   should validate_presence_of :staff
   should ensure_length_of(:staff).is_at_most(50)

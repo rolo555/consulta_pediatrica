@@ -349,6 +349,9 @@ es:
       surgical_staff:
         one: "Personal de Cirugia"
         other: "Personal de Cirugia"
+      surgeries_surgical_staff:
+        one: "Personal en Cirugia"
+        other: "Personal en Cirugia"
     attributes:
       address:
         address: "Direccion"
@@ -445,20 +448,15 @@ es:
         city: "Ciudad"
         country: "Pais"
       surgery:
-        pre_operatiove_diagnosis: "Diagnostico pre operatorio"
+        pre_operative_diagnosis: "Diagnostico pre operatorio"
         post_operative_diagnosis: "Diagnostico post operatorio"
-        sugeon: "Cirujano"
-        assistant: "Ayudante"
-        anesthesis_doctor: "Anestesiologo"
-        instrumentalist: "Istrumentalista"
-        precedure: "Proceso"
+        procedure: "Procedimiento"
         complications: "Complicaciones"
         total_amount: "Monto total"
         hospital_amount: "Monto para hospital"
-        surgion_amount: "Monto para cirujano"
-        anesthesia_doctor_amount: "Monto para anestesiologo"
-        assistant_amount: "Monto para ayudante"
-        instrumentalist_amount: "Monto para istrumentalista"
+        doctors_percentage: "Porcentaje para el doctor"
+        doctors_amount: "Monto para el doctor"
+        surgeries_surgical_staffs: "Personal en cirugia"
       surgical_record:
         pathology: "Patologia"
         procedure: "Procedimiento"
@@ -469,6 +467,9 @@ es:
         staff: "Personal"
         peercentage: "Porcentage"
         is_always_present: "Siempre esta presente"
+      surgeries_surgical_staff:
+        name: Nombre
+        surgical_staff: Personal
     description:
       drug:
         how_often_in_hours: Cuan seguido por horas
@@ -564,3 +565,6 @@ es:
 
     #Consultation price
     can't be false, because at least one consultation price must be default: no puede ser falso, porque al menos un precio de consulta debe estar por defecto
+
+    #Surgery
+    amounts: Montos
