@@ -428,20 +428,21 @@ es:
         phone_numbers: "Numeros telefonicos"
         emails: "Correos electronicos"
       perinatal_record:
-        type_of_birth: "Tipo de Nacimiento"
+        type_of_birth: "Tipo de nacimiento"
         jaundice: "Ictericia"
         observations: "Observaciones"
-        number_of_pregnancy: "Numero de Embarazo"
-        childbirth: "Numero de hijo"
-        cesarea: "Cesarea"
+        number_of_pregnancy: "Número de embarazo"
+        childbirth: "Número de hijo"
+        cesarea: Cesárea
+        vaginal: Vaginal
         abortions: "Abortos"
-        weeks_of_gestation: "Semanas de gestacion"
-        apgar1: "apgar"
-        apgar2: ""
+        weeks_of_gestation: "Semanas de gestación"
+        apgar1: "Apgar a los 10"
+        apgar2: "Apgar a los 5"
         height: "Talla"
         weight: "Peso"
-        head_circumference: "Perimetro Cefalico"
-        body_perimeter: "Perimetro Toracico"
+        head_circumference: Perímetro cefálico
+        body_perimeter: Perímetro torácico
       phone_number:
         number: "Numero"
       place:

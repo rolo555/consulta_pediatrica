@@ -58,20 +58,13 @@ class Patient < ActiveRecord::Base
     sanitizate_strings :first_name, :last_name, :mother, :father, :referenced_by
   end
 
-  def clone_patient
-    twin = self.clone
+  def clone_patient(patient=self)
+    twin = patient.clone
     twin.first_name += " TWIN"
     twin.photograph = nil
     twin.created_at = DateTime.now
     twin.updated_at = DateTime.now
     twin
-  end
-
-  def amount
-    if consultation_price.present?
-      amount = self.consultation_price.amount
-    end
-    amount
   end
 
   def date_of_birth_cant_be_greater_than_today
@@ -82,12 +75,14 @@ class Patient < ActiveRecord::Base
     end
   end
 
-  def after_create
-    self.perinatal_record = PerinatalRecord.new
-    self.perinatal_record.save
+  def after_initialize
+    if @new_record
+      self.consultation_price = ConsultationPrice.find_by_default(true) if self.consultation_price.blank?
+    end
   end
 
-  def before_create
-    self.consultation_price = ConsultationPrice.find_by_default(true)
+  def after_create
+    self.perinatal_record = PerinatalRecord.new
+    self.save
   end
 end
