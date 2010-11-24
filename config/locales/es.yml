@@ -448,6 +448,7 @@ es:
         city: "Ciudad"
         country: "Pais"
       surgery:
+        created_at: Creado en
         pre_operative_diagnosis: "Diagnostico pre operatorio"
         post_operative_diagnosis: "Diagnostico post operatorio"
         procedure: "Procedimiento"
