@@ -65,12 +65,15 @@ class PatientsController < ApplicationController
     add_sub_groups conf.show
   end
 
+  #TODO: Tiene que existir una prueba para do_new cuando se quiere clonar
+  #TODO: Tiene que existir una prueba para do_new cuando llama al before_create
   def do_new
     if params[:id]
       @record = Patient.find(params[:id]).clone_patient
     else
       @record = new_model
     end
+    @record.before_create
     apply_constraints_to_record(@record)
     params[:eid] = @old_eid if @remove_eid
     @record
@@ -85,10 +88,5 @@ class PatientsController < ApplicationController
           :layout => "pdf"
       end
     end
-  end
-
-  def after_create_save(patient)
-    patient.perinatal_record = PerinatalRecord.new
-    patient.save
   end
 end

@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
     :full_text_search => true
 
   active_scaffold :place do |conf|
-    #Configuración de las columnas que se mostrarán
+    #Columnas que se mostrarán
     conf.columns = [:city, :country]
   end
 

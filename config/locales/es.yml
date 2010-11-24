@@ -2,8 +2,6 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 es:
-  activerecord:
-         # Action View
   number:
     # Used in number_with_delimiter()
     # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
@@ -351,6 +349,9 @@ es:
       surgical_staff:
         one: "Personal de Cirugia"
         other: "Personal de Cirugia"
+      surgeries_surgical_staff:
+        one: "Personal en Cirugia"
+        other: "Personal en Cirugia"
     attributes:
       address:
         address: "Direccion"
@@ -383,7 +384,7 @@ es:
       drug:
         name: "Nombre"
         how_often_in_hours: "Frecuencia en horas"
-        how_often_in_wight: "Frecuencia en peso"
+        how_often_in_weight: "Frecuencia en peso"
         recipe: "Receta"
       email:
         address: "Direccion"
@@ -447,20 +448,15 @@ es:
         city: "Ciudad"
         country: "Pais"
       surgery:
-        pre_operatiove_diagnosis: "Diagnostico pre operatorio"
+        pre_operative_diagnosis: "Diagnostico pre operatorio"
         post_operative_diagnosis: "Diagnostico post operatorio"
-        sugeon: "Cirujano"
-        assistant: "Ayudante"
-        anesthesis_doctor: "Anestesiologo"
-        instrumentalist: "Istrumentalista"
-        precedure: "Proceso"
+        procedure: "Procedimiento"
         complications: "Complicaciones"
         total_amount: "Monto total"
         hospital_amount: "Monto para hospital"
-        surgion_amount: "Monto para cirujano"
-        anesthesia_doctor_amount: "Monto para anestesiologo"
-        assistant_amount: "Monto para ayudante"
-        instrumentalist_amount: "Monto para istrumentalista"
+        doctors_percentage: "Porcentaje para el doctor"
+        doctors_amount: "Monto para el doctor"
+        surgeries_surgical_staffs: "Personal en cirugia"
       surgical_record:
         date: "Fecha"
         pathology: "Patologia"
@@ -472,6 +468,13 @@ es:
         staff: "Personal"
         peercentage: "Porcentage"
         is_always_present: "Siempre esta presente"
+      surgeries_surgical_staff:
+        name: Nombre
+        surgical_staff: Personal
+    description:
+      drug:
+        how_often_in_hours: Cuan seguido por horas
+        how_often_in_weight: Cuan seguido por gramos
 
   active_scaffold:
     add: 'Añadir'
@@ -555,9 +558,14 @@ es:
     Amount: 'Monto'
     can't be greater than: 'no puede ser mayor que'
     today: 'hoy'
+    #Are you sure to clone patient?
+    clone_patient_question: ¿Esta seguro de clonar el paciente?
 
     #surgical_record
     Date: 'Fecha'
 
-    #Are you sure to clone patient?
-    clone_patient_question: ¿Esta seguro de clonar el paciente?
+    #Consultation price
+    can't be false, because at least one consultation price must be default: no puede ser falso, porque al menos un precio de consulta debe estar por defecto
+
+    #Surgery
+    amounts: Montos

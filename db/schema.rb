@@ -9,7 +9,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20101123235913) do
+
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -69,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20101123235913) do
   create_table "drugs", :force => true do |t|
     t.string   "name"
     t.integer  "how_often_in_hours"
-    t.integer  "how_often_in_wight"
+    t.integer  "how_often_in_weight"
     t.text     "recipe"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -94,13 +96,6 @@ ActiveRecord::Schema.define(:version => 20101123235913) do
     t.string   "concept"
     t.integer  "price"
     t.boolean  "is_always_used"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "hospital_expenses_surgery_quotations", :id => false, :force => true do |t|
-    t.integer  "surgery_quotation_id"
-    t.integer  "hospital_expense_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -210,21 +205,23 @@ ActiveRecord::Schema.define(:version => 20101123235913) do
   create_table "surgeries", :force => true do |t|
     t.string   "pre_operative_diagnosis"
     t.string   "post_operative_diagnosis"
-    t.string   "sugeon"
-    t.string   "assistant"
-    t.string   "anesthesia_doctor"
-    t.string   "instrumentalist"
     t.text     "procedure"
-    t.text     "complicacions"
+    t.text     "complications"
     t.integer  "total_amount"
     t.integer  "hospital_amount"
-    t.integer  "surgion_amount"
-    t.integer  "anesthesia_doctor_amount"
-    t.integer  "assistant_amount"
-    t.integer  "instrumentalist_amount"
+    t.float    "doctors_percentage"
     t.integer  "patient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "doctors_amount"
+  end
+
+  create_table "surgeries_surgical_staffs", :force => true do |t|
+    t.integer  "surgery_id"
+    t.integer  "surgical_staff_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "surgery_quotations", :force => true do |t|
@@ -232,6 +229,13 @@ ActiveRecord::Schema.define(:version => 20101123235913) do
     t.string   "surgery_time"
     t.decimal  "medical_expenses"
     t.integer  "consultation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "surgery_surgical_staffs", :force => true do |t|
+    t.integer  "surgery_id"
+    t.integer  "surgical_staff_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -250,7 +254,6 @@ ActiveRecord::Schema.define(:version => 20101123235913) do
 
   create_table "surgical_staffs", :force => true do |t|
     t.string   "staff"
-    t.float    "percentage"
     t.boolean  "is_always_present"
     t.datetime "created_at"
     t.datetime "updated_at"

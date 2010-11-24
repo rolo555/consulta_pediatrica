@@ -135,4 +135,22 @@ class PatientTest < ActiveSupport::TestCase
       assert_equal 200, patient.amount
     end
   end
+
+  context "after create" do
+    should "create a PerinatalRecord" do
+      patient = Patient.new
+      patient.after_create
+      assert_not_nil patient.perinatal_record
+    end
+  end
+
+  context "before create" do
+    should "copy the first default ConsultationPrice to consultation_price" do
+      patient = Patient.new
+      consultation_price = ConsultationPrice.new
+      ConsultationPrice.stubs(:find_by_default).returns(consultation_price)
+      patient.before_create
+      assert_equal consultation_price, patient.consultation_price
+    end
+  end
 end

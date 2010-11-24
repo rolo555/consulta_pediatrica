@@ -3,11 +3,11 @@
 one:
   name: MyString
   how_often_in_hours: 1
-  how_often_in_wight: 1
+  how_often_in_weight: 1
   recipe: MyText
 
 two:
   name: MyString
   how_often_in_hours: 1
-  how_often_in_wight: 1
+  how_often_in_weight: 1
   recipe: MyText

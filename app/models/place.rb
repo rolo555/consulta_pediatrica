@@ -1,7 +1,6 @@
 include ModelHelper
 
 class Place < ActiveRecord::Base
-
   protected :before_validation
 
   #Relaciones
@@ -11,7 +10,6 @@ class Place < ActiveRecord::Base
   validates_presence_of :city, :country
   validates_length_of :city, :maximum => 50, :if => "self.city.presence"
   validates_length_of :country, :maximum => 50, :if => "self.country.presence"
-
   validates_uniqueness_of :city,
     :scope => [:country],
     :case_sensitive => false

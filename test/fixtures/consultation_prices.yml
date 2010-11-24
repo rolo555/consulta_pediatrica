@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-two:
+one:
   price_type: MyString
   amount: 9
-  default: false
+  default: true
 
 non_integer:
   price_type: Super oferta

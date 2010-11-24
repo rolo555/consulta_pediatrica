@@ -2,6 +2,7 @@ include ModelHelper
 
 class Patient < ActiveRecord::Base
   protected :before_validation
+
   #Relaciones
   has_many :emails, :dependent => :destroy
   has_many :consultations, :dependent => :destroy
@@ -26,7 +27,6 @@ class Patient < ActiveRecord::Base
   validates_uniqueness_of :first_name, :scope => [:last_name, :date_of_birth], :case_sensitive => false
   validates_length_of :mother, :maximum => 50, :if => "self.mother.presence"
   validates_length_of :father, :maximum => 50, :if => "self.father.presence"
-  validates_length_of :emails, :maximum => 50, :if => "self.emails.presence"
   validates_length_of :first_name, :maximum => 50, :if => "self.first_name.presence"
   validates_length_of :last_name, :maximum => 50, :if => "self.last_name.presence"
   validate :date_of_birth_cant_be_greater_than_today
@@ -80,5 +80,14 @@ class Patient < ActiveRecord::Base
         errors.add :date_of_birth, "#{as_('can\'t be greater than')} #{as_('today')}"
       end
     end
+  end
+
+  def after_create
+    self.perinatal_record = PerinatalRecord.new
+    self.perinatal_record.save
+  end
+
+  def before_create
+    self.consultation_price = ConsultationPrice.find_by_default(true)
   end
 end
