@@ -459,6 +459,7 @@ es:
         doctors_amount: "Monto para el doctor"
         surgeries_surgical_staffs: "Personal en cirugia"
       surgical_record:
+        date: "Fecha"
         pathology: "Patologia"
         procedure: "Procedimiento"
         year: "Año"
