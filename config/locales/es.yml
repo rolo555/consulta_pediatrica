@@ -462,6 +462,7 @@ es:
         assistant_amount: "Monto para ayudante"
         instrumentalist_amount: "Monto para istrumentalista"
       surgical_record:
+        date: "Fecha"
         pathology: "Patologia"
         procedure: "Procedimiento"
         year: "Año"
