@@ -4,6 +4,7 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  before_filter :session_cleanup
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
@@ -17,5 +18,10 @@ class ApplicationController < ActionController::Base
 
     #Utilizar search con ajax
     conf.search.live = true
+  end
+
+  def session_cleanup
+    session.reject! { |k, v| k.is_a?(String) && v !=
+        active_scaffold_session_storage && k.start_with?('as:')}
   end
 end
