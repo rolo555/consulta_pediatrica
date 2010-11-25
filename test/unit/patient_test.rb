@@ -138,4 +138,12 @@ class PatientTest < ActiveSupport::TestCase
       assert_equal consultation_price, patient.consultation_price
     end
   end
+
+  context "amount function" do
+    should "return consultation_price.amount" do
+      consultation_price = ConsultationPrice.new :amount => 999
+      patient = Patient.new :consultation_price => consultation_price
+      assert_equal 999, patient.amount
+    end
+  end
 end
