@@ -50,9 +50,6 @@ class PerinatalRecordsController < ApplicationController
     conf.columns[:apgar1].options = {:include_blank => true, :options => Array.new(50) {|i| i+1}}
     conf.columns[:apgar2].options = {:include_blank => true, :options => Array.new(20) {|i| i+1}}
 
-    #Agregar a :jaundice para que la búsqueda lo incluya
-    conf.search.columns << :jaundice
-
     #Configuración de los agrupados por categorias para la acción create
     add_sub_groups conf.update
     add_sub_groups conf.show
