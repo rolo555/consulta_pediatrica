@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101123235913) do
+ActiveRecord::Schema.define(:version => 20101126002046) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(:version => 20101123235913) do
     t.float    "anterior_fontanel"
     t.float    "temperature"
     t.decimal  "amount"
-    t.boolean  "deduct_clinic_percentage"
     t.text     "current_condition"
     t.text     "diagnosis"
     t.text     "medical_certificate"
