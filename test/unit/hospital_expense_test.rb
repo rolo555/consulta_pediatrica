@@ -9,7 +9,7 @@ class HospitalExpenseTest < ActiveSupport::TestCase
   should_not allow_value(9.99).for(:price)
   should_not allow_value(-1).for(:price)
 
-  should have_and_belong_to_many :surgery_quotations
+  should belong_to(:surgery_quotation)
 
   valid_method_should_call_clean_whitespaces_of_all_strings HospitalExpense
 
