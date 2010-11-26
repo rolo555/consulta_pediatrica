@@ -6,4 +6,13 @@ class SurgicalStaffsController < ApplicationController
   active_scaffold :surgical_staffs do |conf|
     conf.columns = :is_always_present, :staff
   end
+
+  def index
+    if params[:must_close]
+      render :template => "close", :layout => false
+    else
+      list
+    end
+  end
+
 end

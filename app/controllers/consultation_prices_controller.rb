@@ -7,4 +7,13 @@ class ConsultationPricesController < ApplicationController
     #Configuración de las columnas que se mostrarán
     conf.columns = [:default, :price_type, :amount]
   end
+
+  def index
+    if params[:must_close]
+      render :template => "close", :layout => false
+    else
+      list
+    end
+  end
+
 end
