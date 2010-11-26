@@ -5,5 +5,8 @@ class SurgicalStaffsController < ApplicationController
 
   active_scaffold :surgical_staffs do |conf|
     conf.columns = :is_always_present, :staff
+
+    #Agregar a :is_always_present para que la búsqueda lo incluya
+    conf.search.columns << :is_always_present
   end
 end

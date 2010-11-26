@@ -6,5 +6,8 @@ class ConsultationPricesController < ApplicationController
   active_scaffold :consultation_price do |conf|
     #Configuración de las columnas que se mostrarán
     conf.columns = [:default, :price_type, :amount]
+
+    #Agregar a :default para que la búsqueda lo incluya
+    conf.search.columns << :default
   end
 end
