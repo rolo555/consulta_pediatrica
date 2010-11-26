@@ -51,6 +51,10 @@
     background-color: #fff;
 }
 
+#nav li.selected a {
+    background-color: #ffffcc;
+}
+
 .autocomplete_field {
     vertical-align: top;
 }
