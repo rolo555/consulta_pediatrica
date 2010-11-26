@@ -6,11 +6,17 @@ class PerinatalRecord < ActiveRecord::Base
   #Relaciones
   belongs_to :patient
 
-  [:number_of_pregnancy, :childbirth, :cesarea, :abortions, :weeks_of_gestation,
+  [:number_of_pregnancy, :childbirth, :cesarea, :abortions,
   :apgar1, :apgar2].each do |field|
     validates_numericality_of field, :only_integer => true,
-      :greater_than => 0, :unless => "#{field}.blank?"
+      :greater_than_or_equal_to => 0, :unless => "#{field}.blank?"
   end
+
+  validates_numericality_of :weeks_of_gestation,
+    :only_integer => true,
+    :greater_or_equal_than => 0,
+    :less_than_or_equal_to => 50,
+    :unless => "weeks_of_gestation.blank?"
   
   [:head_circumference, :body_perimeter, :weight, :height].each do |field|
     validates_numericality_of field, :greater_than => 0,

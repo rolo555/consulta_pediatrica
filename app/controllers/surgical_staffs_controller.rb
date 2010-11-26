@@ -9,4 +9,13 @@ class SurgicalStaffsController < ApplicationController
     #Agregar a :is_always_present para que la búsqueda lo incluya
     conf.search.columns << :is_always_present
   end
+
+  def index
+    if params[:must_close]
+      render :template => "close", :layout => false
+    else
+      list
+    end
+  end
+
 end

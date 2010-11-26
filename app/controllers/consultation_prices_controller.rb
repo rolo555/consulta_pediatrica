@@ -10,4 +10,13 @@ class ConsultationPricesController < ApplicationController
     #Agregar a :default para que la búsqueda lo incluya
     conf.search.columns << :default
   end
+
+  def index
+    if params[:must_close]
+      render :template => "close", :layout => false
+    else
+      list
+    end
+  end
+
 end

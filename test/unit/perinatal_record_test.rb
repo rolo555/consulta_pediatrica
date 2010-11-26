@@ -11,7 +11,10 @@ class PerinatalRecordTest < ActiveSupport::TestCase
     should_not allow_value(1.5).for field
     should allow_value(1).for field
     should allow_value(nil).for field
+    should allow_value(0).for field
   end
+
+  whuld_not allow_value(51).for :weeks_of_gestation
   
 #  should_be_positive_float :weight
 #  should_be_positive_float :height
