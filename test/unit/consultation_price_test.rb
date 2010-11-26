@@ -18,11 +18,10 @@ class ConsultationPriceTest < ActiveSupport::TestCase
   end
 
   should "not allow none default consultation price" do
-    default_price = mock()
-    ConsultationPrice.stubs(:find_by_default).with(true).returns(default_price)
-    consultation_price = consultation_prices :one
-    consultation_price.save
-    assert_equal false, consultation_price.valid?
+    ConsultationPrice.stubs(:find_by_default).with(true).returns(nil)
+    consultation_price = consultation_prices :two
+    consultation_price.valid?
+    assert_not_equal nil, consultation_price.errors[:default]
   end
 
   context 'to_label method' do
