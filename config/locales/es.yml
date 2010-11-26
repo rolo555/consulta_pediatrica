@@ -477,6 +477,8 @@ es:
       drug:
         how_often_in_hours: Cuan seguido por horas
         how_often_in_weight: Cuan seguido por gramos
+      hospital_expense:
+        price: Bs
 
   active_scaffold:
     add: 'Añadir'
