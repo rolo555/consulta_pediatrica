@@ -42,13 +42,13 @@ class PerinatalRecordsController < ApplicationController
       conf.columns[field].form_ui = :select
     end
 
-    conf.columns[:number_of_pregnancy].options = {:include_blank => true, :options => Array.new(10) {|i| i+1}}
-    conf.columns[:childbirth].options = {:include_blank => true, :options => Array.new(10) {|i| i+1}}
-    conf.columns[:abortions].options = {:include_blank => true, :options => Array.new(10) {|i| i+1}}
-    conf.columns[:cesarea].options = {:include_blank => true, :options => Array.new(20) {|i| i+1}}
-    conf.columns[:weeks_of_gestation].options = {:include_blank => true, :options => Array.new(50) {|i| i+1}}
-    conf.columns[:apgar1].options = {:include_blank => true, :options => Array.new(50) {|i| i+1}}
-    conf.columns[:apgar2].options = {:include_blank => true, :options => Array.new(20) {|i| i+1}}
+    conf.columns[:number_of_pregnancy].options = {:include_blank => true, :options => Array.new(10) {|i| i}}
+    conf.columns[:childbirth].options = {:include_blank => true, :options => Array.new(11) {|i| i}}
+    conf.columns[:abortions].options = {:include_blank => true, :options => Array.new(11) {|i| i}}
+    conf.columns[:cesarea].options = {:include_blank => true, :options => Array.new(21) {|i| i}}
+    conf.columns[:weeks_of_gestation].options = {:include_blank => true, :options => Array.new(51) {|i| i}}
+    conf.columns[:apgar1].options = {:include_blank => true, :options => Array.new(51) {|i| i}}
+    conf.columns[:apgar2].options = {:include_blank => true, :options => Array.new(21) {|i| i}}
 
     #Configuración de los agrupados por categorias para la acción create
     add_sub_groups conf.update
