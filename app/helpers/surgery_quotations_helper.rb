@@ -1,6 +1,6 @@
 module SurgeryQuotationsHelper
   def surgery_quotation_total_expenses_column(record)
-    record.total_expenses
+     number_to_currency(record.total_expenses, :precision => 0)
   end
 
   def surgery_quotation_hospital_expenses_show_column(record)
