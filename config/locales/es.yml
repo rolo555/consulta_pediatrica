@@ -481,6 +481,8 @@ es:
         price: Bs
       family_record:
         relation_ship: Relación que tiene el familiar con el paciente
+      surgery_quotation:
+        hospital_expenses: Lista de gastos hospitalarios
   active_scaffold:
     add: 'Añadir'
     add_existing: 'Añadir Existente'
