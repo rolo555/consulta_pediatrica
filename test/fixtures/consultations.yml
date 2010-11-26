@@ -8,7 +8,6 @@ one:
   anterior_fontanel: 1.5
   temperature: 
   amount: 
-  deduct_clinic_percentage: false
   current_condition: MyText
   diagnosis: MyText
   medical_certificate: MyText
@@ -24,7 +23,6 @@ two:
   anterior_fontanel: 1.5
   temperature: 
   amount: 
-  deduct_clinic_percentage: false
   current_condition: MyText
   diagnosis: MyText
   medical_certificate: MyText
