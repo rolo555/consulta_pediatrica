@@ -40,4 +40,6 @@ Rails::Initializer.run do |config|
   require 'paginator'
   config.gem "shoulda", :lib => "shoulda"
   config.i18n.default_locale = :es
+
+  config.action_controller.session_store = :active_record_store 
 end
