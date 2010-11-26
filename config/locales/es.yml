@@ -479,7 +479,8 @@ es:
         how_often_in_weight: Cuan seguido por gramos
       hospital_expense:
         price: Bs
-
+      family_record:
+        relation_ship: Relación que tiene el familiar con el paciente
   active_scaffold:
     add: 'Añadir'
     add_existing: 'Añadir Existente'
