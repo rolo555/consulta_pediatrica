@@ -1,4 +1,4 @@
-class CreateJoinSurgeryQuotationWithHospitalExpense < ActiveRecord::Migration
+class CreateJoinSurgeryWithSurgicalStaff < ActiveRecord::Migration
   def self.up
     create_table :surgery_surgical_staffs do |t|
       t.integer :surgery_id
