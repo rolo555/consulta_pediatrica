@@ -24,4 +24,14 @@ class ConsultationTest < ActiveSupport::TestCase
   should validate_numericality_of :amount
   should_not allow_value(neg).for(:amount)
   should allow_value(nil).for(:amount)
+  
+  context "A new instance of consultation" do
+    should "copy patient.amount to amount if patient exists" do
+      patient = Patient.new
+      patient.stubs(:amount).returns(123)
+      @new_record = true
+      consultation = Consultation.new :patient => patient
+      assert_equal 123, consultation.amount
+    end
+  end
 end

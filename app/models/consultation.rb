@@ -41,4 +41,10 @@ class Consultation < ActiveRecord::Base
      self.income.save
   end
 
+  def after_initialize
+    if @new_record
+      patient = self.patient
+      self.amount = patient.amount unless patient.blank?
+    end
+  end
 end

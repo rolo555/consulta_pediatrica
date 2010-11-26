@@ -58,22 +58,6 @@ class ConsultationsController < ApplicationController
 
   end
 
-  def default_values(consultation)
-    patient = consultation.patient
-    if patient.present?
-      consultation.amount = patient.amount
-    end
-    consultation
-  end
-
-  def do_new
-    @record = active_scaffold_config.model.new
-    apply_constraints_to_record(@record)
-    params[:eid] = @old_eid if @remove_eid
-    @record = default_values(@record)
-    @record
-  end
-
   def print
     if params[:record]
       consultation = Consultation.find params[:id]

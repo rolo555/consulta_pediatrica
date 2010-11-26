@@ -103,9 +103,12 @@ class PatientTest < ActiveSupport::TestCase
 
   context "clone_patient function" do
     should "call clone function" do
-      patient = mock('patient', :first_name => 'Juansito')
-      patient.expects(:clone).once
-      patient.clone_patient
+      patient = Patient.new
+      twin = Patient.new
+      Patient.any_instance.stubs(:clone).returns(twin)
+      assert_equal twin, patient.clone
+      twin.expects(:clone).returns(Patient.new :first_name => "")
+      patient.clone_patient(twin)
     end
 
     should "concat \"TWIN\" to first_name" do
@@ -119,23 +122,6 @@ class PatientTest < ActiveSupport::TestCase
     end
   end
 
-  context "amount function" do
-    should "return consultation_price.amount if is present" do
-      consultation_price = ConsultationPrice.new
-      consultation_price.stubs(:present? => true, :amount => 999)
-      patient = Patient.new(:consultation_price => consultation_price)
-      assert_equal 999, patient.amount
-    end
-
-    should "return amount if consultation_price is not present" do
-      consultation_price = ConsultationPrice.new
-      consultation_price.stubs :present? => false, :amount => 999
-      patient = Patient.new
-      patient.stubs :consultation_price => consultation_price, :amount => 200
-      assert_equal 200, patient.amount
-    end
-  end
-
   context "after create" do
     should "create a PerinatalRecord" do
       patient = Patient.new
@@ -146,11 +132,18 @@ class PatientTest < ActiveSupport::TestCase
 
   context "before create" do
     should "copy the first default ConsultationPrice to consultation_price" do
-      patient = Patient.new
       consultation_price = ConsultationPrice.new
       ConsultationPrice.stubs(:find_by_default).returns(consultation_price)
-      patient.before_create
+      patient = Patient.new :consultation_price => consultation_price
       assert_equal consultation_price, patient.consultation_price
+    end
+  end
+
+  context "amount function" do
+    should "return consultation_price.amount" do
+      consultation_price = ConsultationPrice.new :amount => 999
+      patient = Patient.new :consultation_price => consultation_price
+      assert_equal 999, patient.amount
     end
   end
 end
