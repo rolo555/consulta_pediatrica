@@ -3,6 +3,14 @@ module SurgeryQuotationsHelper
      number_to_currency(record.total_expenses, :precision => 0)
   end
 
+  def surgery_quotation_days_of_hospitalization_column(record)
+    time_ago_in_words(record.days_of_hospitalization.days.from_now)
+  end
+
+  def surgery_quotation_surgery_time_column(record)
+    time_ago_in_words(record.days_of_hospitalization.hours.from_now)
+  end
+
   def surgery_quotation_hospital_expenses_show_column(record)
     list = record.hospital_expenses.map { |item| content_tag "li", item.to_label }
     content_tag "ul", list
