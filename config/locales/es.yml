@@ -504,6 +504,14 @@ es:
         anterior_fontanel: cm
         temperature: &#176;C
         amount: Bs
+      perinatal_record:
+        weight: Por defecto <em>gr</em>, puede utilizar <em>lb</em> y <em>kg</em>
+        height: cm
+        head_circumference: cm
+        body_perimeter: cm
+        weeks_of_gestation: semanas
+        apgar1: /10
+        apgar2: /5
   active_scaffold:
     add: 'Añadir'
     add_existing: 'Añadir Existente'
