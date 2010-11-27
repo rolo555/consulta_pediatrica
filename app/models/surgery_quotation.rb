@@ -3,17 +3,16 @@ class SurgeryQuotation < ActiveRecord::Base
   belongs_to :consultation
   has_many :hospital_expenses, :dependent => :destroy
 
-  validates_presence_of :days_of_hospitalization
-  validates_presence_of :hospital_expenses
-  validates_presence_of :medical_expenses
-  validates_presence_of :surgery_time
+  validates_presence_of :days_of_hospitalization, :hospital_expenses,
+    :medical_expenses, :surgery_time
 
-  validates_numericality_of :days_of_hospitalization, :only_integer => true, :greater_than => 0
-  validates_numericality_of :medical_expenses, :greater_than => 0
-  validates_numericality_of :surgery_time, :greater_than => 0
+  validates_numericality_of :days_of_hospitalization, :only_integer => true,
+    :greater_than => 0
+  validates_numericality_of :medical_expenses, :greater_than_or_equal_to => 0
+  validates_numericality_of :surgery_time, :greater_than_or_equal_to => 0
 
   def to_label
-    total_expenses
+    "#{self.class.human_name} #{I18n.t(:created_at, :scope => :attributes).downcase} #{I18n.l created_at, :format => :short}"
   end
 
   def total_expenses
@@ -21,8 +20,6 @@ class SurgeryQuotation < ActiveRecord::Base
   end
 
   def after_initialize
-    if @new_record
-      self.hospital_expenses = HospitalExpense.find_all_by_is_always_used true
-    end
+    self.hospital_expenses = HospitalExpense.find_all_by_is_always_used true if @new_record
   end
 end
