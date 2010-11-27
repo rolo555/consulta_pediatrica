@@ -13,9 +13,9 @@ class SurgeryQuotationsController < ApplicationController
 
   active_scaffold :surgery_quotation do |conf|
     conf.list.columns.exclude :hospital_expenses
-
-    conf.columns[:hospital_expenses].form_ui = :record_select
     
+    conf.columns[:hospital_expenses].form_ui = :record_select
+
     conf.columns[:medical_expenses].options[:format] = :currency
     conf.columns[:medical_expenses].options[:i18n_options] = { :precision => 0 }
 

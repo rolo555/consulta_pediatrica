@@ -1,7 +1,7 @@
 class SurgeryQuotation < ActiveRecord::Base
   #Relaciones
   belongs_to :consultation
-  has_many :hospital_expenses, :dependent => :destroy
+  has_and_belongs_to_many :hospital_expenses
 
   validates_presence_of :days_of_hospitalization, :hospital_expenses,
     :medical_expenses, :surgery_time

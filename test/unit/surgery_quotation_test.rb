@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SurgeryQuotationTest < ActiveSupport::TestCase
   should belong_to :consultation
-  should have_many(:hospital_expenses).dependent(:destroy)
+  should have_and_belong_to_many :hospital_expenses
 
   should validate_presence_of :days_of_hospitalization
   should validate_presence_of :hospital_expenses
