@@ -152,9 +152,9 @@ es:
       submit: 'Guardar %{model}'
 
   # Attributes names common to most models
-  #attributes:
-    #created_at: "Created at"
-    #updated_at: "Updated at"
+  attributes:
+    created_at: Creado/a en
+    updated_at: Actualizado/a en
 
   # Active Record models configuration
   activerecord:
