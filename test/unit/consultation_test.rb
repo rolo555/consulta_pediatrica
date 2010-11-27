@@ -29,7 +29,7 @@ class ConsultationTest < ActiveSupport::TestCase
     should "copy patient.amount to amount if patient exists" do
       patient = Patient.new
       patient.stubs(:amount).returns(123)
-      @new_record = true
+      patient.stubs(:new_record?).returns(true)
       consultation = Consultation.new :patient => patient
       assert_equal 123, consultation.amount
     end

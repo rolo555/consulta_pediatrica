@@ -36,15 +36,16 @@ class Consultation < ActiveRecord::Base
   end
 
   def after_save
-     self.income.concept = "Consulta a #{patient.first_name} #{patient.last_name}"
-     self.income.amount = amount
-     self.income.save
+    self.income.concept = "Consulta a #{patient.first_name} #{patient.last_name}"
+    self.income.amount = amount
+    self.income.save
+  end
+
+  def set_amount
+    self.amount = self.patient.amount unless self.patient.blank? 
   end
 
   def after_initialize
-    if @new_record
-      patient = self.patient
-      self.amount = patient.amount unless patient.blank?
-    end
+    set_amount if new_record?
   end
 end
