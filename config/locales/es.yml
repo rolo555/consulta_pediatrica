@@ -382,6 +382,8 @@ es:
         recipe: "Receta"
         order: "Orden"
         laboratory: "Laboratorio"
+        images: Imágenes
+        surgery_quotations: Cotizacion de cirugías
       diagnostic:
         name: "Nombre"
       drug:
@@ -495,6 +497,13 @@ es:
         days_of_hospitalization: dias
         surgery_time: horas
         medical_expenses: Bs
+      consultation:
+        weight: Kg
+        height: cm
+        head_circumference: cm
+        anterior_fontanel: cm
+        temperature: &#176;C
+        amount: Bs
   active_scaffold:
     add: 'Añadir'
     add_existing: 'Añadir Existente'

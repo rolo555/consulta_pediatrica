@@ -48,14 +48,11 @@ class ConsultationsController < ApplicationController
     conf.action_links.add :print,
       :type => :member
     #      :parameters => { :id => "0" }
+  end
 
-    conf.columns[:weight].description = " Kg. "
-    conf.columns[:height].description = " cm. "
-    conf.columns[:head_circumference].description = " cm. "
-    conf.columns[:anterior_fontanel].description = " cm. "
-    conf.columns[:temperature].description = " &#176;C "
-    conf.columns[:amount].description = " Bs. "
-
+  def do_new
+    super
+    @record.set_amount
   end
 
   def print
