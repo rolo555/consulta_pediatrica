@@ -352,6 +352,9 @@ es:
       surgeries_surgical_staff:
         one: "Personal en Cirugia"
         other: "Personal en Cirugia"
+      surgery_quotation:
+        one: Cotización de cirugía
+        other: Cotizaciones de cirugía
     attributes:
       address:
         address: "Direccion"
@@ -473,6 +476,12 @@ es:
       surgeries_surgical_staff:
         name: Nombre
         surgical_staff: Personal
+      surgery_quotation:
+        days_of_hospitalization: Dias de hospitalización
+        medical_expenses: Gastos médicos
+        surgery_time: Tiempo de cirugía
+        total_expenses: Gastos totales
+        hospital_expenses: Gastos de hospital
     description:
       drug:
         how_often_in_hours: Cuan seguido por horas
@@ -483,6 +492,8 @@ es:
         relation_ship: Relación que tiene el familiar con el paciente
       surgery_quotation:
         hospital_expenses: Lista de gastos hospitalarios
+        days_of_hospitalization: dias
+        surgery_time: horas
   active_scaffold:
     add: 'Añadir'
     add_existing: 'Añadir Existente'

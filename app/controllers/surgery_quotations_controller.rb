@@ -2,11 +2,12 @@ class SurgeryQuotationsController < ApplicationController
   def self.add_sub_groups (action)
     action.columns.add_subgroup "" do |group|
       group.add :days_of_hospitalization
-      group.add :medical_expenses
       group.add :surgery_time
     end
     action.columns.add_subgroup "" do |group|
       group.add :hospital_expenses
+      group.add :medical_expenses
+      group.add :total_expenses if action.is_a? ActiveScaffold::Config::Show
     end
   end
 
@@ -15,9 +16,6 @@ class SurgeryQuotationsController < ApplicationController
 
     conf.columns[:hospital_expenses].form_ui = :record_select
     
-    conf.columns[:days_of_hospitalization].description = "days"
-    conf.columns[:surgery_time].description = "hours"
-
     conf.columns[:medical_expenses].options[:format] = :currency
     conf.columns[:medical_expenses].options[:i18n_options] = { :precision => 0 }
 
