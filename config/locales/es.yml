@@ -494,6 +494,7 @@ es:
         hospital_expenses: Lista de gastos hospitalarios
         days_of_hospitalization: dias
         surgery_time: horas
+        medical_expenses: Bs
   active_scaffold:
     add: 'Añadir'
     add_existing: 'Añadir Existente'
