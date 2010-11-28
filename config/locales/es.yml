@@ -488,6 +488,7 @@ es:
         year: "Año"
         month: "Mes"
         day: "Dia"
+        aproximate_date: "Fecha aproximada"
       surgical_staff:
         staff: "Personal"
         peercentage: "Porcentage"
