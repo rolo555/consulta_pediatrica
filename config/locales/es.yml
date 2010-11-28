@@ -3,6 +3,7 @@
 
 es:
   number:
+    weeks: semanas
     # Used in number_with_delimiter()
     # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
     format:

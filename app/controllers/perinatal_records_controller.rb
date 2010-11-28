@@ -49,8 +49,15 @@ class PerinatalRecordsController < ApplicationController
 
   def before_update_save(record)
     value = params[:record][:weight].strip
-    if value =~ /^[0-9]*\.?[0-9]+(\s\s*(gr|lb|kg))*$/
-      record.weight = value.to_grams
-    end
+    record.weight = value.to_grams if value
+
+    value = params[:record][:height].strip
+    record.height = value.to_cms if value
+
+    value = params[:record][:head_circumference].strip
+    record.head_circumference = value.to_cms if value
+
+    value = params[:record][:body_perimeter].strip
+    record.body_perimeter = value.to_cms if value
   end
 end
