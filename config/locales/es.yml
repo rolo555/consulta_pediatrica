@@ -324,6 +324,9 @@ es:
       hospitalization:
         one: "Hospitalizacion"
         other: "Hospitalizaciones"
+      hospitalization_follow_up:
+        one: "Seguimiento"
+        other: "Seguimientos"
       income:
         one: "Ingreso"
         other: "Ingresos"
@@ -417,6 +420,14 @@ es:
         room: "Habitacion"
         created_at: "Creado en"
         doctors_name: "Nombre del medico"
+      hospitalization_follow_up:
+        date: "Fecha"
+        currentCondition: "Padecimiento actual"
+        physicalExamination: "Exploracion fisica"
+        diagnosis: "Diagnostico"
+        treatment: "Tratamiento"
+        room: "Habitacion"
+        prescription: "Prescripcion"
       income:
         concept: "Concepto"
         amount: "Monto"
@@ -623,3 +634,7 @@ es:
 
     #Surgery
     amounts: Montos
+
+    #Hospital_follow_up
+    Clinical course: "Evolucion clinica"
+    Medical prescription: "Prescripcion medica"

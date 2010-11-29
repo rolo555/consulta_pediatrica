@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   
+  map.resources :hospitalization_follow_ups, :active_scaffold => true
   map.resources :doctors_names, :active_scaffold => true
   map.resources :hospitalizations, :active_scaffold => true
   map.resources :balances, :active_scaffold => true
