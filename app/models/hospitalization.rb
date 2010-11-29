@@ -9,7 +9,7 @@ class Hospitalization < ActiveRecord::Base
   has_many :hospitalization_follow_up, :dependent => :destroy
 
   #Validaciones
-  validates_presence_of :room
+  validates_presence_of :room, :doctors_name
   validates_length_of :room, :maximum => 50, :unless => "room.blank?"
 
   def before_validation

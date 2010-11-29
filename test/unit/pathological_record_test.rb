@@ -12,8 +12,8 @@ class PathologicalRecordTest < ActiveSupport::TestCase
 
   context 'to_label method' do
     should 'return diagnosis' do
-      pathological_record = PathologicalRecord.new :diagnosis => 'Resfrío'
-      assert_equal 'Resfrío', pathological_record.to_label
+      pathological_record = PathologicalRecord.new :diagnosis => 'Resfrio'
+      assert_equal 'Resfrio', pathological_record.to_label
     end
   end
 end

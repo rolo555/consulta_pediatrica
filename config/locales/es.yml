@@ -420,8 +420,10 @@ es:
         room: "Habitacion"
         created_at: "Creado en"
         doctors_name: "Nombre del medico"
+        hospitalization_follow_up: "Seguimiento"
+        doctors_names: "Nombres de medicos"
       hospitalization_follow_up:
-        date: "Fecha"
+        date: "Fecha y hora"
         currentCondition: "Padecimiento actual"
         physicalExamination: "Exploracion fisica"
         diagnosis: "Diagnostico"

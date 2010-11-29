@@ -12,7 +12,7 @@ class HospitalizationFollowUpsController < ApplicationController
     end
   end
   active_scaffold :hospitalization_follow_up do |conf|
-    conf.list.columns = :date, :diagnosis
+    conf.list.columns = :date, :currentCondition, :physicalExamination, :diagnosis, :treatment, :prescription
 
     conf.columns[:date].options = {:end_year => Date.today.year-30, :start_year => Date.today.year, :include_blank => false}
 

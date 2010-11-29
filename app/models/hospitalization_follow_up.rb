@@ -7,6 +7,7 @@ class HospitalizationFollowUp < ActiveRecord::Base
   belongs_to :hospitalization
 
   #Validaciones
+  validates_presence_of :date
   validates_length_of :room, :maximum => 50, :unless => "room.blank?"
   validate :date_must_be_lower_than_tomorrow
 
