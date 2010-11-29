@@ -526,7 +526,7 @@ es:
       surgery_quotation:
         hospital_expenses: Lista de gastos hospitalarios
         days_of_hospitalization: dias
-        surgery_time: horas
+        surgery_time: minutos
         medical_expenses: Bs
       consultation:
         weight: Kg
