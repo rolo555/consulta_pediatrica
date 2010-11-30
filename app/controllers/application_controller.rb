@@ -18,4 +18,9 @@ class ApplicationController < ActionController::Base
     #Utilizar search con ajax
     conf.search.live = true
   end
+
+  def help
+    render :layout => false
+  end
+
 end
