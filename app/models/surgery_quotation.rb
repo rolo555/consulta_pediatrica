@@ -7,7 +7,7 @@ class SurgeryQuotation < ActiveRecord::Base
     :medical_expenses, :surgery_time
 
   validates_numericality_of :days_of_hospitalization, :only_integer => true,
-    :greater_than => 0
+    :greater_than_or_equal_to => 0
   validates_numericality_of :medical_expenses, :greater_than_or_equal_to => 0
   validates_numericality_of :surgery_time, :greater_than_or_equal_to => 0
 
