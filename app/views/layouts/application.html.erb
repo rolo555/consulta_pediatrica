@@ -20,7 +20,7 @@
       <%= link_to image_tag('icons/icon_question_mark.jpg'), { :action => "help", :id => " " }, :popup => ['height=300,width=600'] %>
     <h3>Cumplañeros:</h3>
       <ul id="birthdays">
-        <% Patient.find_birthdays.each do |birth| %>
+        <% Patient.find_birthdays.take(10).each do |birth| %>
         <li>
           <% month =  as_(:month_names, :scope => [:date])[birth.date_of_birth.month] unless birth.date_of_birth.month.blank?%>
           <%= "#{birth.first_name}: #{birth.date_of_birth.day} de #{month}" %>
