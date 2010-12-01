@@ -5,7 +5,7 @@ class CreateConsultations < ActiveRecord::Migration
       t.float :weight
       t.float :height
       t.float :head_circumference
-      t.float :anterior_fontanel
+      t.string :anterior_fontanel
       t.float :temperature
       t.decimal :amount
       t.boolean :deduct_clinic_percentage

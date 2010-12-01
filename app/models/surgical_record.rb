@@ -9,8 +9,8 @@ class SurgicalRecord < ActiveRecord::Base
 
   #Validaciones
   validates_presence_of :pathology, :procedure
-  validates_length_of :pathology, :maximum => 50, :if => "self.pathology.presence"
-  validates_uniqueness_of :pathology, :case_sensitive => false
+  validates_length_of :pathology, :maximum => 100, :if => "self.pathology.presence"
+  validates_uniqueness_of :pathology, :case_sensitive => false, :scope => :patient_id
   validate :date_must_be_lower_than_tomorrow, :incomplite_date
 
   def to_label
