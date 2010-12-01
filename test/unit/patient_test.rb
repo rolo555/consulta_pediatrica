@@ -146,4 +146,32 @@ class PatientTest < ActiveSupport::TestCase
       assert_equal 999, patient.amount
     end
   end
+
+  context "nearest birthday" do
+    should "be true - 10" do
+      patient = Patient.new :date_of_birth => Date.today - 10
+      assert_equal true, patient.nearest_birthday?
+    end
+    should "be true + 10" do
+      patient = Patient.new :date_of_birth => Date.today + 10
+      assert_equal true, patient.nearest_birthday?
+    end
+    should "be true - 15" do
+      patient = Patient.new :date_of_birth => Date.today - 15
+      assert_equal true, patient.nearest_birthday?
+    end
+    should "be true + 15 << 300" do
+      patient = Patient.new :date_of_birth => Date.today - 15 << 300
+      assert_equal true, patient.nearest_birthday?
+    end
+    should "be false - 16" do
+      patient = Patient.new :date_of_birth => Date.today - 16
+      assert_equal false, patient.nearest_birthday?
+    end
+    should "be false + 16" do
+      patient = Patient.new :date_of_birth => Date.today + 16
+      assert_equal false, patient.nearest_birthday?
+    end
+  end
+
 end
