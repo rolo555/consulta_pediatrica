@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20101127064447) do
     t.float    "weight"
     t.float    "height"
     t.float    "head_circumference"
-    t.float    "anterior_fontanel"
+    t.string   "anterior_fontanel"
     t.float    "temperature"
     t.decimal  "amount"
     t.text     "current_condition"
