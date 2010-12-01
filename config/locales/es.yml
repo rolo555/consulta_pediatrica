@@ -306,6 +306,9 @@ es:
       diagnostic:
         one: "Diagnostico"
         other: "Diagnosticos"
+      doctors_name:
+        one: "Nombre del medico"
+        other: "Nombres de medicos"
       drug:
         one: "Medicamento"
         other: "Medicamentos"
@@ -318,6 +321,12 @@ es:
       hospital_expense:
         one: "Gasto hospitalario"
         other: "Gastos hospitalarios"
+      hospitalization:
+        one: "Hospitalizacion"
+        other: "Hospitalizaciones"
+      hospitalization_follow_up:
+        one: "Seguimiento"
+        other: "Seguimientos"
       income:
         one: "Ingreso"
         other: "Ingresos"
@@ -391,6 +400,8 @@ es:
         surgery_quotations: Cotizacion de cirugías
       diagnostic:
         name: "Nombre"
+      doctors_name:
+        name: "Nombre"
       drug:
         name: "Nombre"
         how_often_in_hours: "Frecuencia en horas"
@@ -405,6 +416,20 @@ es:
         concept: "Concepto"
         price: "Precio"
         is_always_used: "Es siempre usado"
+      hospitalization:
+        room: "Habitacion"
+        created_at: "Creado en"
+        doctors_name: "Nombre del medico"
+        hospitalization_follow_up: "Seguimiento"
+        doctors_names: "Nombres de medicos"
+      hospitalization_follow_up:
+        date: "Fecha y hora"
+        currentCondition: "Padecimiento actual"
+        physicalExamination: "Exploracion fisica"
+        diagnosis: "Diagnostico"
+        treatment: "Tratamiento"
+        room: "Habitacion"
+        prescription: "Prescripcion"
       income:
         concept: "Concepto"
         amount: "Monto"
@@ -476,6 +501,7 @@ es:
         year: "Año"
         month: "Mes"
         day: "Dia"
+        aproximate_date: "Fecha aproximada"
       surgical_staff:
         staff: "Personal"
         peercentage: "Porcentage"
@@ -500,7 +526,7 @@ es:
       surgery_quotation:
         hospital_expenses: Lista de gastos hospitalarios
         days_of_hospitalization: dias
-        surgery_time: horas
+        surgery_time: minutos
         medical_expenses: Bs
       consultation:
         weight: Kg
@@ -610,3 +636,7 @@ es:
 
     #Surgery
     amounts: Montos
+
+    #Hospital_follow_up
+    Clinical course: "Evolucion clinica"
+    Medical prescription: "Prescripcion medica"

@@ -31,4 +31,9 @@ module PatientsHelper
   def patient_surgeries_column(record)
     image_tag "icons/surgery.png", :title => plural_for(Surgery)
   end
+
+  def patient_hospitalizations_column(record)
+    image_tag "icons/hospitalization.png", :title => plural_for(Hospitalization)
+  end
+
 end

@@ -13,6 +13,7 @@ class Patient < ActiveRecord::Base
   has_many :phone_numbers, :dependent => :destroy
   has_many :pathological_records, :dependent => :destroy
   has_many :surgeries, :dependent => :destroy
+  has_many :hospitalizations, :dependent => :destroy
   has_one :perinatal_record, :dependent => :destroy
   belongs_to :place
   belongs_to :consultation_price
@@ -89,4 +90,15 @@ class Patient < ActiveRecord::Base
   def amount
     self.consultation_price.amount
   end
+
+  def nearest_birthday?
+    how_many_months_should_be_add = (Date.today.year - self.date_of_birth.year) * 12
+    birth = self.date_of_birth >> how_many_months_should_be_add
+    (((birth >= Date.today - 15) and (birth <= Date.today + 15)) or ((birth >> 12 >= Date.today - 15) and (birth >> 12 <= Date.today + 15)) or ((birth << 12 >= Date.today - 15) and (birth << 12 <= Date.today+ 15)))
+  end
+
+  def self.find_birthdays
+    Patient.find(:all).map{|p| p.nearest_birthday? ? p:nil}.compact
+  end
+
 end

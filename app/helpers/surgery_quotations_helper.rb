@@ -8,7 +8,7 @@ module SurgeryQuotationsHelper
   end
 
   def surgery_quotation_surgery_time_column(record)
-    time_ago_in_words(record.surgery_time.to_i.hours.from_now)
+    time_ago_in_words(record.surgery_time.to_i.minutes.from_now)
   end
 
   def surgery_quotation_days_of_hospitalization_show_column(record)
@@ -21,6 +21,6 @@ module SurgeryQuotationsHelper
 
   def surgery_quotation_hospital_expenses_show_column(record)
     list = record.hospital_expenses.map { |item| content_tag "li", item.to_label }
-    content_tag "ul", list
+    content_tag "ul", list.join(" ")
   end
 end

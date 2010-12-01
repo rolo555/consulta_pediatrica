@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  hospitalization_id: 1
+  date: 2010-11-28 19:08:09
+  currentCondition: MyText
+  physicalExamination: MyText
+  diagnosis: MyText
+  treatment: MyText
+
+two:
+  hospitalization_id: 1
+  date: 2010-11-28 19:08:09
+  currentCondition: MyText
+  physicalExamination: MyText
+  diagnosis: MyText
+  treatment: MyText
