@@ -12,7 +12,7 @@ class Allergy < ActiveRecord::Base
   validates_length_of :substance, :maximum => 50, :if => "self.substance.presence"
   validates_length_of :reaction, :maximum => 50, :if => "self.reaction.presence"
 
-  validates_uniqueness_of :substance, :case_sensitive => false
+  validates_uniqueness_of :substance, :case_sensitive => false, :scope => :patient_id
 
   def before_validation
     sanitizate_strings :substance, :reaction
