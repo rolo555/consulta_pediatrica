@@ -7,8 +7,8 @@ class PathologicalRecord < ActiveRecord::Base
   belongs_to :patient
 
   validates_presence_of :diagnosis, :treatment
-  validates_length_of :diagnosis, :maximum => 50, :if => "self.diagnosis.presence"
-  validates_length_of :treatment, :maximum => 50, :if => "self.treatment.presence"
+  validates_length_of :diagnosis, :maximum => 200, :if => "self.diagnosis.presence"
+  validates_length_of :treatment, :maximum => 200, :if => "self.treatment.presence"
   validate :date_cant_be_greater_than_today
 
   def before_validation
