@@ -18,9 +18,6 @@ class Consultation < ActiveRecord::Base
   validates_numericality_of :head_circumference,
     :greater_than_or_equal_to => 0,
     :allow_nil => true
-  validates_numericality_of :anterior_fontanel,
-    :greater_than_or_equal_to => 0,
-    :allow_nil => true
   validates_numericality_of :amount,
     :only_integer => true,
     :greater_than_or_equal_to => 0,
