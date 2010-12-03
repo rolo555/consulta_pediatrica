@@ -640,3 +640,6 @@ es:
     #Hospital_follow_up
     Clinical course: "Evolucion clinica"
     Medical prescription: "Prescripcion medica"
+
+    #Incomes
+    balances: Balances
