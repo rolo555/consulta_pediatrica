@@ -4,10 +4,11 @@ class IncomesController < ApplicationController
     conf.list.columns = :created_at, :concept, :amount
     conf.show.columns = :created_at, :concept, :amount
 
-    conf.action_links.add :daily_balance,
+    conf.action_links.add :balances,
       :type => :collection,
       :controller => "balances",
-      :action => "new"
+      :action => "new",
+      :page => true
   end
 
   def daily_balance
