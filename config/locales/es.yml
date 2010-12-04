@@ -643,3 +643,7 @@ es:
 
     #Incomes
     balances: Balances
+    generate_balance: Generar balance
+    daily_balance: Balance diario
+    monthly_balance: Balance mensual
+    yearly_balance: Balance anual
