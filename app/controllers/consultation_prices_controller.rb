@@ -7,6 +7,10 @@ class ConsultationPricesController < ApplicationController
     #Configuración de las columnas que se mostrarán
     conf.columns = [:default, :price_type, :amount]
 
+    #configuracion de como se mostrara la columns amount
+    conf.columns[:amount].options[:format] = :currency
+    conf.columns[:amount].options[:i18n_options] = { :precision => 0 }
+
     #Agregar a :default para que la búsqueda lo incluya
     conf.search.columns << :default
   end
