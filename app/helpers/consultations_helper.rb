@@ -8,21 +8,21 @@ module ConsultationsHelper
   end
 
   def consultation_medical_certificate_form_column(record, options)
-    text_area_and_link_to_record_select(:medical_certificate, options, :medical_certificates) + (params[:action] == "print" ? check_box_tag(:print_laboratory) : "")
+    text_area_and_link_to_record_select(:medical_certificate, options, :medical_certificates) + (params[:action] == "print" ? check_box_tag(:print_medical_certificate) : "")
   end
 
   def consultation_order_form_column(record, options)
-    text_area_and_link_to_record_select(:order, options, :medical_orders) + (params[:action] == "print" ? check_box_tag(:print_laboratory) : "")
+    text_area_and_link_to_record_select(:order, options, :medical_orders) + (params[:action] == "print" ? check_box_tag(:print_order) : "")
   end
 
   def consultation_recipe_form_column(record, options)
     column = active_scaffold_config.columns[:recipe]
-    active_scaffold_input_textarea(column, options) + (params[:action] == "print" ? check_box_tag(:print_laboratory) : "")
+    active_scaffold_input_textarea(column, options) + (params[:action] == "print" ? check_box_tag(:print_recipe) : "")
   end
 
   def consultation_current_condition_form_column(record, options)
     column = active_scaffold_config.columns[:current_condition]
-    active_scaffold_input_textarea(column, options) + (params[:action] == "print" ? check_box_tag(:print_laboratory) : "")
+    active_scaffold_input_textarea(column, options) + (params[:action] == "print" ? check_box_tag(:print_current_condition) : "")
   end
 
   def consultation_images_column(record)
