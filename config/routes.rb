@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   
+  map.resources :immunization_histories, :active_scaffold => true
+  map.resources :vaccines, :active_scaffold => true
+  map.resources :vaccines_names, :active_scaffold => true, :collection => {:browse => :get}, :member => {:select => :post}
   map.resources :hospitalization_follow_ups, :active_scaffold => true
   map.resources :doctors_names, :active_scaffold => true
   map.resources :hospitalizations, :active_scaffold => true
