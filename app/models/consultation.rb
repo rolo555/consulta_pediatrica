@@ -28,7 +28,7 @@ class Consultation < ActiveRecord::Base
   end
 
   def after_create
-    self.income = Income.new
+    self.income = Income.new :created_at => self.created_at, :updated_at => self.updated_at
     self.income.save
   end
 
