@@ -19,13 +19,13 @@ class PatientsController < ApplicationController
     #Columnas que se mostrarán al listar
     conf.list.columns = :photograph, :last_name, :first_name, :age, 
       :consultations, :family_records, :allergies, :perinatal_record,
-      :surgical_records, :pathological_records, :surgeries, :hospitalizations
+      :surgical_records, :pathological_records, :surgeries, :hospitalizations, :immunization_records
 
     #Columnas que se excluiran para todas las acciones
     conf.columns.exclude :photograph_content_type, :photograph_file_name,
       :photograph_file_size, :photograph_updated_at, :family_records,
       :allergies, :perinatal_record, :surgical_records, :pathological_records,
-      :consultations, :surgeries, :hospitalizations
+      :consultations, :surgeries, :hospitalizations, :immunization_records
 
     #Botón generar historial
     conf.action_links.add :patient_history,
@@ -50,6 +50,7 @@ class PatientsController < ApplicationController
     conf.columns[:perinatal_record].label = ""
     conf.columns[:surgeries].label = ""
     conf.columns[:hospitalizations].label = ""
+    conf.columns[:immunization_records].label = ""
     
     #Algunos campos se muestran con :record_select
     conf.columns[:consultation_price].form_ui = :record_select

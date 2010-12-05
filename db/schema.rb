@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101128230809) do
+ActiveRecord::Schema.define(:version => 20101204225939) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20101128230809) do
     t.string   "substance"
     t.string   "reaction"
     t.integer  "patient_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "application_records", :force => true do |t|
+    t.integer  "immunization_record_id"
+    t.date     "date"
+    t.string   "application_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -143,6 +151,13 @@ ActiveRecord::Schema.define(:version => 20101128230809) do
     t.datetime "updated_at"
   end
 
+  create_table "immunization_records", :force => true do |t|
+    t.integer  "patient_id"
+    t.integer  "vaccines_name_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "incomes", :force => true do |t|
     t.text     "concept"
     t.decimal  "amount"
@@ -235,7 +250,7 @@ ActiveRecord::Schema.define(:version => 20101128230809) do
   end
 
   create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
+    t.string   "session_id", :limit => 2550, :null => false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -296,6 +311,22 @@ ActiveRecord::Schema.define(:version => 20101128230809) do
   create_table "surgical_staffs", :force => true do |t|
     t.string   "staff"
     t.boolean  "is_always_present"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vaccines", :force => true do |t|
+    t.integer  "vaccines_name_id"
+    t.decimal  "purchase_cost"
+    t.float    "percentage_increase"
+    t.integer  "units"
+    t.date     "expiration_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vaccines_names", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
