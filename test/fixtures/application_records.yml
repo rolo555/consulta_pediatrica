@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  immunization_record_id: 1
+  date: 2010-12-04
+  type: MyString
+
+two:
+  immunization_record_id: 1
+  date: 2010-12-04
+  type: MyString

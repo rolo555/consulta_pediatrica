@@ -294,6 +294,9 @@ es:
       allergy:
         one: "Alergia"
         other: "Alergias"
+      application_record:
+        one: Registro de Aplicaciones
+        other: Registros de Aplicaciones
       balance:
         one: "Balance"
         other: "Balances"
@@ -327,6 +330,9 @@ es:
       hospitalization_follow_up:
         one: "Seguimiento"
         other: "Seguimientos"
+      immunization_record:
+        one: "Registro de Vacuna"
+        other: "Registros de Vacunas"
       income:
         one: "Ingreso"
         other: "Ingresos"
@@ -369,12 +375,21 @@ es:
       surgery_quotation:
         one: Cotización de cirugía
         other: Cotizaciones de cirugía
+      vaccine:
+        one: Inventario de vacuna
+        other: Inventario de vacunas
+      vaccines_name:
+        one: Nombre de vacuna
+        other: Nombres de vacunas
     attributes:
       address:
         address: "Direccion"
       allergy:
         substance: "Sustancia"
         reaction: "Reaccion"
+      application_record:
+        date: "Fecha"
+        application_type: "Tipo"
       balance:
         date_start: "Fecha de inicio"
         date_finish: "Fecha final"
@@ -430,6 +445,10 @@ es:
         treatment: "Tratamiento"
         room: "Habitacion"
         prescription: "Prescripcion"
+      immunization_record:
+        application_records: Registro de aplicacion
+        applications_records: Registros de aplicacion
+        vaccines_name: Nombre de vacuna
       income:
         concept: "Concepto"
         amount: "Monto"
@@ -515,6 +534,14 @@ es:
         surgery_time: Tiempo de cirugía
         total_expenses: Gastos totales
         hospital_expenses: Gastos de hospital
+      vaccine:
+        vaccines_name: Nombre de vacuna
+        purchase_cost: Precio de compra por unidad
+        units: Unidades
+        expiration_date: Fecha de vencimiento
+        percentage_increase: Porcentaje de aumento para la venta
+      vaccines_name:
+        name: Nombre
     description:
       drug:
         how_often_in_hours: Cuan seguido por horas
@@ -640,3 +667,10 @@ es:
     #Hospital_follow_up
     Clinical course: "Evolucion clinica"
     Medical prescription: "Prescripcion medica"
+
+    #immunization_record
+    dosis: [~, Primera, Segunda, Tercera, Curata, Quinta, Sexta, Septima, Octava, Novena, Decima]
+    refuerzos: [~, Primer, Segundo, Tercero, Curato, Quinto, Sexto, Septimo, Octavo, Noveno, Decimo]
+
+    #vaccine
+    cant be lower than: No puede ser menor que

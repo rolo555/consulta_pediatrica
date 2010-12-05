@@ -14,6 +14,7 @@ class Patient < ActiveRecord::Base
   has_many :pathological_records, :dependent => :destroy
   has_many :surgeries, :dependent => :destroy
   has_many :hospitalizations, :dependent => :destroy
+  has_many :immunization_records, :dependent => :destroy
   has_one :perinatal_record, :dependent => :destroy
   belongs_to :place
   belongs_to :consultation_price
