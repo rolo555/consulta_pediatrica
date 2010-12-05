@@ -24,6 +24,10 @@ class BalancesController < ApplicationController
   end
 
   def yearly_balance
+    balance = Balance.first
+    start = balance.date_start
+    finish = balance.date_finish
+    @items = Income.yearly_balance(start.year, finish.year)
     respond_to do |format|
       format.pdf do
         render :pdf => "yearly_balance",
@@ -34,6 +38,10 @@ class BalancesController < ApplicationController
   end
 
   def monthly_balance
+    balance = Balance.first
+    start = balance.date_start
+    finish = balance.date_finish
+    @items = Income.monthly_balance(start.year, start.month, finish.year, finish.month)
     respond_to do |format|
       format.pdf do
         render :pdf => "monthly_balance",
@@ -44,6 +52,10 @@ class BalancesController < ApplicationController
   end
 
   def daily_balance
+    balance = Balance.first
+    start = balance.date_start
+    finish = balance.date_finish
+    @items = Income.daily_balance(start.to_date, finish.to_date)
     respond_to do |format|
       format.pdf do
         render :pdf => "daily_balance",
