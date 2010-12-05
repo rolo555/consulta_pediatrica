@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type"
+          content="text/html;charset=UTF-8" />
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>Año</th>
+        <th>Mes</th>
+        <th>Cantidad consultas</th>
+        <th>Monto consultas</th>
+        <th>Cantidad cirugías</th>
+        <th>Monto cirugías</th>
+        <th>Monto total</th>
+      </tr>
+      <% @items.each do |year, year_group| %>
+        <% year_group.each do |month, v| %>
+          <tr>
+            <td><%= year %></td>
+            <td><%= month %></td>
+            <td><%= v["count"]["Consultation"] %></td>
+            <td><%= v["amount"]["Consultation"].round(1).to_s unless v["amount"]["Consultation"].blank?%></td>
+            <td><%= v["count"]["Surgery"] %></td>
+            <td><%= v["amount"]["Surgery"].round(1).to_s unless v["amount"]["Surgery"].blank?%></td>
+            <td><%= v["total_amount"].round(1).to_s unless v["total_amount"].blank? %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </body>
+</html>
