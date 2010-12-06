@@ -1,6 +1,9 @@
 include ModelHelper
 
 class Drug < ActiveRecord::Base
+  #Relaciones
+  has_and_belongs_to_many :diagnostics
+
   protected :before_validation
 
   validates_presence_of :name, :recipe
