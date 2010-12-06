@@ -1,7 +1,7 @@
 class VaccinesNamesController < ApplicationController
   record_select :per_page => 5,
     :search_on => ['name'],
-    :full_text_seach => true
+    :full_text_search => true
 
   active_scaffold :vaccines_name do |conf|
     conf.columns = [:name]

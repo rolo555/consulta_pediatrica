@@ -378,6 +378,9 @@ es:
       vaccine:
         one: Inventario de vacuna
         other: Inventario de vacunas
+      vaccine_sale:
+        one: Venta de vacuna
+        other: Ventas de vacunas
       vaccines_name:
         one: Nombre de vacuna
         other: Nombres de vacunas
@@ -540,6 +543,13 @@ es:
         units: Unidades
         expiration_date: Fecha de vencimiento
         percentage_increase: Porcentaje de aumento para la venta
+      vaccine_sale:
+        vaccine: Vacuna
+        buyer: Comprador
+        sales_units: Unidades de venta
+        amount: Monto
+        created_at: Creado en
+        vaccines_name: Nombre de vacuna
       vaccines_name:
         name: Nombre
     description:
@@ -673,4 +683,4 @@ es:
     refuerzos: [~, Primer, Segundo, Tercero, Curato, Quinto, Sexto, Septimo, Octavo, Noveno, Decimo]
 
     #vaccine
-    cant be lower than: No puede ser menor que
+    can't be lower than: No puede ser menor que
