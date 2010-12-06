@@ -1,2 +1,2 @@
-page.assign 'text', @diagnostic.name
+page.assign 'text', "#{@diagnostic.name}\r\n"
 page << " getElementsByAttribute(document, 'textarea', 'name', 'diagnosis')[0].value += text"
