@@ -1,3 +1,9 @@
+img.help {
+    float: right;
+    height: 36px;
+    weight: 36px;
+}
+
 #logo {
     margin: auto;
     display: block;

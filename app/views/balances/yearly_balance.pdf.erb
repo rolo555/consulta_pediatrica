@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type"
+          content="text/html;charset=UTF-8" />
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>Año</th>
+        <th>Cantidad consultas</th>
+        <th>Monto consultas</th>
+        <th>Cantidad cirugías</th>
+        <th>Monto cirugías</th>
+        <th>Monto total</th>
+      </tr>
+      <% @items.each do |k, v| %>
+        <tr>
+          <td><%= k %></td>
+          <td><%= v["count"]["Consultation"] %></td>
+          <td><%= v["amount"]["Consultation"].round(1).to_s %></td>
+          <td><%= v["count"]["Surgery"] %></td>
+          <td><%= v["amount"]["Surgery"].round(1).to_s %></td>
+          <td><%= v["total_amount"].round(1).to_s %></td>
+        </tr>
+      <% end %>
+    </table>
+  </body>
+</html>

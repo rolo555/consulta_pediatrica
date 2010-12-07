@@ -51,8 +51,8 @@ class Surgery < ActiveRecord::Base
     end
   end
 
-  def before_create
-    self.income = Income.new
+  def after_create
+    self.income = Income.new :created_at => self.created_at, :updated_at => self.updated_at
     self.income.save
   end
 
