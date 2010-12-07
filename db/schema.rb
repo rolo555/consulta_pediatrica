@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20101206223510) do
     t.date     "date"
     t.string   "application_type"
     t.boolean  "doctor_application"
-    t.string   "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

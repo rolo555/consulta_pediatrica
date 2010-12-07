@@ -22,17 +22,4 @@ module ApplicationRecordsHelper
     end
   end
 
-  def application_record_amount_form_column(record, options)
-    if params["scope"]
-      scope = params["scope"]
-      scope.gsub!('[', '["')
-      scope.gsub!(']', '"]')
-      v = eval("params['record']#{scope}['doctor_application']")
-      if v
-        content_tag "span", "si marcado", options
-      else
-        content_tag "div", "no marcado", options
-      end
-    end
-  end
 end

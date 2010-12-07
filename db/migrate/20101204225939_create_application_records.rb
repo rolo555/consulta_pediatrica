@@ -6,7 +6,6 @@ class CreateApplicationRecords < ActiveRecord::Migration
       t.date :date
       t.string :application_type
       t.boolean :doctor_application
-      t.string :amount
 
       t.timestamps
     end
