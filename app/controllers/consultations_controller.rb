@@ -30,8 +30,8 @@ class ConsultationsController < ApplicationController
   active_scaffold :consultation do |conf|
     #Configuración de las columnas que se mostrarán
     conf.columns = [:weight, :height, :head_circumference, :anterior_fontanel,
-      :temperature, :current_condition, :diagnosis, :medical_certificate, 
-      :recipe, :order, :laboratory, :amount]
+      :temperature, :current_condition, :diagnosis, :suggested_drugs,
+      :medical_certificate, :recipe, :order, :laboratory, :amount]
 
     #Configuración de las columnas que se mostrarán al listar
     conf.list.columns = [:diagnosis, :recipe, :amount, :images,
@@ -82,4 +82,14 @@ class ConsultationsController < ApplicationController
   #    end
   #  end
 
+  def update_drugs
+    @drugs = Set.new
+    if params[:diagnoses].present?
+      possible_diagnoses = params[:diagnoses].split(/[\,\;\.\n\r]/).map {|i| i.strip}.delete_if {|i| i.strip.empty?}
+      possible_diagnoses.each do |possible_diagnosis|
+        diagnoses = Diagnostic.all :conditions => ["UPPER(name) LIKE ?", "%#{possible_diagnosis.upcase}%"], :include => :drugs
+        diagnoses.each {|diagnosis| @drugs = @drugs.union diagnosis.drugs}
+      end
+    end
+  end
 end

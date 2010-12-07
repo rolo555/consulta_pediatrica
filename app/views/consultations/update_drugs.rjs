@@ -1,0 +1,3 @@
+page << 'suggested_drugs_id = getElementsByAttribute(document, \'span\', \'name\', \'suggested.drugs\')[0].id;'
+page << "Element.update(suggested_drugs_id, \"#{@drugs.map {|d| d.to_label}.join(", ")}\");"
+puts page
