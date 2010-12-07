@@ -33,7 +33,17 @@ class ApplicationRecord < ActiveRecord::Base
       self.income.concept = "Aplicacion de #{vaccine.vaccines_name.to_label} a #{self.immunization_record.patient.first_name} #{self.immunization_record.patient.last_name}"
       self.income.amount = self.vaccine.purchase_cost * (self.vaccine.percentage_increase / 100)
       self.income.save
+      self.vaccine.units -= 1
+      self.vaccine.save
     end
+  end
+
+  def destroy
+    if self.doctor_application
+      self.vaccine.units += 1
+      self.vaccine.save
+    end
+    super
   end
 
 end
