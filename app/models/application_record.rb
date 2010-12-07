@@ -1,8 +1,13 @@
 class ApplicationRecord < ActiveRecord::Base
 
   belongs_to :immunization_record
+  belongs_to :vaccine
 
-  validates_presence_of :date, :application_type
+  validates_presence_of :date, :application_type, :doctor_application
+  validates_presence_of :vaccine, :if => "self.doctor_application"
+  validates_numericality_of  :amount,
+    :greater_than_or_equal_to => 0,
+    :allow_nil => true
   validate :date_cant_be_greater_than_today
 
   def date_cant_be_greater_than_today

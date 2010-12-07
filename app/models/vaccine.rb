@@ -2,6 +2,7 @@ class Vaccine < ActiveRecord::Base
   #Relaciones
   belongs_to :vaccines_name
   has_many :vaccine_sale
+  has_many :application_record
 
   #Validaciones
   validates_presence_of :vaccines_name, :purchase_cost, :percentage_increase, :units, :expiration_date
