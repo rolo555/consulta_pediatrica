@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101204225939) do
+ActiveRecord::Schema.define(:version => 20101206223510) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(:version => 20101204225939) do
     t.integer  "immunization_record_id"
     t.date     "date"
     t.string   "application_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "application_records_immunization_records", :force => true do |t|
+    t.integer  "application_record_id"
+    t.integer  "immunization_record_id"
+    t.boolean  "application"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -311,6 +319,15 @@ ActiveRecord::Schema.define(:version => 20101204225939) do
   create_table "surgical_staffs", :force => true do |t|
     t.string   "staff"
     t.boolean  "is_always_present"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "vaccine_sales", :force => true do |t|
+    t.integer  "vaccine_id"
+    t.string   "buyer"
+    t.integer  "sales_units"
+    t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

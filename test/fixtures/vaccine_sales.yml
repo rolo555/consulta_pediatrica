@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  vaccine_id: 1
+  buyer: MyString
+  sales_units: 1
+  amount: 9.99
+
+two:
+  vaccine_id: 1
+  buyer: MyString
+  sales_units: 1
+  amount: 9.99
