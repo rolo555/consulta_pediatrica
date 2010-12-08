@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def help
-    render :layout => false
+    render :layout => "help"
   end
 
 end

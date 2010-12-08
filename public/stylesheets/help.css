@@ -1,0 +1,20 @@
+body.help {
+    margin: 3em;
+}
+
+body.help p {
+    font-size: 130%;
+}
+
+body.help h1 {
+    color: red;
+    text-align: center;
+}
+
+body.help h2 {
+    color: mediumblue;
+}
+
+body.help h3 {
+    color: mediumseagreen;
+}
