@@ -3,7 +3,7 @@ class Consultation < ActiveRecord::Base
   belongs_to :patient
   has_many :images, :as => :imaginable
   has_many :surgery_quotations
-  has_one :income, :as => :payment
+  has_one :income, :as => :payment, :dependent => :destroy
 
   #Validaciones
   validates_numericality_of :weight,

@@ -3,7 +3,7 @@ include ModelHelper
 class VaccineSale < ActiveRecord::Base
   #Relaciones
   belongs_to :vaccine
-  has_one :income, :as => :payment
+  has_one :income, :as => :payment, :dependent => :destroy
 
   #Validaciones
   validates_presence_of :buyer, :sales_units, :amount, :vaccine
