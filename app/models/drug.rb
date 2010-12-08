@@ -1,6 +1,9 @@
 include ModelHelper
 
 class Drug < ActiveRecord::Base
+  #Relaciones
+  has_and_belongs_to_many :diagnostics
+
   protected :before_validation
 
   validates_presence_of :name, :recipe
@@ -15,5 +18,12 @@ class Drug < ActiveRecord::Base
 
   def to_label
     "#{name}"
+  end
+
+  def generate_recipe(w, h)
+    r = self.recipe.clone
+    r.gsub!("(w)", w)
+    r.gsub!("(h)", h)
+    r
   end
 end

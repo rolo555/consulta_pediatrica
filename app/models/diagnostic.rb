@@ -1,4 +1,6 @@
 class Diagnostic < ActiveRecord::Base
+  #Relaciones
+  has_and_belongs_to_many :drugs
 
   protected :before_validation
 
