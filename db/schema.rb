@@ -28,8 +28,18 @@ ActiveRecord::Schema.define(:version => 20101206223510) do
 
   create_table "application_records", :force => true do |t|
     t.integer  "immunization_record_id"
+    t.integer  "vaccine_id"
     t.date     "date"
     t.string   "application_type"
+    t.boolean  "doctor_application"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "application_records_immunization_records", :force => true do |t|
+    t.integer  "application_record_id"
+    t.integer  "immunization_record_id"
+    t.boolean  "application"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
