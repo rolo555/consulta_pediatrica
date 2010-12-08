@@ -17,6 +17,12 @@ class ApplicationController < ActionController::Base
 
     #Utilizar search con ajax
     conf.search.live = true
+
+    conf.action_links.add :help,
+      :type => :collection,
+      :page => true,
+      :popup => true,
+      :parameters => {:id => " "}
   end
 
   def help
