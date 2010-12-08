@@ -7,6 +7,15 @@ class ApplicationRecord < ActiveRecord::Base
   validates_presence_of :date, :application_type
   validates_presence_of :vaccine, :if => "self.doctor_application"
   validate :date_cant_be_greater_than_today
+  validate :vaccine_must_be_nil_unless_doctor_application_is_selected
+
+  def vaccine_must_be_nil_unless_doctor_application_is_selected
+    unless self.vaccine.nil?
+      unless( self.doctor_application )
+        errors.add :vaccine, "#{as_('must be empty unless is a doctor application')}"
+      end
+    end
+  end
 
   def date_cant_be_greater_than_today
     unless self.date.nil?
