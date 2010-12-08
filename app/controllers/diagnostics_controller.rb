@@ -4,8 +4,10 @@ class DiagnosticsController < ApplicationController
     :full_text_search => true,
     :notify => :add_diagnostic
 
-  active_scaffold :diagnostics
-
+  active_scaffold :diagnostics do |conf|
+    conf.columns[:drugs].form_ui = :record_select
+  end
+  
   def add_diagnostic(record)
     @diagnostic = Diagnostic.find(params[:id])
     @view = 'add_diagnostic'

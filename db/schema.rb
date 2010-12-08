@@ -81,6 +81,13 @@ ActiveRecord::Schema.define(:version => 20101206223510) do
     t.datetime "updated_at"
   end
 
+  create_table "diagnostics_drugs", :id => false, :force => true do |t|
+    t.integer  "diagnostic_id"
+    t.integer  "drug_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "doctors_names", :force => true do |t|
     t.string   "name"
     t.integer  "hospitalization_id"

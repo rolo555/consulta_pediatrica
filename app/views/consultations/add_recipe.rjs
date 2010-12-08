@@ -1,0 +1,3 @@
+page << 'recipe_id = getElementsByAttribute(document, \'textarea\', \'name\', \'recipe\')[0].id;'
+page.assign 'new_recipe', "#{@drug.generate_recipe(@weigth, @heigth)}\n"
+page << "$(recipe_id).value += new_recipe;"

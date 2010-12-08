@@ -4,6 +4,7 @@ module ConsultationsHelper
   end
 
   def consultation_diagnosis_form_column(record, options)
+    options[:onchange] = remote_function(:url => { :controller => :consultations, :action => :update_drugs, :id => " " }, :with => "'diagnoses=' + $('#{options[:id]}').value", :update => "suggested_drugs")
     text_area_and_link_to_record_select :diagnosis, options, :diagnostics
   end
 
@@ -33,5 +34,9 @@ module ConsultationsHelper
     else
       "-"
     end
+  end
+
+  def consultation_suggested_drugs_form_column(record, options)
+    content_tag "div", "", options
   end
 end
