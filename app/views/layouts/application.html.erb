@@ -17,16 +17,21 @@
   </head>
   <body>
     <% unless params[:must_close] %>
-    <h3>Cumplañeros:</h3>
-      <ul id="birthdays">
-        <% Patient.find_birthdays.take(10).each do |birth| %>
-        <li>
-          <% month =  as_(:month_names, :scope => [:date])[birth.date_of_birth.month] unless birth.date_of_birth.month.blank?%>
-          <%= "#{birth.first_name}: #{birth.date_of_birth.day} de #{month}" %>
-        </li>
-        <% end %>
-      </ul>
-      <%= image_tag 'logo.png', :id => 'logo' %>
+      <div id="birthdays" style="height: 210px; width: 30%; float: left; overflow: scroll;">
+        <h3 style="width: 80%">Cumpleañeros:</h3>
+        <ul id="birthdays" style="width: 80%">
+          <% Patient.find_birthdays.each do |birth| %>
+            <li>
+              <% month =  as_(:month_names, :scope => [:date])[birth.date_of_birth.month] unless birth.date_of_birth.month.blank?%>
+              <%= "#{birth.first_name}: #{birth.date_of_birth.day} de #{month}" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div style="width: 33%; float: left;">
+        <%= image_tag 'logo.png', :id => 'logo' %>
+      </div>
+      <div style="width: 33%; float: left;"></div>
       <div id="nav_container">
         <%= render :partial => "layouts/menu.html" %>
       </div>
