@@ -92,4 +92,10 @@ class ConsultationsController < ApplicationController
       end
     end
   end
+
+  def add_recipe
+    @drug = Drug.find params[:id]
+    @weigth = params[:weight]
+    @heigth = params[:height]
+  end
 end

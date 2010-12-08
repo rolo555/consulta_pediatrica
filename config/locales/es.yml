@@ -413,6 +413,7 @@ es:
         laboratory: "Laboratorio"
         images: Imágenes
         surgery_quotations: Cotizacion de cirugías
+        suggested_drugs: Medicamentos sugeridos
       diagnostic:
         name: "Nombre"
       doctors_name:

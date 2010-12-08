@@ -1,3 +1,12 @@
-page << 'suggested_drugs_id = getElementsByAttribute(document, \'span\', \'name\', \'suggested.drugs\')[0].id;'
-page << "Element.update(suggested_drugs_id, \"#{@drugs.map {|d| d.to_label}.join(", ")}\");"
-puts page
+page << 'suggested_drugs_id = getElementsByAttribute(document, \'div\', \'name\', \'suggested_drugs\')[0].id;'
+weight_id = 'getElementsByAttribute(document, \'input\', \'name\', \'weight\')[0].id'
+height_id = 'getElementsByAttribute(document, \'input\', \'name\', \'height\')[0].id'
+drugs_links = @drugs.map do |d|
+  link_to_remote(d.to_label, 
+    :url => { :controller => :consultations,
+      :action => :add_recipe,
+      :id => d.id },
+    :with => "'height=' + $(#{height_id}).value + '&weight=' + $(#{weight_id}).value"
+  ).gsub('"', "\\\"")
+end
+page << "$(suggested_drugs_id).update(\" #{drugs_links.join(" ")} \");"

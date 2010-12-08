@@ -37,6 +37,6 @@ module ConsultationsHelper
   end
 
   def consultation_suggested_drugs_form_column(record, options)
-    content_tag "span", "", options
+    content_tag "div", "", options
   end
 end

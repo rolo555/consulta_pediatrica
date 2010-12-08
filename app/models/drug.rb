@@ -19,4 +19,11 @@ class Drug < ActiveRecord::Base
   def to_label
     "#{name}"
   end
+
+  def generate_recipe(w, h)
+    r = self.recipe.clone
+    r.gsub!("(w)", w)
+    r.gsub!("(h)", h)
+    r
+  end
 end
