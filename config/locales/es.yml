@@ -698,3 +698,5 @@ es:
 
     #application_record
     must be empty unless is a doctor application: tiene que estar vacia a menos que sea una aplicacion del doctor
+
+    help: Ayuda

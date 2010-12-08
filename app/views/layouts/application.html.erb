@@ -17,7 +17,6 @@
   </head>
   <body>
     <% unless params[:must_close] %>
-      <%= link_to image_tag('icons/icon_question_mark.jpg', :class => "help"), { :action => "help", :id => " " }, :popup => ['height=300,width=600'] %>
     <h3>Cumplañeros:</h3>
       <ul id="birthdays">
         <% Patient.find_birthdays.take(10).each do |birth| %>
