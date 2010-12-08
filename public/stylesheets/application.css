@@ -61,6 +61,7 @@ img.help {
     background-color: #ffffcc;
 }
 
-.autocomplete_field {
+.autocomplete_field, .autocomplete_field * {
     vertical-align: top;
 }
+
