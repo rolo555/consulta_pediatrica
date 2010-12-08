@@ -1,35 +1,28 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <title>Ayuda de Paciente</title>
-  </head>
-  <body>
-    <p> En cualquier momento puede escoger ingresar a otro lugar del sistema, listado en la parte inferior del logo, haciendo click en el nombre de la pestaña donde desea ir. </p>
-    <p> <h2>Buscar:</h2> Despliega un campo a la izquierda de la pantalla para ingresar algun dato personal del paciente que se desea buscar, este puede ser:
-    el nombre y/o apellido del paciente, nombre de la madre o padre, telefono, correo, observacion</p>
-  <p> <h2>Crear nuevo:</h2> Muestra el formulario correspondiente a un nuevo paciente, los campos obligatorios estan resaltados con negrilla.</p>
-<p> <h4>Fotografia:</h4> Al hacer click en el boton [imagen del boton "Choose File"] se abrira una ventana
-que permite eleguir la foto correspondiente del paciente. </p>
-<p> <h4>Lugar:</h4> Es obligatorio eleguir un lugar para el paciente, este se selecciona de una lista que contiene todos los lugares conocidos por
-el sistema, es posible agregar un nuevo lugar, si es necesario, haciendo click en el signo de mas "+". </p>
-<p> <h4>Direcciones, Numeros telefonicos y Correo electronicos:</h4> No son campos obligatorios pero se pueden igresar
-cuantos sean necesarios, considerando que un paciente puede tener varios telefonos, direccones y correos.
-Para agregar otro solo se hace click en el boton correspondiente {imagenes de botonos}</p>
-<p> <h2>Consultas:</h2> Al hacer click en la imagen del fonendoscopio [imagen de consultation], se despliegan todas las consultas correspondientes al paciente junto a sus acciones. </p>
-<p> <h2>Registros familiares:</h2> Al hacer click en la imagen de la familia [imagen de family_record], se despliegan todos los registros familiares correspondientes al paciente junto a sus acciones. </p>
-<p> <h2>Alergias:</h2>Se mostrara una imagen de exclamacion amarilla [imagen de alergia sin alergia], si el paciente NO tiene ninguna alergia registrada, se mostrara una imagen de
-exclamacion roja [imagen de alergia con alergia], si el paciente SI tiene alguna alergia registrada, al hacer click en la imagen de exclamacion ya sea amarilla o roja, se despliegan
-todas las alergias correspondientes al paciente junto a sus acciones.</p>
-<p> <h2>Registro perinatal:</h2>Al hacer click en la imagen del bebe [imagen de registro perinatal], se despliega el registro perinatal del paciente correspondiente junto a sus acciones. </p>
-<p> <h2>Registros de cirugias:</h2>Al hacer click en la imagen de las curitas cruzadas [imagen de surgical record], se despliegan todos los registros de cirugias correspondientes al paciente junto a sus acciones. </p>
-<p> <h2>Registros Patologicos:</h2>Al hacer click en la imagen del baston de esculapio [imagen de registro patologico], se despliegan todos los registros patologicos correspondientes al paciente junto cno sus acciones. </p>
-<p> <h2>Cirugia:</h2>Al hacer click en la imagen del bisturi [imagen de surgery], se despliegan todas las cirugias correspondientes al paciente junto con sus acciones. </p>
-<p> <h2>Hospitalizacion:</h2>Al hacer click en la imagen de la enfermera junto a la cama [imagen de hospitalization], se despliegan todas las hospitalizaciones correspondientes al paciente junto con sus acciones.</p>
-<p> <h2>Historial de paciente:</h2> Al hacer click en el link de "Historial de paciente", se descargara un pdf con el historial del paciente correspondiente. </p>
-<p> <h2>Clonar:</h2>Al hacer click en el link de "Clonar", se creara un paciente con los mismos datos personales, pero en el nombre se agregara la palabra "Gemelo". </p>
-<p> <h2>Editar:</h2>Al hacer click en el link de "Editar", se despliega un formulario con los datos correspondientes al paciente para poder editarlos. </p>
-<p> <h2>Borrar:</h2>Al hacer click en el link de "Borrar", se mostrara una ventana para confirmar si se desea o no borrar al paciente del sistema, si se acepta, el paciente es borrado del sistema
-junto con toda su informacion.</p>
-<p> <h2>Ver:</h2>Al hacer click en el link de "Ver", se despliega toda la informacion correspondiente al paciente. </p>
-</body>
-</html>
+<% @title = "Ayuda de Paciente" %>
+<p> En cualquier momento puede escoger ingresar a otro lugar del sistema, listado en la parte inferior del logo, haciendo click en el nombre de la pestaña donde desea ir. </p>
+<h2>Buscar:</h2><p>Despliega un campo a la izquierda de la pantalla para ingresar algun dato personal del paciente que se desea buscar, este puede ser:
+  el nombre y/o apellido del paciente, nombre de la madre o padre, telefono, correo, observacion</p>
+<h2>Crear nuevo:</h2><p>Muestra el formulario correspondiente a un nuevo paciente, los campos obligatorios estan resaltados con negrilla.</p>
+<h3>Fotografia:</h3><p>Al hacer click en el boton [imagen del boton "Choose File"] se abrira una ventana
+  que permite eleguir la foto correspondiente del paciente. </p>
+<h3>Lugar:</h3><p>Es obligatorio eleguir un lugar para el paciente, este se selecciona de una lista que contiene todos los lugares conocidos por
+  el sistema, es posible agregar un nuevo lugar, si es necesario, haciendo click en el signo de mas "+". </p>
+<h3>Direcciones, Numeros telefonicos y Correo electronicos:</h3><p>No son campos obligatorios pero se pueden igresar
+  cuantos sean necesarios, considerando que un paciente puede tener varios telefonos, direccones y correos.
+  Para agregar otro solo se hace click en el boton correspondiente {imagenes de botonos}</p>
+<h2>Consultas:</h2><p>Al hacer click en la imagen del fonendoscopio [imagen de consultation], se despliegan todas las consultas correspondientes al paciente junto a sus acciones. </p>
+<h2>Registros familiares:</h2><p>Al hacer click en la imagen de la familia [imagen de family_record], se despliegan todos los registros familiares correspondientes al paciente junto a sus acciones. </p>
+<h2>Alergias:</h2><p>Se mostrara una imagen de exclamacion amarilla [imagen de alergia sin alergia], si el paciente NO tiene ninguna alergia registrada, se mostrara una imagen de
+  exclamacion roja [imagen de alergia con alergia], si el paciente SI tiene alguna alergia registrada, al hacer click en la imagen de exclamacion ya sea amarilla o roja, se despliegan
+  todas las alergias correspondientes al paciente junto a sus acciones.</p>
+<h2>Registro perinatal:</h2><p>Al hacer click en la imagen del bebe [imagen de registro perinatal], se despliega el registro perinatal del paciente correspondiente junto a sus acciones. </p>
+<h2>Registros de cirugias:</h2><p>Al hacer click en la imagen de las curitas cruzadas [imagen de surgical record], se despliegan todos los registros de cirugias correspondientes al paciente junto a sus acciones. </p>
+<h2>Registros Patologicos:</h2><p>Al hacer click en la imagen del baston de esculapio [imagen de registro patologico], se despliegan todos los registros patologicos correspondientes al paciente junto cno sus acciones. </p>
+<h2>Cirugia:</h2><p>Al hacer click en la imagen del bisturi [imagen de surgery], se despliegan todas las cirugias correspondientes al paciente junto con sus acciones. </p>
+<h2>Hospitalizacion:</h2><p>Al hacer click en la imagen de la enfermera junto a la cama [imagen de hospitalization], se despliegan todas las hospitalizaciones correspondientes al paciente junto con sus acciones.</p>
+<h2>Historial de paciente:</h2><p>Al hacer click en el link de "Historial de paciente", se descargara un pdf con el historial del paciente correspondiente. </p>
+<h2>Clonar:</h2><p>Al hacer click en el link de "Clonar", se creara un paciente con los mismos datos personales, pero en el nombre se agregara la palabra "Gemelo". </p>
+<h2>Editar:</h2><p>Al hacer click en el link de "Editar", se despliega un formulario con los datos correspondientes al paciente para poder editarlos. </p>
+<h2>Borrar:</h2><p>Al hacer click en el link de "Borrar", se mostrara una ventana para confirmar si se desea o no borrar al paciente del sistema, si se acepta, el paciente es borrado del sistema
+  junto con toda su informacion.</p>
+<h2>Ver:</h2><p>Al hacer click en el link de "Ver", se despliega toda la informacion correspondiente al paciente. </p>
