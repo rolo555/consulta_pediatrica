@@ -25,7 +25,7 @@ img.help {
 #nav li {
     float: left;
     margin-right: 0;
-    margin-left: 1em;
+/*    margin-left: 1em;*/
 }
 
 #nav li a {
@@ -37,11 +37,11 @@ img.help {
 }
 
 #nav li a {
-    padding: 1em;
+    padding: 0.5em;
     display: block;
     background-color: #eee;
-    border: solid 1px #ddd;
-    border-bottom: none;
+/*    border: solid 1px #ddd;
+    border-bottom: none;*/
     color: #3399ff;
 }
 
@@ -50,8 +50,8 @@ img.help {
 }
 
 #nav li a:active {
-    border: solid 1px #ccc;
-    border-bottom: solid 1px #fff;
+/*    border: solid 1px #ccc;*/
+/*    border-bottom: solid 1px #fff;*/
     color: #666;
     cursor: default;
     background-color: #fff;

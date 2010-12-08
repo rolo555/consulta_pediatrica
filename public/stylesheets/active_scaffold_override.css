@@ -2,3 +2,8 @@
     float: left;
     width: 50%;
 }
+
+a.action img, td.photograph-column img.images {
+    height: 48px;
+    width: 48px;
+}
