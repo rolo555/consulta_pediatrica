@@ -351,7 +351,7 @@ ActiveRecord::Schema.define(:version => 20101215220253) do
 
   create_table "vaccine_schedules", :force => true do |t|
     t.integer  "vaccines_name_id"
-    t.string   "type"
+    t.string   "application_type"
     t.integer  "days"
     t.datetime "created_at"
     t.datetime "updated_at"
