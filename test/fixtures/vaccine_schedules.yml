@@ -2,10 +2,10 @@
 
 one:
   vaccines_name_id: 1
-  type: MyString
+  application_type: MyString
   days: 1
 
 two:
   vaccines_name_id: 1
-  type: MyString
+  application_type: MyString
   days: 1
