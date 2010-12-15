@@ -4,7 +4,8 @@ class VaccinesNamesController < ApplicationController
     :full_text_search => true
 
   active_scaffold :vaccines_name do |conf|
-    conf.columns = [:name]
+    conf.columns = :name, :vaccine_schedule
+    conf.list.columns.exclude :vaccine_schedule
   end
 
   def index
