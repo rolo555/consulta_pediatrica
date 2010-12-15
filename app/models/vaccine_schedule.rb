@@ -1,3 +1,4 @@
 class VaccineSchedule < ActiveRecord::Base
-  validates_presence_of :vaccine_name_id, :type, :days
+  validates_presence_of :vaccines_name, :type, :days
+  belongs_to :vaccines_name
 end
