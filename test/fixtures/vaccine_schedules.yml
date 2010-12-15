@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  vaccine_name_id: 1
+  type: MyString
+  days: 1
+
+two:
+  vaccine_name_id: 1
+  type: MyString
+  days: 1
