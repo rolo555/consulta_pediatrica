@@ -5,6 +5,7 @@ class VaccinesName < ActiveRecord::Base
 
   #Relaciones
   has_many :vaccines
+  has_many :vaccine_schedule
 
   #Validaciones
   validates_presence_of :name
