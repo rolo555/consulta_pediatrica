@@ -333,6 +333,14 @@ ActiveRecord::Schema.define(:version => 20101205211526) do
     t.datetime "updated_at"
   end
 
+  create_table "vaccine_schedules", :force => true do |t|
+    t.integer  "vaccines_name_id"
+    t.string   "application_type"
+    t.integer  "days"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "vaccines", :force => true do |t|
     t.integer  "vaccines_name_id"
     t.decimal  "purchase_cost"
