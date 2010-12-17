@@ -381,6 +381,9 @@ es:
       vaccine_sale:
         one: Venta de vacuna
         other: Ventas de vacunas
+      vaccine_schedule:
+        one: Cronograma de aplicacion
+        other: Cronograma de aplicaciones
       vaccines_name:
         one: Nombre de vacuna
         other: Nombres de vacunas
@@ -554,8 +557,13 @@ es:
         amount: Monto
         created_at: Creado en
         vaccines_name: Nombre de vacuna
+      vaccine_schedule:
+        application_type: Tipo
+        days: Dias
+        number: Número
       vaccines_name:
         name: Nombre
+        vaccine_schedules: Cronograma de aplicaciones
     description:
       drug:
         how_often_in_hours: Cuan seguido por horas
