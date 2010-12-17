@@ -8,7 +8,7 @@ class IncomesController < ApplicationController
       :type => :collection,
       :controller => "balances",
       :action => "edit",
-      :parameters => { :id => Balance.first.id },
+      :parameters => { :id => Balance.first.nil? ? Balance.create().id : Balance.first.id },
       :page => true
   end
 end
