@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
- 
+  map.resources :vaccine_schedules, :active_scaffold => true
   map.resources :vaccine_sales, :active_scaffold => true
   map.resources :application_records, :active_scaffold => true
   map.resources :immunization_records, :active_scaffold => true
