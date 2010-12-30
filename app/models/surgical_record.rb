@@ -18,7 +18,7 @@ class SurgicalRecord < ActiveRecord::Base
   end
 
   def before_validation
-    sanitizate_strings :pathology, :procedure
+    sanitizate_strings :pathology
   end
 
   def date_must_be_lower_than_tomorrow
