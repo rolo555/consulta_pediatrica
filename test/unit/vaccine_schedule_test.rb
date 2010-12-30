@@ -8,6 +8,14 @@ class VaccineScheduleTest < ActiveSupport::TestCase
 
   should belong_to :vaccines_name
 
+  context 'to label' do
+    should 'return [number] [application type] [days]' do
+      vaccine_schedule = VaccineSchedule.new
+      vaccine_schedule.stubs(:number => "Primera", :application_type => "Dosis", :days => 10)
+      assert_equal "Primera Dosis a los 10 días", vaccine_schedule.to_label
+    end
+  end
+
   context 'number method' do
     should 'return Primera if is the first dosis' do
       vaccine_schedule = VaccineSchedule.new

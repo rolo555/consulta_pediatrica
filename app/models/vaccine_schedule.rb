@@ -18,6 +18,6 @@ class VaccineSchedule < ActiveRecord::Base
   end
 
   def to_label
-    "#{number} #{application_type}, #{days} días"
+    "#{number} #{application_type} a los #{days} días"
   end
 end
