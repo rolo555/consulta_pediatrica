@@ -698,8 +698,8 @@ es:
     yearly_balance: Balance anual
 
     #immunization_record
-    dosis: [~, Primera, Segunda, Tercera, Curata, Quinta, Sexta, Septima, Octava, Novena, Decima]
-    refuerzos: [~, Primer, Segundo, Tercero, Curato, Quinto, Sexto, Septimo, Octavo, Noveno, Decimo]
+    dosis: [~, Primera, Segunda, Tercera, Cuarta, Quinta, Sexta, Septima, Octava, Novena, Décima]
+    refuerzos: [~, Primer, Segundo, Tercer, Cuarto, Quinto, Sexto, Septimo, Octavo, Noveno, Décimo]
 
     #vaccine
     can't be lower than: No puede ser menor que
