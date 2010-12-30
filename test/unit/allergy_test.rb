@@ -5,7 +5,7 @@ class AllergyTest < ActiveSupport::TestCase
   should belong_to :patient
   should validate_presence_of :substance
   should validate_presence_of :reaction
-  should validate_uniqueness_of(:substance).case_insensitive
+  should validate_uniqueness_of(:substance).case_insensitive.scoped_to(:patient_id)
   should ensure_length_of(:substance).is_at_most(50)
   should ensure_length_of(:reaction).is_at_most(50)
 
