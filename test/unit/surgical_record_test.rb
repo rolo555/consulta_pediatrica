@@ -6,7 +6,6 @@ class SurgicalRecordTest < ActiveSupport::TestCase
   should validate_presence_of :procedure
   should ensure_length_of(:pathology).is_at_most(100)
   should validate_uniqueness_of(:pathology).case_insensitive.scoped_to(:patient_id)
-#  should_not allow_value(Date.tomorrow).for(:date)
   should_not allow_value(Date.today.year+1).for(:year)
 
   context "to_label" do
