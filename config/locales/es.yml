@@ -289,7 +289,7 @@ es:
 
     models:
       address:
-        one: "Direccion"
+        one: "Dirección"
         other: "Direcciones"
       allergy:
         one: "Alergia"
@@ -307,11 +307,11 @@ es:
         one: "Consulta"
         other: "Consultas"
       diagnostic:
-        one: "Diagnostico"
-        other: "Diagnosticos"
+        one: "Diagnóstico"
+        other: "Diagnósticos"
       doctors_name:
-        one: "Nombre del medico"
-        other: "Nombres de medicos"
+        one: "Nombre del médico"
+        other: "Nombres de médicos"
       drug:
         one: "Medicamento"
         other: "Medicamentos"
@@ -325,7 +325,7 @@ es:
         one: "Gasto hospitalario"
         other: "Gastos hospitalarios"
       hospitalization:
-        one: "Hospitalizacion"
+        one: "Hospitalización"
         other: "Hospitalizaciones"
       hospitalization_follow_up:
         one: "Seguimiento"
@@ -340,14 +340,14 @@ es:
         one: "Perfil de laboratorio"
         other: "Perfiles de laboratorio"
       medical_certificate:
-        one: "Certificado medico"
-        other: "Certificados medicos"
+        one: "Certificado médico"
+        other: "Certificados médicos"
       medical_order:
-        one: "Orden medico"
-        other: "Ordenes medicos"
+        one: "Orden médico"
+        other: "Ordenes médicos"
       pathological_record:
-        one: "Registro patologico"
-        other: "Registros patologicos"
+        one: "Registro patológico"
+        other: "Registros patológicos"
       patient:
         one: "Paciente"
         other: "Pacientes"
@@ -355,23 +355,23 @@ es:
         one: "Registro perinatal"
         other: "Registros perinatales"
       phone_number:
-        one: "Numero telefonico"
-        other: "Numeros telefonicos"
+        one: "Número telefónico"
+        other: "Números telefónicos"
       place:
         one: "Lugar"
         other: "Lugares"
       surgery:
-        one: "Cirugia"
-        other: "Cirugias"
+        one: "Cirugía"
+        other: "Cirugías"
       surgical_record:
-        one: "Registro de Cirugia"
-        other: "Registros de Cirugia"
+        one: "Registro de Cirugía"
+        other: "Registros de Cirugía"
       surgical_staff:
-        one: "Personal de Cirugia"
-        other: "Personal de Cirugia"
+        one: "Personal de Cirugía"
+        other: "Personal de Cirugía"
       surgeries_surgical_staff:
-        one: "Personal en Cirugia"
-        other: "Personal en Cirugia"
+        one: "Personal en Cirugía"
+        other: "Personal en Cirugía"
       surgery_quotation:
         one: Cotización de cirugía
         other: Cotizaciones de cirugía
@@ -389,16 +389,16 @@ es:
         other: Nombres de vacunas
     attributes:
       address:
-        address: "Direccion"
+        address: "Dirección"
       allergy:
         substance: "Sustancia"
-        reaction: "Reaccion"
+        reaction: "Reacción"
       application_record:
         date: "Fecha"
         application_type: "Tipo"
         immunization_record: Historial de vacuna
         vaccine: Vacuna
-        doctor_application: Aplicacion del doctor
+        doctor_application: Aplicación del doctor
       balance:
         date_start: "Fecha de inicio"
         date_finish: "Fecha final"
@@ -410,18 +410,18 @@ es:
       consultation:
         weight: "Peso"
         height: "Talla"
-        head_circumference: "Perimetro Cefalico"
+        head_circumference: "Perímetro Cefálico"
         anterior_fontanel: "Fontanel anterior"
         temperature: "Temperatura"
         amount: "Monto"
-        current_condition: "Condicion actual"
-        diagnosis: "Diagnostico"
-        medical_certificate: "Certificado medico"
+        current_condition: "Condición actual"
+        diagnosis: "Diagnóstico"
+        medical_certificate: "Certificado médico"
         recipe: "Receta"
         order: "Orden"
         laboratory: "Laboratorio"
         images: Imágenes
-        surgery_quotations: Cotizacion de cirugías
+        surgery_quotations: Cotización de cirugías
         suggested_drugs: Medicamentos sugeridos
       diagnostic:
         name: "Nombre"
@@ -433,10 +433,10 @@ es:
         how_often_in_weight: "Frecuencia en peso"
         recipe: "Receta"
       email:
-        address: "Direccion"
+        address: "Dirección"
       family_record:
-        pathology: "Patologia"
-        relation_ship: "Relacion"
+        pathology: "Patología"
+        relation_ship: "Relación"
       hospital_expense:
         concept: "Concepto"
         price: "Precio"
@@ -444,20 +444,20 @@ es:
       hospitalization:
         room: "Habitacion"
         created_at: "Creado en"
-        doctors_name: "Nombre del medico"
+        doctors_name: "Nombre del médico"
         hospitalization_follow_up: "Seguimiento"
-        doctors_names: "Nombres de medicos"
+        doctors_names: "Nombres de médicos"
       hospitalization_follow_up:
         date: "Fecha y hora"
         currentCondition: "Padecimiento actual"
-        physicalExamination: "Exploracion fisica"
-        diagnosis: "Diagnostico"
+        physicalExamination: "Exploración física"
+        diagnosis: "Diagnóstico"
         treatment: "Tratamiento"
-        room: "Habitacion"
-        prescription: "Prescripcion"
+        room: "Habitación"
+        prescription: "Prescripción"
       immunization_record:
-        application_records: Registro de aplicacion
-        applications_records: Registros de aplicacion
+        application_records: Registro de aplicación
+        applications_records: Registros de aplicación
         vaccines_name: Nombre de vacuna
       income:
         concept: "Concepto"
@@ -474,10 +474,10 @@ es:
         text: "Texto"
       pathological_record:
         date: "Fecha"
-        diagnosis: "Diagnostico"
+        diagnosis: "Diagnóstico"
         treatment: "Tratamiento"
       patient:
-        photograph: "Fotografia"
+        photograph: "Fotografía"
         first_name: "Nombre"
         last_name: "Apellido"
         date_of_birth: "Fecha de nacimiento"
@@ -489,8 +489,8 @@ es:
         consultation_price: "Precio de consulta"
         place: "Lugar"
         addresses: "Direcciones"
-        phone_numbers: "Numeros telefonicos"
-        emails: "Correos electronicos"
+        phone_numbers: "Números telefónicos"
+        emails: "Correos electrónicos"
       perinatal_record:
         type_of_birth: "Tipo de nacimiento"
         jaundice: "Ictericia"
@@ -511,25 +511,25 @@ es:
         number: "Numero"
       place:
         city: "Ciudad"
-        country: "Pais"
+        country: "País"
       surgery:
         created_at: Creado en
-        pre_operative_diagnosis: "Diagnostico pre operatorio"
-        post_operative_diagnosis: "Diagnostico post operatorio"
+        pre_operative_diagnosis: "Diagnóstico pre operatorio"
+        post_operative_diagnosis: "Diagnóstico post operatorio"
         procedure: "Procedimiento"
         complications: "Complicaciones"
         total_amount: "Monto total"
         hospital_amount: "Monto para hospital"
         doctors_percentage: "Porcentaje para el doctor"
         doctors_amount: "Monto para el doctor"
-        surgeries_surgical_staffs: "Personal en cirugia"
+        surgeries_surgical_staffs: "Personal en cirugía"
       surgical_record:
         date: "Fecha"
-        pathology: "Patologia"
+        pathology: "Patología"
         procedure: "Procedimiento"
         year: "Año"
         month: "Mes"
-        day: "Dia"
+        day: "Día"
         aproximate_date: "Fecha aproximada"
       surgical_staff:
         staff: "Personal"
@@ -539,7 +539,7 @@ es:
         name: Nombre
         surgical_staff: Personal
       surgery_quotation:
-        days_of_hospitalization: Dias de hospitalización
+        days_of_hospitalization: Días de hospitalización
         medical_expenses: Gastos médicos
         surgery_time: Tiempo de cirugía
         total_expenses: Gastos totales
@@ -574,7 +574,7 @@ es:
         relation_ship: Relación que tiene el familiar con el paciente
       surgery_quotation:
         hospital_expenses: Lista de gastos hospitalarios
-        days_of_hospitalization: dias
+        days_of_hospitalization: días
         surgery_time: minutos
         medical_expenses: Bs
       consultation:
@@ -670,12 +670,12 @@ es:
     clone: 'Clonar'
     Personal data: 'Datos personales'
     Parents data: 'Padres'
-    Medical data: 'Datos medicos'
+    Medical data: 'Datos médicos'
     Amount: 'Monto'
     can't be greater than: 'no puede ser mayor que'
     today: 'hoy'
     #Are you sure to clone patient?
-    clone_patient_question: ¿Esta seguro de clonar el paciente?
+    clone_patient_question: ¿Está seguro de clonar el paciente?
 
     #surgical_record
     Date: 'Fecha'
@@ -687,8 +687,8 @@ es:
     amounts: Montos
 
     #Hospital_follow_up
-    Clinical course: "Evolucion clinica"
-    Medical prescription: "Prescripcion medica"
+    Clinical course: "Evolución clínica"
+    Medical prescription: "Prescripción médica"
 
     #Incomes
     balances: Balances
@@ -705,6 +705,6 @@ es:
     can't be lower than: No puede ser menor que
 
     #application_record
-    must be empty unless is a doctor application: tiene que estar vacia a menos que sea una aplicacion del doctor
+    must be empty unless is a doctor application: tiene que estar vacía a menos que sea una aplicación del doctor
 
     help: Ayuda
