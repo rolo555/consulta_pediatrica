@@ -2,8 +2,8 @@ require 'test_helper'
 
 class ConsultationTest < ActiveSupport::TestCase
   should belong_to :patient
-  should have_many(:images)#.dependent(:destroy)
-  should have_many(:surgery_quotations)#.dependent(:destroy)
+  should have_many(:images).dependent(:destroy)
+  should have_many(:surgery_quotations).dependent(:destroy)
   should have_one :income
 
   [:weight, :height, :head_circumference, :temperature, :amount].each do |field|

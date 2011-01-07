@@ -1,8 +1,8 @@
-class Consultation < ActiveRecord::Base
+class Consultation < ActiveRecord::Base  
   #Relaciones
   belongs_to :patient
-  has_many :images, :as => :imaginable
-  has_many :surgery_quotations
+  has_many :images, :as => :imaginable, :dependent => :destroy
+  has_many :surgery_quotations, :dependent => :destroy
   has_one :income, :as => :payment, :dependent => :destroy
 
   #Validaciones
