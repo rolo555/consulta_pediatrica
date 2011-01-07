@@ -425,6 +425,7 @@ es:
         suggested_drugs: Medicamentos sugeridos
       diagnostic:
         name: "Nombre"
+        drugs: Medicamentos
       doctors_name:
         name: "Nombre"
       drug:
