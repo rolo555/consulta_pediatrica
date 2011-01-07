@@ -272,6 +272,15 @@ es:
 
   # For Rails 2
   activerecord:
+    found:
+      one: encontrado/a
+      other: encontrados/as
+    next:
+      one: siguiente
+      other: siguientes
+    previous:
+      one: anterior
+      other: anteriores
     errors:
       template:
         header:
