@@ -18,7 +18,7 @@ module PathologicalRecordsHelper
   def pathological_record_aproximate_date_column(record)
     aproximate_date = []
     aproximate_date << "%d" unless record.day.blank?
-    aproximate_date << as_(:abbr_month_names, :scope => [:date])[record.date.month] unless record.month.blank?
+    aproximate_date << as_(:month_names, :scope => [:date])[record.date.month] unless record.month.blank?
     aproximate_date << "%Y" unless record.year.blank?
     record.date.strftime aproximate_date.join(" ") unless record.date.blank?
   end
