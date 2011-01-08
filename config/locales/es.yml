@@ -575,6 +575,8 @@ es:
         name: Nombre
         vaccine_schedules: Cronograma de aplicaciones
     description:
+      diagnostic:
+        drugs: Seleccionar un medicamento
       drug:
         how_often_in_hours: Cuan seguido por horas
         how_often_in_weight: Cuan seguido por gramos
@@ -592,6 +594,9 @@ es:
       surgery:
         total_amount: Bs
         hospital_amount: Bs
+      vaccine_sale:
+        vaccine: Vacuna, Unidades, Fecha de vencimiento
+        amount: Bs
       consultation:
         weight: Kg
         height: cm
