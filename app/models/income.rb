@@ -2,6 +2,9 @@ class Income < ActiveRecord::Base
   #Relaciones
   belongs_to :payment, :polymorphic => true
 
+  #Validation
+  validates_numericality_of :amount, :greater_than_or_equal_to => 0
+
   def self.yearly_balance(start_year, finish_year)
     balance = ActiveSupport::OrderedHash.new
     start_year.upto(finish_year).each do |year|

@@ -14,8 +14,7 @@ class HospitalExpensesController < ApplicationController
     conf.columns[:frequency]
 
     #Configuración de cómo se mostrará la columna price
-    conf.columns[:price].options[:format] = :currency
-    conf.columns[:price].options[:i18n_options] = { :precision => 0 }
+    conf.columns[:price].options[:format] = nil
 
     #Agregar a :is_always_used para que la búsqueda lo incluya
     conf.search.columns << :is_always_used

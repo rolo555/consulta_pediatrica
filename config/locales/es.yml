@@ -580,6 +580,8 @@ es:
         how_often_in_weight: Cuan seguido por gramos
       hospital_expense:
         price: Bs
+      income:
+        amount: Bs
       family_record:
         relation_ship: Relación que tiene el familiar con el paciente
       surgery_quotation:
@@ -587,6 +589,9 @@ es:
         days_of_hospitalization: días
         surgery_time: minutos
         medical_expenses: Bs
+      surgery:
+        total_amount: Bs
+        hospital_amount: Bs
       consultation:
         weight: Kg
         height: cm
@@ -604,6 +609,10 @@ es:
         weeks_of_gestation: semanas
         apgar1: /10
         apgar2: /5
+      vaccine_sale:
+        amount: Bs
+      vaccine:
+        purchase_cost: Bs
   active_scaffold:
     add: 'Añadir'
     add_existing: 'Añadir Existente'

@@ -4,8 +4,7 @@ class VaccineSalesController < ApplicationController
     conf.list.columns = :created_at, :buyer, :vaccines_name, :sales_units
     conf.columns[:vaccine].form_ui = :record_select
     conf.columns = [:vaccine, :sales_units, :buyer, :amount]
-    conf.columns[:amount].options[:format] = :currency
-    conf.columns[:amount].options[:i18n_options] = { :precision => 2 }
+    conf.columns[:amount].options[:format] = :nil
     conf.columns[:sales_units].update_column = :amount
     conf.columns[:sales_units].send_form_on_update_column = true
     conf.columns[:vaccine].description = "Vacuna, Unidades, Fecha de Ven."
