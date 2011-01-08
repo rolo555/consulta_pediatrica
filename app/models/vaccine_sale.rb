@@ -6,13 +6,13 @@ class VaccineSale < ActiveRecord::Base
   has_one :income, :as => :payment, :dependent => :destroy
 
   #Validaciones
-  validates_presence_of :buyer, :sales_units, :amount, :vaccine
+  validates_presence_of :buyer, :sales_units, :vaccine
   validates_length_of :buyer, :maximum => 50, :unless => "buyer.blank?"
   validates_numericality_of :sales_units,
     :greater_than => 0,
     :only_integer => true
-  validates_numericality_of :amount,
-    :greater_than_or_equal_to => 0
+#  validates_numericality_of :amount,
+#    :greater_than_or_equal_to => 0
   validate :sales_units_cant_be_greater_than_vaccine_units
 
   def sales_units_cant_be_greater_than_vaccine_units
@@ -36,6 +36,11 @@ class VaccineSale < ActiveRecord::Base
       old_units = VaccineSale.find(self.id).sales_units
     end
     @diff_units = old_units - self.sales_units
+
+    #Caluculo de amount
+    unit_cost = ((self.vaccine.percentage_increase / 100) + 1) * self.vaccine.purchase_cost
+    self.amount = self.sales_units * unit_cost
+
   end
 
   def after_create
