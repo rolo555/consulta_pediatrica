@@ -9,7 +9,7 @@ class PathologicalRecord < ActiveRecord::Base
   validates_presence_of :diagnosis, :treatment
   validates_length_of :diagnosis, :maximum => 200, :if => "self.diagnosis.presence"
   validates_length_of :treatment, :maximum => 200, :if => "self.treatment.presence"
-  validate :date_cant_be_greater_than_today
+  validate :date_cant_be_greater_than_today, :incomplite_date
 
   def before_validation
     sanitizate_strings :diagnosis, :treatment
@@ -19,6 +19,24 @@ class PathologicalRecord < ActiveRecord::Base
     unless self.date.nil?
       if (self.date <=> Date.today) > 0
         errors.add :date, 'can\'t be greater than today'
+      end
+    end
+  end
+
+  def incomplite_date
+    unless self.day.blank?
+      unless self.month.blank?
+        if self.year.blank?
+          errors.add :date, 'can\'t select a month without a year'
+        end
+      else
+        errors.add :date, 'can\'t select a day without a month'
+      end
+    else
+      unless self.month.blank?
+        if self.year.blank?
+          errors.add :date, 'can\'t select a month without a year'
+        end
       end
     end
   end
