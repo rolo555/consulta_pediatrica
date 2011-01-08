@@ -8,9 +8,6 @@ class VaccineSalesController < ApplicationController
     conf.columns[:amount].options[:i18n_options] = { :precision => 2 }
     conf.columns[:sales_units].update_column = :amount
     conf.columns[:sales_units].send_form_on_update_column = true
-    conf.columns[:vaccine].description = "Vacuna, Unidades, Fecha de Ven."
-    conf.columns[:amount].description= "Bs."
-#    conf.columns[:amount].options = {"disabled" => "disabled"}
   end
 
   protected
@@ -23,5 +20,4 @@ class VaccineSalesController < ApplicationController
       record.amount = 0
     end
   end
-
 end

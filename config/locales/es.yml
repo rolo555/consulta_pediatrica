@@ -587,6 +587,9 @@ es:
         days_of_hospitalization: días
         surgery_time: minutos
         medical_expenses: Bs
+      vaccine_sale:
+        vaccine: Vacuna, Unidades, Fecha de vencimiento
+        amount: Bs
       consultation:
         weight: Kg
         height: cm
