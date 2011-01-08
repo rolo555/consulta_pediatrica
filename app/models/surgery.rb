@@ -16,11 +16,9 @@ class Surgery < ActiveRecord::Base
     :unless => 'post_operative_diagnosis.blank?'
 
   validates_numericality_of :total_amount,
-    :only_integer => true,
     :greater_than_or_equal_to => 0
 
   validates_numericality_of :hospital_amount,
-    :only_integer => true,
     :greater_than_or_equal_to => 0
 
   validates_numericality_of :doctors_percentage,

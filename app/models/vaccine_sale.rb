@@ -11,8 +11,8 @@ class VaccineSale < ActiveRecord::Base
   validates_numericality_of :sales_units,
     :greater_than => 0,
     :only_integer => true
-#  validates_numericality_of :amount,
-#    :greater_than_or_equal_to => 0
+  validates_numericality_of :amount,
+    :greater_than_or_equal_to => 0
   validate :sales_units_cant_be_greater_than_vaccine_units
 
   def sales_units_cant_be_greater_than_vaccine_units
