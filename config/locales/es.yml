@@ -486,6 +486,7 @@ es:
         date: "Fecha"
         diagnosis: "Diagnóstico"
         treatment: "Tratamiento"
+        aproximate_date: Fecha aproximada
       patient:
         photograph: "Fotografía"
         first_name: "Nombre"
