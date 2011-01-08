@@ -5,7 +5,9 @@ class DiagnosticsController < ApplicationController
     :notify => :add_diagnostic
 
   active_scaffold :diagnostics do |conf|
+    conf.columns = [:name, :drugs]
     conf.columns[:drugs].form_ui = :record_select
+    conf.columns[:drugs].description = "Seleccionar un medicamento"
   end
   
   def add_diagnostic(record)

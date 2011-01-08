@@ -272,6 +272,15 @@ es:
 
   # For Rails 2
   activerecord:
+    found:
+      one: encontrado/a
+      other: encontrados/as
+    next:
+      one: siguiente
+      other: siguientes
+    previous:
+      one: anterior
+      other: anteriores
     errors:
       template:
         header:
@@ -425,6 +434,7 @@ es:
         suggested_drugs: Medicamentos sugeridos
       diagnostic:
         name: "Nombre"
+        drugs: Medicamentos
       doctors_name:
         name: "Nombre"
       drug:

@@ -342,9 +342,9 @@ RecordSelect.Multiple.prototype = Object.extend(new RecordSelect.Abstract(), {
     if (already_selected) return;
 
     var entry = '<li>'
-              + '<a href="#" onclick="$(this.parentNode).remove(); return false;" class="remove">remove</a>'
               + '<input type="hidden" name="' + this.input_name + '" value="' + id + '" />'
               + '<label>' + label + '</label>'
+              + '<a href="#" onclick="$(this.parentNode).remove(); return false;" class="remove">remove</a>'
               + '</li>';
     new Insertion.Top(this.list_container, entry);
   }
