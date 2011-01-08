@@ -42,16 +42,10 @@ class PatientsController < ApplicationController
     conf.columns[:date_of_birth].options = {:end_year => Date.today.year-30, :start_year => Date.today.year, :include_blank => false }
 
     #Eliminar las etiquetas al listar de todas las relaciones
-    conf.columns[:consultations].label = ""
-    conf.columns[:surgical_records].label = ""
-    conf.columns[:pathological_records].label = ""
-    conf.columns[:family_records].label = ""
-    conf.columns[:allergies].label = ""
-    conf.columns[:perinatal_record].label = ""
-    conf.columns[:surgeries].label = ""
-    conf.columns[:hospitalizations].label = ""
-    conf.columns[:immunization_records].label = ""
-    
+    [:consultations, :surgical_records, :pathological_records, :family_records, :allergies, :perinatal_record, :surgeries, :hospitalizations, :immunization_records].each do |field|
+      conf.columns[field].label = ""
+    end
+
     #Algunos campos se muestran con :record_select
     conf.columns[:consultation_price].form_ui = :record_select
     conf.columns[:place].form_ui = :record_select
