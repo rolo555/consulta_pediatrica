@@ -205,6 +205,9 @@ ActiveRecord::Schema.define(:version => 20110108221606) do
     t.string   "treatment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "day"
+    t.string   "month"
+    t.string   "year"
   end
 
   create_table "patients", :force => true do |t|

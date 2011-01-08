@@ -11,7 +11,7 @@ class SurgicalRecord < ActiveRecord::Base
   validates_presence_of :pathology, :procedure
   validates_length_of :pathology, :maximum => 100, :if => "self.pathology.presence"
   validates_uniqueness_of :pathology, :case_sensitive => false, :scope => :patient_id
-  validate :date_must_be_lower_than_tomorrow, :incomplite_date
+  validate :date_must_be_lower_than_tomorrow, :date_cant_be_incomplete
 
   def to_label
     "#{pathology} #{procedure}"
@@ -29,22 +29,12 @@ class SurgicalRecord < ActiveRecord::Base
     end
   end
 
-  def incomplite_date
-    unless self.day.blank?
-      unless self.month.blank?
-        if self.year.blank?
-          errors.add :date, 'can\'t select a month without a year'
-        end
-      else
-        errors.add :date, 'can\'t select a day without a month'
-      end
-    else
-      unless self.month.blank?
-        if self.year.blank?
-          errors.add :date, 'can\'t select a month without a year'
-        end
-      end
+  def date_cant_be_incomplete
+    if self.day.present? and self.month.blank?
+      errors.add :date, 'can\'t select a day without a month'
+    end
+    if self.month.present? and self.year.blank?
+      errors.add :date, 'can\'t select a month without a year'
     end
   end
-
 end
