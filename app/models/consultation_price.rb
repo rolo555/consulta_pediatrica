@@ -35,5 +35,5 @@ class ConsultationPrice < ActiveRecord::Base
    def require_validation_destroy
     raise "Cannot delete consultation price with payments" if self.default
   end
-
+  
 end

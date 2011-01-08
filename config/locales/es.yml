@@ -694,6 +694,7 @@ es:
 
     #Consultation price
     can't be false, because at least one consultation price must be default: no puede ser falso, porque al menos un precio de consulta debe estar por defecto
+    can't delete default consultation price: no se puede borrar el precio de consulta por defecto
 
     #Surgery
     amounts: Montos

@@ -23,4 +23,14 @@ class ConsultationPricesController < ApplicationController
     end
   end
 
+  def do_destroy
+    destroy_find_record
+    begin
+      self.successful = @record.destroy
+    rescue Exception => ex
+      flash[:error] = as_("can\'t delete default consultation price")
+      self.successful = false
+    end
+  end
+
 end
