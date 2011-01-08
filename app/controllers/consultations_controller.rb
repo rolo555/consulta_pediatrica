@@ -38,8 +38,7 @@ class ConsultationsController < ApplicationController
       :surgery_quotations]
 
     #Configuración de cómo se mostrará la columna amount
-    conf.columns[:amount].options[:format] = :currency
-    conf.columns[:amount].options[:i18n_options] = { :precision => 0 }
+    conf.columns[:amount].options[:format] = nil
 
 #    add_sub_groups conf.create
 #    add_sub_groups conf.update
