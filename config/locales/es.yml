@@ -584,6 +584,8 @@ es:
         anterior_fontanel: cm
         temperature: &#176;C
         amount: Bs
+      consultation_price:
+        amount: Bs
       perinatal_record:
         weight: Por defecto <em>gr</em>, puede utilizar <em>lb</em> y <em>kg</em>
         height: cm
