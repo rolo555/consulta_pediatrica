@@ -10,5 +10,8 @@ class IncomesController < ApplicationController
       :action => "edit",
       :parameters => { :id => Balance.first.nil? ? Balance.create().id : Balance.first.id },
       :page => true
+
+    conf.columns[:amount].options[:format] = nil
+
   end
 end
