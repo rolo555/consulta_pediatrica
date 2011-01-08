@@ -29,4 +29,11 @@ class ConsultationPrice < ActiveRecord::Base
   def cant_exist_none_consultation_price_by_default
     errors.add :default, as_("can\'t be false, because at least one consultation price must be default") if (self.default == false) and ConsultationPrice.find_by_default(true).nil?
   end
+
+  before_destroy :require_validation_destroy
+
+   def require_validation_destroy
+    raise "Cannot delete consultation price with payments" if self.default
+  end
+
 end
