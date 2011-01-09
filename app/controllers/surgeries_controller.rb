@@ -19,9 +19,7 @@ class SurgeriesController < ApplicationController
 
     conf.columns[:total_amount].options[:format] = nil
     conf.columns[:hospital_amount].options[:format] = nil
-
-    conf.columns[:doctors_percentage].options[:format] = :percentage
-    conf.columns[:doctors_percentage].options[:i18n_options] = { :precision => 0 }
+    conf.columns[:doctors_percentage].options[:format] = nil
 
     add_sub_groups conf.create
     add_sub_groups conf.update

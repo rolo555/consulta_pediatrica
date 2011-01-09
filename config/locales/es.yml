@@ -352,8 +352,8 @@ es:
         one: "Certificado médico"
         other: "Certificados médicos"
       medical_order:
-        one: "Orden médico"
-        other: "Ordenes médicos"
+        one: "Orden médica"
+        other: "Ordenes médicas"
       pathological_record:
         one: "Registro patológico"
         other: "Registros patológicos"
@@ -486,6 +486,7 @@ es:
         date: "Fecha"
         diagnosis: "Diagnóstico"
         treatment: "Tratamiento"
+        aproximate_date: Fecha aproximada
       patient:
         photograph: "Fotografía"
         first_name: "Nombre"
@@ -594,6 +595,7 @@ es:
       surgery:
         total_amount: Bs
         hospital_amount: Bs
+        percentage: %
       vaccine_sale:
         vaccine: Vacuna, Unidades, Fecha de vencimiento
         amount: Bs

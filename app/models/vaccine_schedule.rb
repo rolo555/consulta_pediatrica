@@ -2,6 +2,8 @@ class VaccineSchedule < ActiveRecord::Base
   validates_presence_of :vaccines_name, :application_type, :days
   belongs_to :vaccines_name
 
+  validates_numericality_of :days
+
   def number
     index = VaccineSchedule.find_all_by_vaccines_name_id_and_application_type(vaccines_name.id,
       application_type, :order => :days).index self
