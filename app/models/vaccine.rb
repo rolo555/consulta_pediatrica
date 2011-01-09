@@ -10,14 +10,12 @@ class Vaccine < ActiveRecord::Base
 
   validates_numericality_of :units,
     :only_integer => true,
-    :greater_than => 0,
-    :on => :create
+    :greater_than => 0
 
   validates_numericality_of :purchase_cost,
     :greater_than => 0
 
   validates_numericality_of :percentage_increase,
-    :only_integer => true,
     :greater_than_or_equal_to => 0
 
   validate :expiration_date_cant_be_lower_than_today
