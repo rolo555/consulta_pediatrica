@@ -3,7 +3,7 @@ class Income < ActiveRecord::Base
   belongs_to :payment, :polymorphic => true
 
   #Validation
-  validates_numericality_of :amount, :greater_than_or_equal_to => 0
+  validates_numericality_of :amount, :greater_than_or_equal_to => 0, :if => "self.amount.present?"
 
   def self.yearly_balance(start_year, finish_year)
     balance = ActiveSupport::OrderedHash.new
