@@ -11,6 +11,11 @@ class ConsultationsController < ApplicationController
 
     #Configuración de cómo se mostrará la columna amount
     conf.columns[:amount].options[:format] = nil
+    
+    conf.columns[:weight].options[:format] = nil
+    conf.columns[:height].options[:format] = nil
+    conf.columns[:head_circumference].options[:format] = nil
+    conf.columns[:temperature].options[:format] = nil
 
     conf.action_links.add :print,
       :type => :member
