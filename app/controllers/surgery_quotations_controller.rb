@@ -16,7 +16,7 @@ class SurgeryQuotationsController < ApplicationController
     
     conf.columns[:hospital_expenses].form_ui = :record_select
 
-    conf.columns[:medical_expenses].options[:format] = :nil
+    conf.columns[:medical_expenses].options[:format] = nil
 
     conf.list.columns << :total_expenses
 
