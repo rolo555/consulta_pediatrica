@@ -32,4 +32,12 @@ class ConsultationPricesController < ApplicationController
     end
   end
 
+  def warning_message
+    if params[:selected] == "true"
+      render :partial => 'messages', :locals => { :flash => {:warning => as_("unique default price warning")} }
+    else
+      render :text => ""
+    end
+  end
+
 end
