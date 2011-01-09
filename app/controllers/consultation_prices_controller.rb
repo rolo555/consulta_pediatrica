@@ -32,4 +32,12 @@ class ConsultationPricesController < ApplicationController
     end
   end
 
+  def warning_message
+    if params[:selected] == "true"
+      render :layout => false
+    else
+      render :text => ""
+    end
+  end
+
 end
