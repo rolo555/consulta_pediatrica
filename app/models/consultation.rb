@@ -6,6 +6,7 @@ class Consultation < ActiveRecord::Base
   has_one :income, :as => :payment, :dependent => :destroy
 
   #Validaciones
+  validates_presence_of :amount
   validates_numericality_of :weight,
     :greater_than_or_equal_to => 0,
     :allow_nil => true

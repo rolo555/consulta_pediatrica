@@ -89,7 +89,11 @@ class Patient < ActiveRecord::Base
   end
 
   def amount
-    self.consultation_price.amount
+    if self.consultation_price.blank?
+      nil
+    else
+      self.consultation_price.amount
+    end
   end
 
   def nearest_birthday?
