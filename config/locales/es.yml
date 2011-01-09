@@ -595,6 +595,7 @@ es:
       surgery:
         total_amount: Bs
         hospital_amount: Bs
+        percentage: %
       vaccine_sale:
         vaccine: Vacuna, Unidades, Fecha de vencimiento
         amount: Bs
