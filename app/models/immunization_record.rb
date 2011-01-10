@@ -6,7 +6,8 @@ class ImmunizationRecord < ActiveRecord::Base
   has_many :application_records, :dependent => :destroy
 
   #Validaciones
-  validates_presence_of :vaccines_name, :application_records
+  validates_presence_of :vaccines_name
+  validates_uniqueness_of :vaccines_name_id, :scope => :patient_id
 
   def to_label
     "#{self.class.human_name}"
