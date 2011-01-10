@@ -15,8 +15,19 @@ class SurgeryQuotation < ActiveRecord::Base
     "#{self.class.human_name} #{I18n.t(:created_at, :scope => :attributes).downcase} #{I18n.l created_at, :format => :short}"
   end
 
+  def calculate_hospital_expense_price( hospital_expense )
+    if hospital_expense.frequency == "por_hora"
+      hour = self.surgery_time.to_i / 60
+      hospital_expense.price * hour
+    elsif hospital_expense.frequency == "por_dia"
+      hospital_expense.price * self.days_of_hospitalization
+    else
+      hospital_expense.price
+    end
+  end
+
   def total_expenses
-    medical_expenses + hospital_expenses.map { |e| e.price }.sum
+    medical_expenses + hospital_expenses.map { |e| calculate_hospital_expense_price e }.sum
   end
 
   def after_initialize
