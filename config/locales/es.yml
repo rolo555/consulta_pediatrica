@@ -467,8 +467,8 @@ es:
         prescription: "Prescripción"
       immunization_record:
         application_records: Registro de aplicación
-        applications_records: Registros de aplicación
         vaccines_name: Nombre de vacuna
+        vaccines_name_id: Nombre de vacuna
       income:
         concept: "Concepto"
         amount: "Monto"
