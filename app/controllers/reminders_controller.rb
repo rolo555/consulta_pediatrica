@@ -1,0 +1,3 @@
+class RemindersController < ApplicationController
+  
+end
