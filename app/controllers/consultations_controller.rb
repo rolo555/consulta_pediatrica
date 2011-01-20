@@ -31,11 +31,7 @@ class ConsultationsController < ApplicationController
       consultation = Consultation.find params[:id]
       @patient = consultation.patient
       respond_to do |format|
-        format.pdf do
-          render :pdf => "print",
-            :stylesheets => ["application","prince"],
-            :layout => "pdf"
-        end
+        format.pdf { render :layout => false }
       end
     else
       @record = Consultation.find params[:id]
