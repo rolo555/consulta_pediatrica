@@ -18,6 +18,7 @@ class Patient < ActiveRecord::Base
   has_one :perinatal_record, :dependent => :destroy
   belongs_to :place
   belongs_to :consultation_price
+  has_one :reminder, :as => :reminder, :dependent => :destroy
 
   #Fotografía
   has_attached_file :photograph, 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110108223600) do
+ActiveRecord::Schema.define(:version => 20110110234923) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -258,6 +258,15 @@ ActiveRecord::Schema.define(:version => 20110108223600) do
   create_table "places", :force => true do |t|
     t.string   "city"
     t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reminders", :force => true do |t|
+    t.text     "concept"
+    t.date     "reminder_date"
+    t.integer  "reminder_id"
+    t.string   "reminder_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
