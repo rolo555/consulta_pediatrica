@@ -43,11 +43,7 @@ class BalancesController < ApplicationController
     finish = balance.date_finish
     @items = Income.monthly_balance(start.year, start.month, finish.year, finish.month)
     respond_to do |format|
-      format.pdf do
-        render :pdf => "monthly_balance",
-          :stylesheets => ["application","prince"],
-          :layout => "pdf"
-      end
+      format.pdf { render :layout => false }
     end
   end
 
