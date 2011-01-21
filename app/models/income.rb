@@ -64,4 +64,9 @@ class Income < ActiveRecord::Base
     balance["Subtotal"]["total_amount"] = sum :amount, :conditions => ["created_at >= ? AND created_at < ?", start_date, finish_date]
     balance
   end
+
+  def to_label
+    "#{self.concept}"
+  end
+
 end
