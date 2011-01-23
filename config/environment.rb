@@ -43,4 +43,16 @@ Rails::Initializer.run do |config|
   config.action_controller.session_store = :active_record_store 
 
   config.gem "prawn"
+
+#  config.gem "prawn-core"
+#  config.gem "prawn-layout"
+#  config.gem "prawn-security"
+#  config.gem "paginator"
+#  config.gem "hoe"
+#  config.gem "json_pure"
+#  config.gem "postgres-pr"
+#  config.gem "rubyforge"
+#  config.gem "rack"
+  
+
 end
