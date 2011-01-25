@@ -76,11 +76,7 @@ class PatientsController < ApplicationController
   def patient_history
     @patient = Patient.find params[:id]
     respond_to do |format|
-      format.pdf do
-        render :pdf => "patient_history",
-          :stylesheets => ["application","prince"],
-          :layout => "pdf"
-      end
+      format.pdf { render :layout => false }
     end
   end
 end
