@@ -40,4 +40,8 @@ module PatientsHelper
     image_tag "icons/immunizationRecord.png", :title => plural_for(ImmunizationRecord)
   end
 
+  def patient_age_column(record)
+    distance_of_time_in_words(record.date_of_birth, Date.today)
+  end
+
 end

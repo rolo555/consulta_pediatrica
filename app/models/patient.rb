@@ -38,24 +38,25 @@ class Patient < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def age
-    now = Date.today + 1
-    birth = self.date_of_birth
-    years, months, days = now.diff birth
-    age = ""
-    unless years.zero?
-      age += "#{years} years"
-    end
-    unless months.zero?
-      age += " " unless age.empty?
-      age += "#{months} months"
-    end
-    unless days.zero?
-      age += " " unless age.empty?
-      age += "#{days} days"
-    end
-    age
-  end
+#  def age
+#    #    now = Date.today + 1
+#    #    birth = self.date_of_birth
+#    #    years, months, days = now.diff birth
+#    #    age = ""
+#    #    unless years.zero?
+#    #      age += "#{years} #{as_(years)}"
+#    #    end
+#    #    unless months.zero?
+#    #      age += " " unless age.empty?
+#    #      age += "#{months} #{as_(months)}"
+#    #    end
+#    #    unless days.zero?
+#    #      age += " " unless age.empty?
+#    #      age += "#{days} #{as_(days)}"
+#    #    end
+#    #    age
+#    distance_of_time_in_words(self.date_of_birth, Date.today)
+#  end
 
   def before_validation
     sanitizate_strings :first_name, :last_name, :mother, :father, :referenced_by
