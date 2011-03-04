@@ -9,7 +9,7 @@ class Address < ActiveRecord::Base
 
   #Validaciones
   validates_presence_of :address
-  validates_length_of :address, :maximum => 100, :if => "self.address.presence"
+  validates_length_of :address, :maximum => 100, :if => "self.address.present?"
 
   def to_label
     address

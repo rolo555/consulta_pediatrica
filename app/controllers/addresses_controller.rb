@@ -3,7 +3,6 @@ class AddressesController < ApplicationController
     #Configuración de las columnas que se mostrarán
     conf.columns = [:address]
 
-    #Agregar a las columnas de listar la relación patient
-    conf.list.columns.add :patient
+    conf.action_links.delete :help
   end
 end
