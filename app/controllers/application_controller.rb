@@ -20,9 +20,7 @@ class ApplicationController < ActionController::Base
 
     conf.action_links.add :help,
       :type => :collection,
-      :page => true,
-      :popup => true,
-      :parameters => {:id => " "}
+      :popup => true
   end
 
   def help
