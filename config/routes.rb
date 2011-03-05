@@ -22,7 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :pathological_records, :active_scaffold => true
   map.resources :surgical_records, :active_scaffold => true
   map.resources :perinatal_records, :active_scaffold => true
-  map.resources :allergies, :active_scaffold => true
+  map.resources :allergies, :active_scaffold => true, :collection => { :help => :get }
   map.resources :family_records, :active_scaffold => true
   map.resources :patient_prices, :active_scaffold => true
   map.resources :places, :active_scaffold => true, :collection => {:browse => :get}, :member => {:select => :post}

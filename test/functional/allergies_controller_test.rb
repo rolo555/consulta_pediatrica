@@ -4,7 +4,7 @@ class AllergiesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:allergies)
+    assert_not_nil assigns(:records)
   end
 
   test "should get new" do
@@ -14,10 +14,10 @@ class AllergiesControllerTest < ActionController::TestCase
 
   test "should create allergy" do
     assert_difference('Allergy.count') do
-      post :create, :allergy => { }
+      post :create, :record => { :substance => "substance", :reaction => "reaction" }
     end
 
-    assert_redirected_to allergy_path(assigns(:allergy))
+    assert_redirected_to allergies_path
   end
 
   test "should show allergy" do
@@ -31,8 +31,8 @@ class AllergiesControllerTest < ActionController::TestCase
   end
 
   test "should update allergy" do
-    put :update, :id => allergies(:one).to_param, :allergy => { }
-    assert_redirected_to allergy_path(assigns(:allergy))
+    put :update, :id => allergies(:one).to_param, :record => { :substance => "substance", :reaction => "reaction" }
+    assert_redirected_to allergies_path
   end
 
   test "should destroy allergy" do
@@ -42,4 +42,21 @@ class AllergiesControllerTest < ActionController::TestCase
 
     assert_redirected_to allergies_path
   end
+
+  test "should get show_search" do
+    get :show_search
+    assert_response :success
+  end
+
+  context "get help" do
+    should "render with help layout" do
+      get :help
+      assert_equal "layouts/help", @response.layout
+    end
+
+    should "route to allergies/help" do
+      assert_routing '/allergies/help', { :controller => "allergies", :action => "help" }
+    end
+  end
+  
 end
