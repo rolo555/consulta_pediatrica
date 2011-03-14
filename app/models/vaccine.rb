@@ -32,4 +32,19 @@ class Vaccine < ActiveRecord::Base
     end
   end
 
+  def calculate_profit
+    purchase_cost * (percentage_increase / 100)
+  end
+
+  def sell
+    self.units -= 1
+    self.save!
+  end
+
+  def refund
+    puts "refund\n\n"
+    self.units += 1
+    self.save!
+  end
+
 end

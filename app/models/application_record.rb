@@ -6,45 +6,45 @@ class ApplicationRecord < ActiveRecord::Base
 
   validates_presence_of :date, :application_type
   validates_presence_of :vaccine, :if => "self.doctor_application"
-  validate :date_cant_be_greater_than_today
-  validate :vaccine_must_be_nil_unless_doctor_application_is_selected
+  validate :validate_date, :validate_vaccine
 
-  def vaccine_must_be_nil_unless_doctor_application_is_selected
-    unless self.vaccine.nil?
-      unless( self.doctor_application )
-        errors.add :vaccine, "#{as_('must be empty unless is a doctor application')}"
-      end
+  def validate_vaccine
+    if self.vaccine.present? and not self.doctor_application
+      errors.add :vaccine, "#{as_('must be empty unless is a doctor application')}"
     end
   end
 
-  def date_cant_be_greater_than_today
-    unless self.date.nil?
-      if (self.date <=> Date.today) > 0
-        errors.add :date, "#{as_('can\'t be greater than')} #{as_('today')}"
-      end
+  def validate_date
+    if self.date.present? and self.date > Date.today
+      errors.add :date, "#{as_('can\'t be greater than')} #{as_('today')}"
     end
   end
 
   def to_label
-    month =  as_(:month_names, :scope => [:date])[date.month] unless date.month.blank?
-    "#{application_type} del #{date.day} de #{month} del #{date.year}"
+    "#{application_type} #{as_ :of} #{I18n.l(date, :format => :long)}"
   end
 
-  def after_create
-    if self.doctor_application
-      self.income = Income.new
-      self.income.save
+  def update_income
+    if self.income.present?
+      self.income.concept = "#{as_ :application_of} #{vaccine.vaccines_name.to_label} #{as_ :to} #{self.immunization_record.patient.name}"
+      self.income.amount = self.vaccine.calculate_profit
+      self.income.save!
+    end
+  end
+
+  def update_vaccine
+    self.vaccine.sell if self.vaccine_id_changed? and self.vaccine_id_was.nil?
+    if self.vaccine_id_changed? and self.vaccine_id_was.present?
+      puts "update_vaccine\n\n"
+      Vaccine.find(self.vaccine_id_was).refund
     end
   end
 
   def after_save
-    if self.doctor_application
-      self.income.concept = "Aplicacion de #{vaccine.vaccines_name.to_label} a #{self.immunization_record.patient.first_name} #{self.immunization_record.patient.last_name}"
-      self.income.amount = self.vaccine.purchase_cost * (self.vaccine.percentage_increase / 100)
-      self.income.save
-      self.vaccine.units -= 1
-      self.vaccine.save
-    end
+    self.income = Income.create! if self.doctor_application and self.income.blank?
+#    if self.doctor_application and vaccine.present?
+#      self.vaccine.sell
+#    end
   end
 
   def destroy

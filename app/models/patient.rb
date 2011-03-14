@@ -35,6 +35,10 @@ class Patient < ActiveRecord::Base
   validate :date_of_birth_cant_be_greater_than_today
 
   def to_label
+    name
+  end
+
+  def name
     "#{first_name} #{last_name}"
   end
 

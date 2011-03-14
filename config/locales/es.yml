@@ -736,5 +736,7 @@ es:
 
     #application_record
     must be empty unless is a doctor application: tiene que estar vacía a menos que sea una aplicación del doctor
-
+    of: del
+    to: a
+    application_of: Aplicación de
     help: Ayuda
