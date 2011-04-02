@@ -4,20 +4,12 @@ class BalancesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:balances)
+    assert_not_nil assigns(:records)
   end
 
   test "should get new" do
     get :new
     assert_response :success
-  end
-
-  test "should create balance" do
-    assert_difference('Balance.count') do
-      post :create, :balance => { }
-    end
-
-    assert_redirected_to balance_path(assigns(:balance))
   end
 
   test "should show balance" do
@@ -30,9 +22,27 @@ class BalancesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update balance" do
-    put :update, :id => balances(:one).to_param, :balance => { }
-    assert_redirected_to balance_path(assigns(:balance))
+  context "update balance" do
+    should "redirect to yearly" do
+      put :update, :id => balances(:one).to_param, :record => { "date_finish(1i)"=>"2000", "date_start(1i)"=>"2000", "date_finish(2i)"=>"01", "date_start(2i)"=>"01", "date_finish(3i)"=>"01", "date_start(3i)"=>"01" }, :yearly => "yearly"
+      assert_redirected_to balance_path(:yearly_balance)
+    end
+
+    should "redirect to monthly" do
+      put :update, :id => balances(:one).to_param, :record => { "date_finish(1i)"=>"2000", "date_start(1i)"=>"2000", "date_finish(2i)"=>"01", "date_start(2i)"=>"01", "date_finish(3i)"=>"01", "date_start(3i)"=>"01" }, :monthly => "monthly"
+      assert_redirected_to balance_path(:monthly_balance)
+    end
+
+    should "redirect to daily" do
+      put :update, :id => balances(:one).to_param, :record => { "date_finish(1i)"=>"2000", "date_start(1i)"=>"2000", "date_finish(2i)"=>"01", "date_start(2i)"=>"01", "date_finish(3i)"=>"01", "date_start(3i)"=>"01" }
+      assert_redirected_to balance_path(:daily_balance)
+    end
+
+    should "redirect to update" do
+      BalancesController.any_instance.stubs(:successful?).returns(false)
+      put :update, :id => balances(:one).to_param, :record => { }
+      assert_response :success
+    end
   end
 
   test "should destroy balance" do
