@@ -1,15 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   vaccines_name_id: 1
-  purchase_cost: 9.99
-  percentage_increase: 1.5
-  units: 1
-  expiration_date: 2010-12-03
+  purchase_cost: 100
+  percentage_increase: 10
+  units: 2
+  expiration_date: 2030-12-30
 
 two:
   vaccines_name_id: 1
   purchase_cost: 9.99
   percentage_increase: 1.5
-  units: 1
-  expiration_date: 2010-12-03
+  units: 3
+  expiration_date: 2030-12-03

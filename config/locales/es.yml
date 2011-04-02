@@ -408,6 +408,8 @@ es:
         immunization_record: Historial de vacuna
         vaccine: Vacuna
         doctor_application: Aplicación del doctor
+        dose: Dosis
+        reinforcement: Refuerzo
       balance:
         date_start: "Fecha de inicio"
         date_finish: "Fecha final"
@@ -736,5 +738,7 @@ es:
 
     #application_record
     must be empty unless is a doctor application: tiene que estar vacía a menos que sea una aplicación del doctor
-
+    of: del
+    to: a
+    application_of: Aplicación de
     help: Ayuda

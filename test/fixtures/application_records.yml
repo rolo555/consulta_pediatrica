@@ -1,11 +1,22 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   immunization_record_id: 1
   date: 2010-12-04
   application_type: MyString
+  vaccine_id: 1
+  doctor_application: true
 
 two:
   immunization_record_id: 1
   date: 2010-12-04
   application_type: MyString
+  doctor_application: false
+
+three:
+  immunization_record_id: 1
+  date: 2010-12-04
+  application_type: MyString
+  vaccine_id: 1
+  doctor_application: true

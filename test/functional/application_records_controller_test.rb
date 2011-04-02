@@ -4,7 +4,7 @@ class ApplicationRecordsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:application_records)
+    assert_not_nil assigns(:records)
   end
 
   test "should get new" do
@@ -14,10 +14,10 @@ class ApplicationRecordsControllerTest < ActionController::TestCase
 
   test "should create application_record" do
     assert_difference('ApplicationRecord.count') do
-      post :create, :application_record => { }
+      post :create, :record => { :date => Date.today, :application_type => "Dosis", :doctor_application => false }
     end
 
-    assert_redirected_to application_record_path(assigns(:application_record))
+    assert_redirected_to application_records_path
   end
 
   test "should show application_record" do
@@ -31,8 +31,8 @@ class ApplicationRecordsControllerTest < ActionController::TestCase
   end
 
   test "should update application_record" do
-    put :update, :id => application_records(:one).to_param, :application_record => { }
-    assert_redirected_to application_record_path(assigns(:application_record))
+    put :update, :id => application_records(:one).to_param, :record => { }
+    assert_redirected_to application_records_path
   end
 
   test "should destroy application_record" do
@@ -42,4 +42,10 @@ class ApplicationRecordsControllerTest < ActionController::TestCase
 
     assert_redirected_to application_records_path
   end
+
+  test "should get show_search" do
+    get :show_search
+    assert_response :success
+  end
+
 end

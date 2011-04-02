@@ -1,6 +1,7 @@
 module ApplicationRecordsHelper
+
   def options_for_association_conditions(association)
-    if association.name == :vaccine
+    if association.name == :vaccine and @record.immunization_record.present?
       { 'vaccines.vaccines_name_id' => @record.immunization_record.vaccines_name_id }
     else
       super
@@ -14,17 +15,4 @@ module ApplicationRecordsHelper
     active_scaffold_input_checkbox column, options
   end
 
-  #  def application_record_vaccine_form_column(record, html_options)
-  #    if record.doctor_application
-  #      debugger
-  #      column = active_scaffold_config.columns[:vaccine]
-  #      options = { :selected => @record.send(column.name).to_s }
-  #      options_for_select = active_scaffold_translated_options(column)
-  #      html_options.update(column.options[:html_options] || {})
-  #      options.update(column.options)
-  #      select(:record, column.name, options_for_select, options, html_options)
-  #    else
-  #      content_tag "span", "", html_options
-  #    end
-  #  end
 end

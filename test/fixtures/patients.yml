@@ -10,6 +10,7 @@ one:
   observations: MyText
 
 juan:
+  id: 1
   first_name: Juansito
   last_name: Pinto
   date_of_birth: 2010-09-02
