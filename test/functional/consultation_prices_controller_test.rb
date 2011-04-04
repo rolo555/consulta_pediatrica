@@ -4,7 +4,7 @@ class ConsultationPricesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:consultation_prices)
+    assert_not_nil assigns(:records)
   end
 
   test "should get new" do
@@ -14,10 +14,10 @@ class ConsultationPricesControllerTest < ActionController::TestCase
 
   test "should create consultation_price" do
     assert_difference('ConsultationPrice.count') do
-      post :create, :consultation_price => { }
+      post :create, :record => { :price_type => "a", :amount => 1 }
     end
 
-    assert_redirected_to consultation_price_path(assigns(:consultation_price))
+    assert_redirected_to consultation_prices_path
   end
 
   test "should show consultation_price" do
@@ -31,8 +31,8 @@ class ConsultationPricesControllerTest < ActionController::TestCase
   end
 
   test "should update consultation_price" do
-    put :update, :id => consultation_prices(:one).to_param, :consultation_price => { }
-    assert_redirected_to consultation_price_path(assigns(:consultation_price))
+    put :update, :id => consultation_prices(:one).to_param, :record => { }
+    assert_redirected_to consultation_prices_path
   end
 
   test "should destroy consultation_price" do
@@ -42,4 +42,16 @@ class ConsultationPricesControllerTest < ActionController::TestCase
 
     assert_redirected_to consultation_prices_path
   end
+
+  test "should render text null if params[selected] is false" do
+    get :warning_message, { :selected => false }
+    assert_template :text => ""
+  end
+
+  test "should render partial messages if params[selected] is true" do
+    get :warning_message, { :selected => true }
+    assert_template :partial => 'messages'
+#    @controller.expects(:messages)
+  end
+
 end

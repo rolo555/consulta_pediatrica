@@ -4,10 +4,10 @@ class ConsultationPricesController < ApplicationController
     :full_text_search => true
 
   active_scaffold :consultation_price do |conf|
-    #Configuración de las columnas que se mostrarán
+    #Columnas que se mostrarán
     conf.columns = [:default, :price_type, :amount]
 
-    #configuracion de como se mostrara la columns amount
+    #Configuracion de amount
     conf.columns[:amount].options[:format] = nil
 
     #Agregar a :default para que la búsqueda lo incluya
@@ -19,16 +19,6 @@ class ConsultationPricesController < ApplicationController
       render :template => "close", :layout => false
     else
       list
-    end
-  end
-
-  def do_destroy
-    destroy_find_record
-    begin
-      self.successful = @record.destroy
-    rescue Exception => ex
-      flash[:error] = as_("can\'t delete default consultation price")
-      self.successful = false
     end
   end
 

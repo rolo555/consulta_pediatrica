@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  price_type: MyString
+  price_type: Normal
   amount: 9
   default: true
 
 two:
-  price_type: MyString
-  amount: 9
+  price_type: Carero
+  amount: 99999
   default: false
 
 non_integer:

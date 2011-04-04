@@ -25,15 +25,9 @@ class ConsultationPrice < ActiveRecord::Base
       old_default_price = ConsultationPrice.find_by_default(true)
       if old_default_price.present?
         old_default_price.default = false
-        old_default_price.save
+        old_default_price.save!
       end
     end
-  end
-
-  before_destroy :require_validation_destroy
-
-  def require_validation_destroy
-    raise "Cannot delete consultation price with payments" if self.default
   end
   
 end
